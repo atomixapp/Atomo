@@ -57,29 +57,34 @@ header {
 /* Título dentro de la imagen */
 .carousel-title {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  font-size: 24px;
+  bottom: 10px; /* Ajustado más cerca de la parte inferior */
+  left: 15px;  /* Posicionado a la izquierda dentro de la imagen */
+  font-size: 20px;  /* Ajustar el tamaño de la fuente */
   color: white;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo más oscuro para mayor contraste */
+  padding: 8px;
   border-radius: 5px;
   z-index: 2; /* Asegura que el título esté por encima de la imagen */
+  max-width: 85%;  /* Asegura que no se salga de la imagen */
+  text-overflow: ellipsis; /* Si el texto es largo, agregar "..." */
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 /* Puntos de navegación dentro de la imagen */
 .carousel-dots {
   position: absolute;
-  bottom: 20px; /* Colocamos los puntos dentro de la imagen */
-  right: 20px; /* Alineados a la derecha dentro de la imagen */
+  bottom: 10px;  /* Colocados más cerca de la parte inferior de la imagen */
+  right: 20px;  /* Alineados a la derecha */
   display: flex;
-  gap: 10px; /* Espacio entre los puntos */
+  gap: 8px;  /* Reducir espacio entre los puntos */
   z-index: 2; /* Asegura que los puntos estén por encima de la imagen */
+  justify-content: center; /* Centrar los puntos */
 }
 
 .dot {
-  height: 10px;
-  width: 10px;
+  height: 8px;  /* Tamaño de los puntos ajustado */
+  width: 8px;  /* Tamaño de los puntos ajustado */
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   transition: background-color 0.3s ease;
@@ -102,15 +107,15 @@ header {
 
   /* Puntos de navegación en la parte inferior derecha dentro de la imagen */
   .carousel-dots {
-    bottom: 10px; /* Asegurados dentro de la imagen */
-    right: 20px; /* Alineados correctamente a la derecha */
-    justify-content: center;
+    bottom: 8px;  /* Ajuste de la posición */
+    right: 15px;  /* Ajuste de la posición */
+    gap: 6px;  /* Ajuste del espacio entre los puntos */
   }
 
   .carousel-title {
-    font-size: 18px;
-    bottom: 10px; /* Ajustado dentro de la imagen */
-    left: 15px;
+    font-size: 18px;  /* Ajuste de tamaño de texto */
+    bottom: 8px;  /* Ajuste de posición */
+    left: 10px;   /* Ajuste de posición */
     max-width: 80%;
   }
 
@@ -129,9 +134,15 @@ header {
     height: 200px;
   }
 
+  .carousel-dots {
+    bottom: 5px;  /* Ajuste para que se vea correctamente en pantallas pequeñas */
+    gap: 5px;
+  }
+  
   .carousel-title {
-    font-size: 16px;
-    bottom: 5px; /* Ajuste más cerca de la parte inferior */
-    left: 10px;
+    font-size: 16px;  /* Tamaño de fuente ajustado en pantallas más pequeñas */
+    bottom: 5px;  /* Ajuste más cercano al borde de la imagen */
+    left: 5px;   /* Ajuste de la posición */
+    max-width: 70%;
   }
 }
