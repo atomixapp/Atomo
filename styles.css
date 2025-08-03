@@ -53,26 +53,36 @@ header {
   object-fit: cover;
 }
 
-.carousel-title {
+/* Contenedor para el título y los puntos */
+.carousel-content {
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
   left: 20px;
+  right: 20px;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Título dentro de la imagen */
+.carousel-title {
   font-size: 24px;
   color: white;
   background-color: rgba(0, 0, 0, 0.6);
   padding: 10px;
   border-radius: 5px;
-  z-index: 2;
   max-width: 80%;
+  margin: 0 auto;
 }
 
+/* Puntos de navegación dentro de la imagen */
 .carousel-dots {
   position: absolute;
   bottom: 10px;
-  right: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   gap: 10px;
-  z-index: 2;
   justify-content: center;
 }
 
@@ -89,40 +99,36 @@ header {
   background-color: white;
 }
 
-/* Responsividad: Ajustes para pantallas móviles */
+/* Responsividad */
 @media (max-width: 768px) {
   .carousel-item img {
-    height: 250px; /* Ajuste de la altura en pantallas más pequeñas */
+    height: 250px;
   }
 
   .carousel-title {
-    font-size: 18px; /* Reducir tamaño de texto en móviles */
-    bottom: 15px; /* Posicionar un poco más arriba */
-    left: 15px;
-    max-width: 80%; /* Evitar que el texto se desborde */
+    font-size: 18px;
+    max-width: 80%;
   }
 
   .carousel-dots {
-    bottom: 15px; /* Ubicar los puntos más cerca de la parte inferior */
-    right: 15px; /* Ajustar los puntos dentro de la imagen */
-    gap: 8px; /* Reducir espacio entre puntos */
+    bottom: 8px;
+    gap: 6px;
   }
 }
 
 @media (max-width: 480px) {
   .carousel-item img {
-    height: 200px; /* Ajuste de la imagen para pantallas muy pequeñas */
+    height: 200px;
   }
 
   .carousel-title {
-    font-size: 16px; /* Ajustar tamaño de la fuente en pantallas pequeñas */
-    bottom: 10px; /* Ajuste más cercano a la parte inferior */
-    left: 10px;
-    max-width: 70%; /* Evitar que el título se salga de la imagen */
+    font-size: 16px;
+    bottom: 5px;
+    max-width: 70%;
   }
 
   .carousel-dots {
-    bottom: 8px; /* Ajustar puntos más cerca del borde de la imagen */
-    gap: 5px; /* Espacio más reducido entre los puntos */
+    bottom: 5px;
+    gap: 5px;
   }
 }
