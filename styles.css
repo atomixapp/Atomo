@@ -53,18 +53,26 @@ header {
   object-fit: cover;
 }
 
-/* Título dentro de la imagen */
-.carousel-title {
+/* Contenedor para el título y los puntos dentro de la imagen */
+.carousel-content {
   position: absolute;
   bottom: 20px;
   left: 20px;
+  right: 20px;
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+
+/* Título dentro de la imagen */
+.carousel-title {
   font-size: 24px;
   color: white;
   background-color: rgba(0, 0, 0, 0.6);
   padding: 10px;
   border-radius: 5px;
-  z-index: 2;
   max-width: 80%;
+  margin: 0 auto;
 }
 
 /* Puntos de navegación dentro de la imagen */
@@ -75,7 +83,7 @@ header {
   transform: translateX(-50%);
   display: flex;
   gap: 10px;
-  z-index: 2;
+  justify-content: center;
 }
 
 .dot {
