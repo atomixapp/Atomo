@@ -55,7 +55,7 @@ header {
 
 .carousel-title {
   position: absolute;
-  bottom: 20px;
+  bottom: 10px;
   left: 20px;
   font-size: 24px;
   color: white;
@@ -65,11 +65,11 @@ header {
   z-index: 1; /* Asegurarse de que el título esté por encima de la imagen */
 }
 
-/* Puntos de navegación */
+/* Puntos de navegación dentro del carrusel */
 .carousel-dots {
   position: absolute;
-  bottom: 20px; /* Colocarlos en la parte inferior */
-  right: 20px; /* Alineados a la derecha */
+  bottom: 10px; /* Colocarlos en la parte inferior de la imagen */
+  right: 20px; /* Alineados a la derecha dentro de la imagen */
   display: flex;
   gap: 10px; /* Espacio entre los puntos */
   z-index: 2; /* Asegurarse de que los puntos estén por encima de la imagen */
@@ -98,17 +98,17 @@ header {
     width: 50%;
   }
 
-  /* Mostrar puntos de navegación en horizontal dentro de la imagen */
+  /* Puntos de navegación en la parte inferior derecha de la imagen */
   .carousel-dots {
     display: flex;
-    bottom: 10px; /* Mover los puntos más cerca del borde inferior */
-    right: 20px; /* Seguir alineados a la derecha */
-    justify-content: center; /* Centrar los puntos */
+    bottom: 10px;
+    right: 20px;
+    justify-content: center;
   }
 
   .carousel-title {
     font-size: 18px;
-    bottom: 15px;
+    bottom: 10px;
     left: 15px;
     max-width: 80%;
   }
@@ -130,7 +130,7 @@ header {
 
   .carousel-title {
     font-size: 16px;
-    bottom: 10px;
+    bottom: 5px;
     left: 10px;
   }
 }
