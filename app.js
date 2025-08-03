@@ -8,7 +8,7 @@ function setCarousel(index) {
   if (index >= 0 && index < 3) {
     currentIndex = index;
     carouselContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
-    
+
     // Actualizar la clase 'active' en los puntos de navegación
     dots.forEach((dot, i) => {
       dot.classList.remove('active');
