@@ -55,20 +55,20 @@ header {
 
 .carousel-title {
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
   left: 20px;
   font-size: 24px;
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 5px;
   border-radius: 5px;
-  z-index: 2; /* Asegura que el título esté encima de la imagen */
+  z-index: 2; /* Asegurarse de que el título esté por encima de la imagen */
 }
 
-/* Puntos de navegación dentro de la imagen */
+/* Puntos de navegación dentro del carrusel */
 .carousel-dots {
   position: absolute;
-  bottom: 10px; /* Colocarlos justo dentro de la parte inferior de la imagen */
+  bottom: 20px; /* Colocarlos justo dentro de la parte inferior de la imagen */
   right: 20px; /* Alineados a la derecha dentro de la imagen */
   display: flex;
   gap: 10px; /* Espacio entre los puntos */
