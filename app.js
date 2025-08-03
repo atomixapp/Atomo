@@ -8,21 +8,21 @@ function changeSlide(index) {
 }
 
 function updateCarousel() {
-  // Move the carousel to the current index
+  // Mueve el carrusel al índice actual
   const carousel = document.querySelector('.carousel');
   carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-  // Update active dot
+  // Actualiza el punto activo
   dots.forEach(dot => dot.classList.remove('active'));
   dots[currentIndex].classList.add('active');
 }
 
-// Event listeners for dots
+// Event listeners para los puntos
 dots.forEach((dot, index) => {
   dot.addEventListener('click', () => changeSlide(index));
 });
 
-// Auto slide every 5 seconds
+// Desplazamiento automático cada 5 segundos
 setInterval(() => {
   currentIndex = (currentIndex + 1) % items.length;
   updateCarousel();
