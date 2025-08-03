@@ -62,9 +62,7 @@ header {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 5px;
   border-radius: 5px;
-  width: auto;
-  max-width: 90%;
-  z-index: 2; /* Asegurarse de que el título esté por encima de la imagen */
+  z-index: 1; /* Asegurarse de que el título esté por encima de la imagen */
 }
 
 /* Puntos de navegación */
@@ -73,8 +71,6 @@ header {
   bottom: 20px; /* Colocarlos en la parte inferior */
   right: 20px; /* Alineados a la derecha */
   display: flex;
-  justify-content: center; /* Centrado horizontal */
-  align-items: center;
   gap: 10px; /* Espacio entre los puntos */
   z-index: 2; /* Asegurarse de que los puntos estén por encima de la imagen */
 }
@@ -102,10 +98,12 @@ header {
     width: 50%;
   }
 
-  /* Mostrar puntos de navegación a la derecha dentro de la imagen */
+  /* Mostrar puntos de navegación en horizontal dentro de la imagen */
   .carousel-dots {
     display: flex;
-    bottom: 10px; /* Mover los puntos un poco más cerca del borde inferior */
+    bottom: 10px; /* Mover los puntos más cerca del borde inferior */
+    right: 20px; /* Seguir alineados a la derecha */
+    justify-content: center; /* Centrar los puntos */
   }
 
   .carousel-title {
