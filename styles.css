@@ -64,17 +64,19 @@ header {
   border-radius: 5px;
   width: auto;
   max-width: 90%;
+  z-index: 2; /* Asegurarse de que el título esté por encima de la imagen */
 }
 
 /* Puntos de navegación */
 .carousel-dots {
   position: absolute;
   top: 50%;
-  right: 20px;
+  right: 10px;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 2; /* Asegurarse de que los puntos estén por encima de la imagen */
 }
 
 .dot {
@@ -101,14 +103,14 @@ header {
     width: 50%;
   }
 
-  /* Mostrar puntos de navegación a la derecha */
+  /* Mostrar puntos de navegación a la derecha dentro de la imagen */
   .carousel-dots {
     display: flex;
-  }
-
-  /* Eliminar flechas de desplazamiento en pantallas táctiles */
-  .carousel-btn {
-    display: none;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    z-index: 3; /* Asegura que los puntos de navegación estén encima de la imagen */
   }
 
   .carousel-title {
@@ -116,6 +118,11 @@ header {
     bottom: 15px;
     left: 15px;
     max-width: 80%;
+  }
+
+  /* Eliminar flechas de desplazamiento en pantallas táctiles */
+  .carousel-btn {
+    display: none;
   }
 }
 
