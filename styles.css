@@ -71,11 +71,11 @@ header {
 .carousel-dots {
   position: absolute;
   bottom: 10px;
-  right: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   gap: 10px;
   z-index: 2;
-  justify-content: center;
 }
 
 .dot {
