@@ -44,20 +44,20 @@ header {
 .carousel-item {
   min-width: 100%;
   height: 400px;
-  position: relative; /* El contenedor ahora tiene position relative */
+  position: relative; /* Hacemos que el contenedor del carrusel tenga un position relativo */
 }
 
 .carousel-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: relative; /* Asegura que los elementos absolutas estén dentro */
+  position: relative; /* Necesario para posicionar los elementos dentro de la imagen */
 }
 
 /* Título dentro de la imagen */
 .carousel-title {
   position: absolute;
-  bottom: 15px; /* Colocamos el título dentro de la imagen */
+  bottom: 20px;
   left: 20px;
   font-size: 24px;
   color: white;
@@ -70,7 +70,7 @@ header {
 /* Puntos de navegación dentro de la imagen */
 .carousel-dots {
   position: absolute;
-  bottom: 15px; /* Colocamos los puntos dentro de la imagen */
+  bottom: 20px; /* Colocamos los puntos dentro de la imagen */
   right: 20px; /* Alineados a la derecha dentro de la imagen */
   display: flex;
   gap: 10px; /* Espacio entre los puntos */
@@ -93,7 +93,7 @@ header {
 /* Responsividad */
 @media (max-width: 768px) {
   .carousel-item img {
-    height: 250px; /* Ajustamos la altura de la imagen */
+    height: 250px; /* Ajuste de la imagen */
   }
 
   .search-bar {
@@ -102,7 +102,7 @@ header {
 
   /* Puntos de navegación en la parte inferior derecha dentro de la imagen */
   .carousel-dots {
-    bottom: 10px; /* Ajustamos los puntos dentro de la imagen */
+    bottom: 10px; /* Asegurados dentro de la imagen */
     right: 20px; /* Alineados correctamente a la derecha */
     justify-content: center;
   }
@@ -131,7 +131,7 @@ header {
 
   .carousel-title {
     font-size: 16px;
-    bottom: 5px; /* Ajustado más cerca de la parte inferior */
+    bottom: 5px; /* Ajuste más cerca de la parte inferior */
     left: 10px;
   }
 }
