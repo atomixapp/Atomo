@@ -16,4 +16,32 @@ function moveCarousel(direction) {
   if (currentIndex >= totalItems) currentIndex = 0;
 
   carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+  // Actualizar los puntos de navegación
+  updateDots();
 }
+
+// Función para cambiar a una imagen específica con los puntos
+function setCarousel(index) {
+  currentIndex = index;
+  const carousel = document.querySelector('.carousel-container');
+  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+  // Actualizar los puntos de navegación
+  updateDots();
+}
+
+// Función para actualizar la clase 'active' en los puntos
+function updateDots() {
+  const dots = document.querySelectorAll('.dot');
+  dots.forEach((dot, index) => {
+    if (index === currentIndex) {
+      dot.classList.add('active');
+    } else {
+      dot.classList.remove('active');
+    }
+  });
+}
+
+// Inicializar los puntos de navegación
+updateDots();
