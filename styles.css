@@ -44,47 +44,41 @@ header {
 .carousel-item {
   min-width: 100%;
   height: 400px;
-  position: relative; /* Hacemos que el contenedor del carrusel tenga un position relativo */
+  position: relative;
 }
 
 .carousel-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: relative; /* Necesario para posicionar los elementos dentro de la imagen */
 }
 
-/* Título dentro de la imagen */
 .carousel-title {
   position: absolute;
-  bottom: 20px; /* Ajuste de posición para que no se sobreponga */
-  left: 20px;  /* Ajuste de posición a la izquierda */
-  font-size: 24px;  /* Ajuste de tamaño de texto */
+  bottom: 20px;
+  left: 20px;
+  font-size: 24px;
   color: white;
-  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro para contraste */
+  background-color: rgba(0, 0, 0, 0.6);
   padding: 10px;
   border-radius: 5px;
-  z-index: 2; /* Asegura que el título esté por encima de la imagen */
-  max-width: 80%;  /* Evita que el texto se salga de la imagen */
-  text-overflow: ellipsis; /* Si el texto es largo, se cortará */
-  white-space: nowrap;
-  overflow: hidden;
+  z-index: 2;
+  max-width: 80%;
 }
 
-/* Puntos de navegación dentro de la imagen */
 .carousel-dots {
   position: absolute;
-  bottom: 15px;  /* Ajustado más dentro de la imagen */
-  right: 20px;  /* Alineado a la derecha */
+  bottom: 10px;
+  right: 20px;
   display: flex;
-  gap: 10px;  /* Ajuste de espacio entre los puntos */
-  z-index: 2; /* Asegura que los puntos estén por encima de la imagen */
+  gap: 10px;
+  z-index: 2;
   justify-content: center;
 }
 
 .dot {
-  height: 10px;  /* Ajuste del tamaño de los puntos */
-  width: 10px;  /* Ajuste del tamaño de los puntos */
+  height: 10px;
+  width: 10px;
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   transition: background-color 0.3s ease;
@@ -98,24 +92,20 @@ header {
 /* Responsividad */
 @media (max-width: 768px) {
   .carousel-item img {
-    height: 250px; /* Ajuste de la imagen */
-  }
-
-  .search-bar {
-    width: 50%;
+    height: 250px;
   }
 
   .carousel-title {
     font-size: 18px;
-    bottom: 15px;  /* Ajustado más dentro de la imagen */
+    bottom: 15px;
     left: 15px;
     max-width: 80%;
   }
 
   .carousel-dots {
-    bottom: 10px;  /* Ajustado dentro de la imagen */
-    right: 15px;  /* Alineado correctamente */
-    gap: 8px;  /* Ajuste del espacio entre los puntos */
+    bottom: 8px;
+    right: 15px;
+    gap: 8px;
   }
 }
 
@@ -126,13 +116,13 @@ header {
 
   .carousel-title {
     font-size: 16px;
-    bottom: 10px; /* Ajuste más cercano a la parte inferior */
+    bottom: 10px;
     left: 10px;
     max-width: 70%;
   }
 
   .carousel-dots {
-    bottom: 8px;  /* Ajuste para que se vea correctamente */
-    gap: 6px;
+    bottom: 5px;
+    gap: 5px;
   }
 }
