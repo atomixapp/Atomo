@@ -3,55 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carrusel de Películas</title>
+  <title>App de Películas</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Barra de navegación -->
-  <header>
-    <div class="menu-icon">&#9776;</div>
-    <input type="text" id="searchInput" class="search-bar" placeholder="Buscar aquí" />
-  </header>
+  <div class="header">
+    <button class="menu-btn">&#9776;</button>
+    <input type="text" class="search-bar" placeholder="Buscar aquí">
+    <button class="search-btn">&#128269;</button>
+  </div>
 
-  <!-- Carrusel de portadas -->
-  <div class="carousel">
-    <div class="carousel-container">
-      <div class="carousel-item">
-        <img src="https://image.tmdb.org/t/p/original/5l5CveaJQw7rRE70sXnHyEgCfJs.jpg" alt="Wicked">
-        <div class="carousel-content">
-          <div class="carousel-title">Wicked</div>
-          <div class="carousel-dots">
-            <span class="dot" onclick="setCarousel(0)"></span>
-            <span class="dot" onclick="setCarousel(1)"></span>
-            <span class="dot" onclick="setCarousel(2)"></span>
-          </div>
-        </div>
+  <div class="carousel-container">
+    <div class="carousel">
+      <div class="carousel-item active">
+        <img src="https://via.placeholder.com/600x400/000000/FFFFFF?text=Wicked" alt="Wicked">
+        <div class="carousel-title">Wicked</div>
       </div>
       <div class="carousel-item">
-        <img src="https://image.tmdb.org/t/p/original/5hCLgdbNPwQoG4VrnFDbpdBpDWj.jpg" alt="Another Movie">
-        <div class="carousel-content">
-          <div class="carousel-title">Another Movie</div>
-          <div class="carousel-dots">
-            <span class="dot" onclick="setCarousel(0)"></span>
-            <span class="dot" onclick="setCarousel(1)"></span>
-            <span class="dot" onclick="setCarousel(2)"></span>
-          </div>
-        </div>
+        <img src="https://via.placeholder.com/600x400/000000/FFFFFF?text=Movie+2" alt="Movie 2">
+        <div class="carousel-title">Movie 2</div>
       </div>
       <div class="carousel-item">
-        <img src="https://image.tmdb.org/t/p/original/iqC78nLkpK9D9V6HkStpLfzvJpq.jpg" alt="Movie Title">
-        <div class="carousel-content">
-          <div class="carousel-title">Movie Title</div>
-          <div class="carousel-dots">
-            <span class="dot" onclick="setCarousel(0)"></span>
-            <span class="dot" onclick="setCarousel(1)"></span>
-            <span class="dot" onclick="setCarousel(2)"></span>
-          </div>
-        </div>
+        <img src="https://via.placeholder.com/600x400/000000/FFFFFF?text=Movie+3" alt="Movie 3">
+        <div class="carousel-title">Movie 3</div>
+      </div>
+      <div class="carousel-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
       </div>
     </div>
   </div>
 
-  <script src="app.js"></script>
+  <script src="scripts.js"></script>
 </body>
 </html>
