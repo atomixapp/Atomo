@@ -57,16 +57,16 @@ header {
 /* Título dentro de la imagen */
 .carousel-title {
   position: absolute;
-  bottom: 10px; /* Ajustado más cerca de la parte inferior */
-  left: 15px;  /* Posicionado a la izquierda dentro de la imagen */
-  font-size: 20px;  /* Ajustar el tamaño de la fuente */
+  bottom: 20px; /* Ajuste de posición para que no se sobreponga */
+  left: 20px;  /* Ajuste de posición a la izquierda */
+  font-size: 24px;  /* Ajuste de tamaño de texto */
   color: white;
-  background-color: rgba(0, 0, 0, 0.6); /* Fondo más oscuro para mayor contraste */
-  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro para contraste */
+  padding: 10px;
   border-radius: 5px;
   z-index: 2; /* Asegura que el título esté por encima de la imagen */
-  max-width: 85%;  /* Asegura que no se salga de la imagen */
-  text-overflow: ellipsis; /* Si el texto es largo, agregar "..." */
+  max-width: 80%;  /* Evita que el texto se salga de la imagen */
+  text-overflow: ellipsis; /* Si el texto es largo, se cortará */
   white-space: nowrap;
   overflow: hidden;
 }
@@ -74,17 +74,17 @@ header {
 /* Puntos de navegación dentro de la imagen */
 .carousel-dots {
   position: absolute;
-  bottom: 10px;  /* Colocados más cerca de la parte inferior de la imagen */
-  right: 20px;  /* Alineados a la derecha */
+  bottom: 15px;  /* Ajustado más dentro de la imagen */
+  right: 20px;  /* Alineado a la derecha */
   display: flex;
-  gap: 8px;  /* Reducir espacio entre los puntos */
+  gap: 10px;  /* Ajuste de espacio entre los puntos */
   z-index: 2; /* Asegura que los puntos estén por encima de la imagen */
-  justify-content: center; /* Centrar los puntos */
+  justify-content: center;
 }
 
 .dot {
-  height: 8px;  /* Tamaño de los puntos ajustado */
-  width: 8px;  /* Tamaño de los puntos ajustado */
+  height: 10px;  /* Ajuste del tamaño de los puntos */
+  width: 10px;  /* Ajuste del tamaño de los puntos */
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 50%;
   transition: background-color 0.3s ease;
@@ -105,44 +105,34 @@ header {
     width: 50%;
   }
 
-  /* Puntos de navegación en la parte inferior derecha dentro de la imagen */
-  .carousel-dots {
-    bottom: 8px;  /* Ajuste de la posición */
-    right: 15px;  /* Ajuste de la posición */
-    gap: 6px;  /* Ajuste del espacio entre los puntos */
-  }
-
   .carousel-title {
-    font-size: 18px;  /* Ajuste de tamaño de texto */
-    bottom: 8px;  /* Ajuste de posición */
-    left: 10px;   /* Ajuste de posición */
+    font-size: 18px;
+    bottom: 15px;  /* Ajustado más dentro de la imagen */
+    left: 15px;
     max-width: 80%;
   }
 
-  /* Eliminar flechas de desplazamiento en pantallas táctiles */
-  .carousel-btn {
-    display: none;
+  .carousel-dots {
+    bottom: 10px;  /* Ajustado dentro de la imagen */
+    right: 15px;  /* Alineado correctamente */
+    gap: 8px;  /* Ajuste del espacio entre los puntos */
   }
 }
 
 @media (max-width: 480px) {
-  .search-bar {
-    width: 60%;
-  }
-
   .carousel-item img {
     height: 200px;
   }
 
-  .carousel-dots {
-    bottom: 5px;  /* Ajuste para que se vea correctamente en pantallas pequeñas */
-    gap: 5px;
-  }
-  
   .carousel-title {
-    font-size: 16px;  /* Tamaño de fuente ajustado en pantallas más pequeñas */
-    bottom: 5px;  /* Ajuste más cercano al borde de la imagen */
-    left: 5px;   /* Ajuste de la posición */
+    font-size: 16px;
+    bottom: 10px; /* Ajuste más cercano a la parte inferior */
+    left: 10px;
     max-width: 70%;
+  }
+
+  .carousel-dots {
+    bottom: 8px;  /* Ajuste para que se vea correctamente */
+    gap: 6px;
   }
 }
