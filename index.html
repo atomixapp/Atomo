@@ -1,43 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Películas App - Login/Registro</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-firestore.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App de Películas</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Bienvenido a la App de Películas</h1>
-        <div id="form-container">
-            <!-- Formulario de Login -->
-            <div id="login-form" class="form">
-                <h2>Iniciar sesión</h2>
-                <input type="email" id="login-email" placeholder="Correo electrónico" required />
-                <input type="password" id="login-password" placeholder="Contraseña" required />
-                <button id="login-button">Iniciar sesión</button>
-                <p>¿No tienes cuenta? <span id="show-register">Regístrate</span></p>
-            </div>
+  <!-- Barra de navegación -->
+  <header>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <input type="text" id="searchInput" class="search-bar" placeholder="Buscar aquí" />
+  </header>
 
-            <!-- Formulario de Registro -->
-            <div id="register-form" class="form" style="display: none;">
-                <h2>Regístrate</h2>
-                <input type="email" id="register-email" placeholder="Correo electrónico" required />
-                <input type="password" id="register-password" placeholder="Contraseña" required />
-                <button id="register-button">Registrar</button>
-                <p>¿Ya tienes cuenta? <span id="show-login">Inicia sesión</span></p>
-            </div>
-        </div>
-
-        <div id="userStatus" style="display: none;">
-            <p>¡Bienvenido, <span id="user-name"></span>!</p>
-            <button id="logout-button">Cerrar sesión</button>
-        </div>
+  <!-- Carrusel de portadas -->
+  <div class="carousel">
+    <div class="carousel-container">
+      <div class="carousel-item">
+        <img src="https://via.placeholder.com/300x400?text=Wicked" alt="Wicked">
+      </div>
+      <div class="carousel-item">
+        <img src="https://via.placeholder.com/300x400?text=Another+Movie" alt="Another Movie">
+      </div>
+      <div class="carousel-item">
+        <img src="https://via.placeholder.com/300x400?text=Movie+Title" alt="Movie Title">
+      </div>
     </div>
+    <button class="carousel-btn prev" onclick="moveCarousel(-1)">&#10094;</button>
+    <button class="carousel-btn next" onclick="moveCarousel(1)">&#10095;</button>
+  </div>
 
-    <script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
