@@ -3,20 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Películas App</title>
+    <title>Películas App - Login/Registro</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.9.0/firebase-firestore.js"></script>
 </head>
 <body>
-    <h1>Bienvenido a la App de Películas</h1>
-    <div id="userStatus">
-        <button id="loginButton">Iniciar sesión</button>
-        <button id="logoutButton" style="display: none;">Cerrar sesión</button>
+    <div class="container">
+        <h1>Bienvenido a la App de Películas</h1>
+        <div id="form-container">
+            <!-- Formulario de Login -->
+            <div id="login-form" class="form">
+                <h2>Iniciar sesión</h2>
+                <input type="email" id="login-email" placeholder="Correo electrónico" required />
+                <input type="password" id="login-password" placeholder="Contraseña" required />
+                <button id="login-button">Iniciar sesión</button>
+                <p>¿No tienes cuenta? <span id="show-register">Regístrate</span></p>
+            </div>
+
+            <!-- Formulario de Registro -->
+            <div id="register-form" class="form" style="display: none;">
+                <h2>Regístrate</h2>
+                <input type="email" id="register-email" placeholder="Correo electrónico" required />
+                <input type="password" id="register-password" placeholder="Contraseña" required />
+                <button id="register-button">Registrar</button>
+                <p>¿Ya tienes cuenta? <span id="show-login">Inicia sesión</span></p>
+            </div>
+        </div>
+
+        <div id="userStatus" style="display: none;">
+            <p>¡Bienvenido, <span id="user-name"></span>!</p>
+            <button id="logout-button">Cerrar sesión</button>
+        </div>
     </div>
-    
-    <div id="moviesContainer"></div>
 
     <script src="app.js"></script>
 </body>
