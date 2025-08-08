@@ -1,29 +1,19 @@
-let currentIndex = 0;
-const items = document.querySelectorAll('.carousel-item');
-const dots = document.querySelectorAll('.dot');
+// Configuración para el carrusel automático
+let carouselIndex = 0;
+const carouselItems = document.querySelectorAll('.carousel-item');
 
-function changeSlide(index) {
-  currentIndex = index;
-  updateCarousel();
+function moveCarousel() {
+    carouselItems.forEach(item => {
+        item.style.transform = `translateX(-${carouselIndex * 220}px)`;
+    });
+    carouselIndex = (carouselIndex + 1) % carouselItems.length;
 }
 
-function updateCarousel() {
-  // Mueve el carrusel al índice actual
-  const carousel = document.querySelector('.carousel');
-  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+setInterval(moveCarousel, 3000); // Mueve el carrusel cada 3 segundos
 
-  // Actualiza el punto activo
-  dots.forEach(dot => dot.classList.remove('active'));
-  dots[currentIndex].classList.add('active');
-}
-
-// Event listeners para los puntos
-dots.forEach((dot, index) => {
-  dot.addEventListener('click', () => changeSlide(index));
+// Función para buscar películas
+document.getElementById('search').addEventListener('input', (event) => {
+    const query = event.target.value.toLowerCase();
+    // Implementar lógica para filtrar las películas
+    console.log(query); // Solo muestra la búsqueda por ahora
 });
-
-// Desplazamiento automático cada 5 segundos
-setInterval(() => {
-  currentIndex = (currentIndex + 1) % items.length;
-  updateCarousel();
-}, 5000);
