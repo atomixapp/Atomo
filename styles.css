@@ -162,9 +162,16 @@ footer a {
 
 /* Pantallas grandes (más de 1024px) */
 @media (min-width: 1024px) {
-  #carrusel .carousel-image {
-    width: 50vw; /* Para pantallas grandes, cada imagen ocupará la mitad de la pantalla */
+  #carrusel .carousel-container {
+    width: 100%;
+    display: flex;
   }
+
+  #carrusel .carousel-image {
+    width: 100vw; /* Cada imagen ocupa toda la pantalla */
+    height: 500px; /* Ajusta la altura para que se vea bien en pantallas grandes */
+  }
+}
 
   .actor img {
     width: 100px; /* Aumentar el tamaño de los actores */
