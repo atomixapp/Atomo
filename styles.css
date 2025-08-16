@@ -169,7 +169,7 @@ footer a {
 
   #carrusel .carousel-image {
     width: 100vw; /* Cada imagen ocupa toda la pantalla */
-    height: 100vh; /* Ajusta la altura para que se vea bien en pantallas grandes */
+    height: 500px; /* Ajusta la altura para que se vea bien en pantallas grandes */
   }
 }
 
