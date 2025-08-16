@@ -103,6 +103,8 @@ section {
   max-width: 100%;
   overflow: hidden; /* Evitar que las imágenes se desborden */
   position: relative;
+  margin: 0;
+  padding: 0;
 }
 
 #carrusel .carousel-container {
