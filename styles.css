@@ -25,7 +25,7 @@ header nav ul li a {
 }
 
 main {
-  padding: 0px;
+  padding: 10px;
 }
 
 section {
@@ -52,7 +52,7 @@ section {
   flex-shrink: 0; /* No permitir que las imágenes se reduzcan */
 }
 
-/* Estilos para las secciones */
+/* Sección de Estrellas Populares y Mejor Calificación */
 #estrella-populares .actors,
 #mejor-calificacion .movies {
   display: flex;
@@ -81,6 +81,7 @@ section {
   height: 150px;
 }
 
+/* Footer */
 footer {
   background-color: #000;
   padding: 10px;
@@ -90,4 +91,61 @@ footer {
 footer a {
   color: white;
   text-decoration: none;
+}
+
+/* Media Queries para Responsividad */
+
+/* Pantallas grandes (más de 1024px) */
+@media (min-width: 1024px) {
+  #carrusel .carousel-image {
+    width: 50vw; /* Para pantallas grandes, cada imagen ocupará la mitad de la pantalla */
+  }
+
+  .actor img {
+    width: 100px; /* Aumentar el tamaño de los actores */
+    height: 100px;
+  }
+
+  .movie img {
+    width: 150px; /* Aumentar el tamaño de las películas */
+    height: 225px;
+  }
+
+  footer {
+    padding: 20px;
+  }
+}
+
+/* Pantallas medianas (tabletas, entre 768px y 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  #carrusel .carousel-image {
+    width: 75vw; /* En pantallas medianas, cada imagen ocupará un 75% del ancho */
+  }
+
+  .actor img {
+    width: 90px; /* Ajustar tamaño de los actores */
+    height: 90px;
+  }
+
+  .movie img {
+    width: 130px; /* Ajustar tamaño de las películas */
+    height: 195px;
+  }
+}
+
+/* Pantallas pequeñas (móviles, menos de 768px) */
+@media (max-width: 767px) {
+  #carrusel .carousel-image {
+    width: 100vw; /* Cada imagen ocupa todo el ancho de la pantalla */
+  }
+
+  .actor img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .movie img {
+    width: 100px;
+    height: 150px;
+  }
 }
