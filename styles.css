@@ -110,6 +110,8 @@ section {
 #carrusel .carousel-container {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  margin: 0;
+  padding: 0;
 }
 
 .carousel-image {
@@ -117,6 +119,8 @@ section {
   height: auto;
   object-fit: cover;
   flex-shrink: 0; /* No permitir que las imágenes se reduzcan */
+  margin: 0;
+  padding: 0;
 }
 
 /* Sección de Estrellas Populares y Mejor Calificación */
