@@ -7,15 +7,35 @@
   <title>App de Películas</title>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#">Menú</a></li>
-        <li><a href="#">Buscar</a></li>
-        <li><a href="#">Inicio</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <div class="header-container">
+    <!-- Menú desplegable -->
+    <div class="menu-icon" id="menu-toggle">
+      <img src="menu-icon.png" alt="Menú" />
+    </div>
+
+    <!-- Barra de búsqueda -->
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Buscar aquí" />
+    </div>
+
+    <!-- Icono de usuario -->
+    <div class="user-icon">
+      <img src="user-icon.png" alt="Usuario" />
+    </div>
+  </div>
+
+  <!-- Menú desplegable -->
+  <div id="dropdown-menu" class="dropdown-menu">
+    <ul>
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Películas</a></li>
+      <li><a href="#">Series</a></li>
+      <li><a href="#">Favoritos</a></li>
+      <li><a href="#">Configuración</a></li>
+    </ul>
+  </div>
+</header>
   
   <main>
     <section id="carrusel">
@@ -56,4 +76,5 @@
   <script src="app.js"></script>
 </body>
 </html>
+
 
