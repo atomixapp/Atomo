@@ -32,48 +32,53 @@ section {
   margin-bottom: 20px;
 }
 
+/* Carrusel */
+#carrusel {
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden; /* Evitar que las imágenes se desborden */
+  position: relative;
+}
+
 #carrusel .carousel-container {
   display: flex;
-  overflow-x: scroll;
+  transition: transform 0.5s ease-in-out;
 }
 
 .carousel-image {
-  width: 100%;
+  width: 100vw; /* Cada imagen ocupa toda la pantalla */
   height: auto;
   object-fit: cover;
-  margin-right: 10px;
+  flex-shrink: 0; /* No permitir que las imágenes se reduzcan */
 }
 
-#estrella-populares .actors {
+/* Estilos para las secciones */
+#estrella-populares .actors,
+#mejor-calificacion .movies {
   display: flex;
   overflow-x: scroll;
+  gap: 10px;
 }
 
-.actor {
-  margin-right: 15px;
+.actor,
+.movie {
   text-align: center;
+}
+
+.actor img,
+.movie img {
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 .actor img {
   width: 70px;
   height: 70px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-#mejor-calificacion .movies {
-  display: flex;
-  overflow-x: scroll;
-}
-
-.movie {
-  margin-right: 10px;
 }
 
 .movie img {
   width: 100px;
   height: 150px;
-  object-fit: cover;
 }
 
 footer {
