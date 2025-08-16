@@ -7,5 +7,5 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(() => {
     currentIndex = (currentIndex + 1) % totalImages; // Incrementar índice de imagen
     carouselContainer.style.transform = `translateX(-${currentIndex * 100}vw)`; // Desplazar el carrusel
-  }, 3000); // Cambiar imagen cada 3 segundos
+  }, 6000);
 });
