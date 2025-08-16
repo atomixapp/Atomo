@@ -10,7 +10,7 @@ body {
 header {
   background-color: #111;
   color: white;
-  padding: 10px;
+  padding: 0px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -94,7 +94,7 @@ main {
 }
 
 section {
-  margin-bottom: 0px;
+  margin-bottom: 20px;
 }
 
 /* Carrusel */
@@ -103,14 +103,12 @@ section {
   max-width: 100%;
   overflow: hidden; /* Evitar que las imágenes se desborden */
   position: relative;
-  margin: 0;
   padding: 0;
 }
 
 #carrusel .carousel-container {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  margin: 0;
   padding: 0;
 }
 
@@ -119,7 +117,6 @@ section {
   height: auto;
   object-fit: cover;
   flex-shrink: 0; /* No permitir que las imágenes se reduzcan */
-  margin: 0;
   padding: 0;
 }
 
