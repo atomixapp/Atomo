@@ -11,7 +11,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: #333;
-
+  padding: 10px 20px;
 }
 
 .menu-icon {
@@ -31,7 +31,7 @@
   position: relative;
   width: 100%;
   max-width: 800px;
-  margin: 20px auto;
+
   overflow: hidden; /* Ocultar las imágenes fuera de vista */
 }
 
