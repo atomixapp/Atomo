@@ -116,6 +116,44 @@ body {
   background-color: #717171;
 }
 
+/* Sección Plataformas */
+.platforms-section {
+  padding: 20px 0;
+  background-color: #111; /* Fondo oscuro para contraste */
+  color: #fff;
+  text-align: center;
+}
+
+.platforms-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.platforms-carousel {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  width: 100%;
+}
+
+.platform-item {
+  flex: 0 0 auto;
+  width: 120px;
+  margin: 0 10px;
+}
+
+.platform-item img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* Asegura que los logotipos se ajusten bien */
+  transition: transform 0.3s ease;
+}
+
+.platform-item:hover img {
+  transform: scale(1.1); /* Efecto al pasar el mouse */
+}
+
 /* MEDIA QUERY para pantallas más grandes (como tablets y desktops) */
 @media (min-width: 768px) {
   .carousel-container {
@@ -131,6 +169,10 @@ body {
     height: 16px; /* Aumenta el tamaño de los puntos en pantallas grandes */
     width: 16px;
   }
+
+  .platform-item {
+    width: 150px; /* Aumenta el tamaño de los logotipos en pantallas grandes */
+  }
 }
 
 /* MEDIA QUERY para pantallas más pequeñas (como móviles) */
@@ -144,4 +186,7 @@ body {
     max-width: 50%; /* Hace el buscador más pequeño en pantallas pequeñas */
   }
   
+    .platform-item {
+    width: 80px; /* Ajusta el tamaño en pantallas pequeñas */
+  }
 }
