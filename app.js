@@ -27,7 +27,7 @@ function goToPrev() {
   updateCarousel();
 }
 
-// Hacer que los puntos naveguen al hacer click
+// Hacer que los puntos naveguen al hacer clic
 dots.forEach((dot, index) => {
   dot.addEventListener('click', () => {
     currentIndex = index;
