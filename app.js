@@ -53,4 +53,4 @@ document.querySelector('.carousel-container').addEventListener('wheel', handleSc
 updateCarousel();
 
 // Automatizar la navegación del carrusel cada 3 segundos
-setInterval(goToNext, 3000);
+setInterval(goToNext, 6000);
