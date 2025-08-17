@@ -13,7 +13,9 @@ function updateCarousel() {
 
   // Desplazar el carrusel (mover a la imagen correspondiente)
   const offset = -currentIndex * 100;
-  document.querySelector('.carousel').style.transform = `translateX(${offset}%)`;
+  const carousel = document.querySelector('.carousel');
+  carousel.style.transition = "transform 0.5s ease"; // Asegura que la transición sea suave
+  carousel.style.transform = `translateX(${offset}%)`;
 }
 
 // Función para manejar la navegación del carrusel
