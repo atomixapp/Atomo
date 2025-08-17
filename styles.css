@@ -135,6 +135,8 @@ body {
   justify-content: space-between;
   overflow: hidden;
   width: 100%;
+  cursor: pointer; /* Permite hacer clic en los elementos */
+  user-select: none; /* Evita selección de texto */
 }
 
 .platform-item {
