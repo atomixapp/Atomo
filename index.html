@@ -3,87 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
   <title>App de Películas</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-  <div class="header-container">
-    <!-- Menú desplegable -->
-    <div class="menu-icon" id="menu-toggle">
-      <img src="menu-icon.png" alt="Menú" />
+  <!-- Header -->
+  <header class="header">
+    <div class="menu-icon" id="menu-icon">
+      <i class="fas fa-bars"></i>
     </div>
-
-    <!-- Barra de búsqueda -->
     <div class="search-bar">
-      <input type="text" id="search" placeholder="Buscar aquí" />
+      <input type="text" id="search" placeholder="Buscar aquí">
     </div>
+  </header>
 
-    <!-- Icono de usuario -->
-    <div class="user-icon">
-      <img src="user-icon.png" alt="Usuario" />
+  <!-- Carrusel -->
+  <section class="carousel-container">
+    <div class="carousel">
+      <div class="carousel-item">
+        <img src="https://via.placeholder.com/800x400/FF5733/FFFFFF" alt="Imagen 1">
+      </div>
+      <div class="carousel-item">
+        <img src="https://via.placeholder.com/800x400/33FF57/FFFFFF" alt="Imagen 2">
+      </div>
+      <div class="carousel-item">
+        <img src="https://via.placeholder.com/800x400/3357FF/FFFFFF" alt="Imagen 3">
+      </div>
     </div>
-  </div>
+    <div class="carousel-nav">
+      <span class="dot" id="dot1"></span>
+      <span class="dot" id="dot2"></span>
+      <span class="dot" id="dot3"></span>
+    </div>
+  </section>
 
-  <!-- Menú desplegable -->
-  <div id="dropdown-menu" class="dropdown-menu">
-    <ul>
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#">Películas</a></li>
-      <li><a href="#">Series</a></li>
-      <li><a href="#">Favoritos</a></li>
-      <li><a href="#">Configuración</a></li>
-    </ul>
-  </div>
-</header>
-  
-  <main>
-    <section id="carrusel">
-      <div class="carousel-container">
-        <img class="carousel-image" src="https://image.tmdb.org/t/p/original/qJSlDqri6ytqSlTm8sLDVFsGiLe.jpg" alt="Imagen 1">
-        <img class="carousel-image" src="https://image.tmdb.org/t/p/original/aJo2akCsOg4cbdol4UHNlQtASHQ.jpg" alt="Imagen 2">
-        <img class="carousel-image" src="https://image.tmdb.org/t/p/original/kWByUrGgS4mYyvQ2mG95gzblBOj.jpg" alt="Imagen 3">
-      </div>
-    </section>
-    
-    <section id="estrella-populares">
-      <h2>Estrellas Populares</h2>
-      <div class="actors">
-        <div class="actor">
-          <img src="https://media.themoviedb.org/t/p/w276_and_h350_face/qB0hBMu4wU1nPrqtdUQP3sQeN5t.jpg" alt="Dwayne Johnson">
-          <p>Dwayne Johnson</p>
-        </div>
-        <div class="actor">
-          <img src="https://media.themoviedb.org/t/p/w276_and_h350_face/1f9NK43gWrXN2uMmYMlennB7jCC.jpg" alt="Rachel Brosnahan">
-          <p>Rachel Brosnahan</p>
-        </div>
-        <div class="actor">
-          <img src="https://media.themoviedb.org/t/p/w276_and_h350_face/laeAYQVBV9U3DkJ1B4Cn1XhpT8P.jpg" alt="Nicholas Hoult">
-          <p>Nicholas Hoult</p>
-        </div>
-        <!-- Más actores aquí -->
-      </div>
-    </section>
-
-    <section id="mejor-calificacion">
-      <h2>Mejor Calificación</h2>
-      <div class="movies">
-        <div class="movie">
-          <img src="https://image.tmdb.org/t/p/original/k7jZM6Ti1AfoEzHoegRXjtWHyWy.jpg" alt="Pelicula 1">
-          <p>Película 1</p>
-        </div>
-        <!-- Más películas aquí -->
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <a href="#">Inicio</a>
-  </footer>
-
-  <script src="app.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
-
-
