@@ -11,21 +11,29 @@ function updateCarousel() {
   // Activar el punto correspondiente
   dots[currentIndex].classList.add('active');
 
-  // Desplazar el carrusel
+  // Desplazar el carrusel (mover a la imagen correspondiente)
   const offset = -currentIndex * 100;
   document.querySelector('.carousel').style.transform = `translateX(${offset}%)`;
 }
 
 // Función para manejar la navegación del carrusel
 function goToNext() {
-  currentIndex = (currentIndex + 1) % carouselItems.length;
+  currentIndex = (currentIndex + 1) % carouselItems.length; // Avanza al siguiente
   updateCarousel();
 }
 
 function goToPrev() {
-  currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length;
+  currentIndex = (currentIndex - 1 + carouselItems.length) % carouselItems.length; // Retrocede al anterior
   updateCarousel();
 }
+
+// Hacer que los puntos naveguen al hacer click
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    currentIndex = index;
+    updateCarousel();
+  });
+});
 
 // Configuración inicial
 updateCarousel();
