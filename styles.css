@@ -171,7 +171,7 @@ body {
   }
 
   .platform-item {
-    width: 150px; /* Aumenta el tamaño de los logotipos en pantallas grandes */
+    width: 230px; /* Aumenta el tamaño de los logotipos en pantallas grandes */
   }
 }
 
@@ -187,6 +187,6 @@ body {
   }
   
     .platform-item {
-    width: 80px; /* Ajusta el tamaño en pantallas pequeñas */
+    width: 150px; /* Ajusta el tamaño en pantallas pequeñas */
   }
 }
