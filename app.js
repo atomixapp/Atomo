@@ -35,6 +35,18 @@ dots.forEach((dot, index) => {
   });
 });
 
+// Función para manejar el desplazamiento del mouse (scroll)
+function handleScroll(event) {
+  if (event.deltaY > 0) {
+    goToNext(); // Desplazamiento hacia abajo (avanzar)
+  } else {
+    goToPrev(); // Desplazamiento hacia arriba (retroceder)
+  }
+}
+
+// Agregar el detector de eventos para el desplazamiento del mouse
+document.querySelector('.carousel-container').addEventListener('wheel', handleScroll);
+
 // Configuración inicial
 updateCarousel();
 
