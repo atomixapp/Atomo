@@ -15,7 +15,55 @@
   margin-bottom: 0; /* Elimina el margen inferior */
 }
 
-/* Elimina el espacio por defecto entre el header y el carrusel */
+.menu-icon {
+  font-size: 24px;
+  color: #fff;
+}
+
+/* Estilos del buscador moderno */
+.search-bar {
+  position: relative;
+  width: 100%;
+  max-width: 400px; /* Ajusta el ancho del buscador */
+  margin-left: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px 40px 10px 20px; /* Padding ajustado para el icono */
+  border-radius: 25px;
+  border: 2px solid #ccc;
+  font-size: 16px;
+  color: #333;
+  background-color: #fff;
+  transition: all 0.3s ease; /* Transición suave al hacer foco */
+}
+
+.search-bar input:focus {
+  border-color: #007bff; /* Cambio de borde al enfocar */
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.2); /* Sombra suave al hacer foco */
+}
+
+.search-bar i {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #bbb;
+  font-size: 18px;
+  pointer-events: none; /* Hace que el icono no interfiera con el campo de entrada */
+}
+
+.search-bar input::placeholder {
+  color: #aaa;
+  font-style: italic; /* Estilo de fuente en el placeholder */
+}
+
+.search-bar input:focus::placeholder {
+  color: transparent; /* El placeholder desaparece al hacer foco */
+}
+
 .carousel-container {
   position: relative;
   width: 100%;
@@ -86,4 +134,9 @@
     height: 10px; /* Reduce el tamaño de los puntos en pantallas pequeñas */
     width: 10px;
   }
+
+  .search-bar {
+    max-width: 80%; /* Hace el buscador más pequeño en pantallas pequeñas */
+  }
+  
 }
