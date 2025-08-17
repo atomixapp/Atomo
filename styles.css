@@ -32,16 +32,16 @@
   width: 100%;
   max-width: 800px;
   margin: 20px auto;
-  overflow: hidden;
+  overflow: hidden; /* Ocultar las imágenes fuera de vista */
 }
 
 .carousel {
   display: flex;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease; /* Desplazamiento suave */
 }
 
 .carousel-item {
-  min-width: 100%;
+  min-width: 100%; /* Asegura que cada imagen ocupe todo el contenedor */
   position: relative;
 }
 
