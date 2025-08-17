@@ -136,7 +136,7 @@
   }
 
   .search-bar {
-    max-width: 80%; /* Hace el buscador más pequeño en pantallas pequeñas */
+    max-width: 50%; /* Hace el buscador más pequeño en pantallas pequeñas */
   }
   
 }
