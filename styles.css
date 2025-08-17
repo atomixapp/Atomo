@@ -73,3 +73,28 @@
 .dot.active {
   background-color: #717171;
 }
+
+/* MEDIA QUERY para pantallas más grandes (como tablets y desktops) */
+@media (min-width: 768px) {
+  .carousel-container {
+    max-width: 1000px; /* Aumenta el tamaño máximo del carrusel */
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .dot {
+    height: 16px; /* Aumenta el tamaño de los puntos en pantallas grandes */
+    width: 16px;
+  }
+}
+
+/* MEDIA QUERY para pantallas más pequeñas (como móviles) */
+@media (max-width: 767px) {
+  .dot {
+    height: 8px; /* Reduce el tamaño de los puntos en pantallas pequeñas */
+    width: 8px;
+  }
+}
