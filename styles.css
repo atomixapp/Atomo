@@ -12,26 +12,15 @@
   align-items: center;
   background-color: #333;
   padding: 10px 20px;
+  margin-bottom: 0; /* Elimina el margen inferior */
 }
 
-.menu-icon {
-  font-size: 24px;
-  color: #fff;
-}
-
-.search-bar input {
-  width: 200px;
-  padding: 8px;
-  border-radius: 5px;
-  border: none;
-}
-
-/* Estilos del carrusel */
+/* Elimina el espacio por defecto entre el header y el carrusel */
 .carousel-container {
   position: relative;
   width: 100%;
   max-width: 800px;
-
+  margin: 0 auto; /* Elimina el margen superior */
   overflow: hidden; /* Ocultar las imágenes fuera de vista */
 }
 
@@ -94,7 +83,7 @@
 /* MEDIA QUERY para pantallas más pequeñas (como móviles) */
 @media (max-width: 767px) {
   .dot {
-    height: 8px; /* Reduce el tamaño de los puntos en pantallas pequeñas */
-    width: 8px;
+    height: 10px; /* Reduce el tamaño de los puntos en pantallas pequeñas */
+    width: 10px;
   }
 }
