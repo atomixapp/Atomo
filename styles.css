@@ -116,45 +116,54 @@ body {
   background-color: #717171;
 }
 
-/* Sección Plataformas */
-.platforms-section {
-  padding: 20px 20;
-  background-color: #111; /* Fondo oscuro para contraste */
-  color: #fff;
-  text-align: left;
-}
+    /* Sección Plataformas */
+    .platforms-section {
+      padding: 30px 20px;
+      background-color: #111; /* Fondo oscuro */
+      color: #fff;
+    }
 
-.platforms-section h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
+    .platforms-section h2 {
+      font-size: 22px;
+      font-weight: bold;
+      margin-left: 5px; /* Más separado del borde izquierdo */
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
 
-.platforms-carousel {
-  display: flex;
-  justify-content: space-between;
-  overflow: hidden;
-  width: 100%;
-  cursor: pointer; /* Permite hacer clic en los elementos */
-  user-select: none; /* Evita selección de texto */
-}
+    .platforms-carousel {
+      display: flex;
+      gap: 15px; /* Espaciado uniforme */
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding-bottom: 10px;
+    }
 
-.platform-item {
-  flex: 0 0 auto;
-  width: 120px;
-  margin: 0 10px;
-}
+    .platforms-carousel::-webkit-scrollbar {
+      display: none; /* Oculta scroll en navegadores webkit */
+    }
 
-.platform-item img {
-  width: 100%;
-  height: auto;
-  object-fit: contain; /* Asegura que los logotipos se ajusten bien */
-  transition: transform 0.3s ease;
-}
+    .platform-item {
+      flex: 0 0 auto;
+      width: 110px;
+      transition: transform 0.3s ease;
+    }
 
-.platform-item:hover img {
-  transform: scale(1.1); /* Efecto al pasar el mouse */
-}
+    .platform-item img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+      background: #1a1a1a; /* Fondo sutil detrás de los logos */
+      padding: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .platform-item:hover img {
+      transform: scale(1.08);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.8);
+    }
 
 /* MEDIA QUERY para pantallas más grandes (como tablets y desktops) */
 @media (min-width: 768px) {
