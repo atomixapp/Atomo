@@ -118,8 +118,8 @@ body {
 
 /* Sección Plataformas */
 .platforms-section {
-  padding: 20px 0;
-  background-color: #111; /* Fondo oscuro para contraste */
+  padding: 0px 0;
+  background-color: #000; /* Fondo oscuro para contraste */
   color: #fff;
   text-align: center;
 }
