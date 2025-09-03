@@ -119,14 +119,14 @@ body {
 /* Sección Plataformas */
 .platforms-section {
   padding: 20px 0;
-  background-color: #000; /* Fondo oscuro para contraste */
+  background-color: #111; /* Fondo oscuro para contraste */
   color: #fff;
-  text-align: center;
+  text-align: left;
 }
 
 .platforms-section h2 {
-  font-size: 14px;
-  margin-bottom: 0px;
+  font-size: 20px;
+  margin-bottom: 10px;
   font-weight: bold;
 }
 
