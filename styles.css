@@ -162,51 +162,73 @@ body {
       box-shadow: 0 4px 12px rgba(0,0,0,0.8);
     }
 
-    /* --- Carrusel de Películas --- */
-    .movies-section {
-      padding: 30px 20px;
-      background-color: #111;
-      color: #fff;
-    }
+/* --- Carrusel de Películas --- */
+.movies-section {
+  padding: 30px 20px;
+  background-color: #111;
+  color: #fff;
+}
 
-    .movies-section h2 {
-      font-size: 22px;
-      font-weight: bold;
-      margin-left: 5px;
-      margin-bottom: 15px;
-      letter-spacing: 1px;
-    }
+.movies-section h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-left: 5px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
 
-    .movies-carousel {
-      display: flex;
-      gap: 15px;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      padding-bottom: 10px;
-    }
+.movies-carousel {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 10px;
+  -webkit-overflow-scrolling: touch; /* Suaviza el desplazamiento en dispositivos móviles */
+}
 
-    .movies-carousel::-webkit-scrollbar {
-      display: none;
-    }
+.movies-carousel::-webkit-scrollbar {
+  display: none;
+}
 
-    .movie-item {
-      flex: 0 0 auto;
-      width: 140px; /* Más estrecho para formato póster */
-    }
+.movie-item {
+  flex: 0 0 auto;
+  width: 140px; /* Más estrecho para formato póster */
+}
 
-    .movie-item img {
-      width: 100%;
-      height: 210px; /* Alto fijo para formato vertical */
-      object-fit: cover;
-      border-radius: 14px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.7);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+.movie-item img {
+  width: 100%;
+  height: 210px; /* Alto fijo para formato vertical */
+  object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .movie-item:hover img {
-      transform: scale(1.05);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.9);
-    }
+.movie-item img {
+  max-width: 100%; /* Evita que las imágenes se desborden */
+  max-height: 100%; /* Limita la altura */
+}
+
+.movie-item:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.9);
+}
+
+/* Esto se aplica para el contenedor del carrusel */
+.movies-carousel {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start; /* Ajusta el contenido a la izquierda */
+  overflow-x: hidden; /* Asegura que las imágenes no se desborden del contenedor */
+  position: relative;
+}
+
+/* Aquí agregamos un borde sutil al contenedor para asegurar que no haya desbordes visibles */
+.movies-section {
+  overflow-x: hidden;
+  position: relative;
+}
+
 
 /* MEDIA QUERY para pantallas más grandes (como tablets y desktops) */
 @media (min-width: 768px) {
