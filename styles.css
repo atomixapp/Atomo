@@ -25,139 +25,49 @@ body {
   color: #fff;
 }
 
-/* Estilos del buscador moderno */
-.search-bar {
-  position: relative;
-  width: 100%;
-  max-width: 400px; /* Ajusta el ancho del buscador */
-  margin-left: 20px;
-}
+    /* Carrusel de Plataformas */
+    .platforms-section {
+      padding: 30px 20px;
+      background-color: #111;
+      color: #fff;
+    }
 
-.search-bar input {
-  width: 100%;
-  padding: 10px 40px 10px 20px; /* Padding ajustado para el icono */
-  border-radius: 25px;
-  border: 2px solid #ccc;
-  font-size: 16px;
-  color: #333;
-  background-color: #f0f0f0;
-  transition: all 0.3s ease; /* Transición suave al hacer foco */
-}
+    .platforms-section h2 {
+      font-size: 22px;
+      font-weight: bold;
+      margin-left: 5px;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
 
-.search-bar input:focus {
-  border-color: #007bff; /* Cambio de borde al enfocar */
-  outline: none;
-  box-shadow: 0 0 10px rgba(0, 123, 255, 0.2); /* Sombra suave al hacer foco */
-}
+    .platforms-carousel {
+      display: flex;
+      gap: 15px;
+      overflow-x: hidden; /* Oculta el desbordamiento horizontal */
+      padding-bottom: 10px;
+      position: relative;
+      width: 100%; /* Asegura que el carrusel ocupe todo el espacio */
+      transition: transform 0.3s ease; /* Desplazamiento suave */
+    }
 
-.search-bar i {
-  position: absolute;
-  top: 50%;
-  left: 12px;
-  transform: translateY(-50%);
-  color: #bbb;
-  font-size: 18px;
-  pointer-events: none; /* Hace que el icono no interfiera con el campo de entrada */
-}
+    .platform-item {
+      flex-shrink: 0; /* Evita que los items se encojan */
+      width: 150px; /* Define el ancho fijo de cada elemento */
+    }
 
-.search-bar input::placeholder {
-  color: #aaa;
-  font-style: italic; /* Estilo de fuente en el placeholder */
-}
+    .platform-item img {
+      width: 100%;
+      height: auto;
+      object-fit: cover; /* Asegura que las imágenes mantengan la proporción */
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.search-bar input:focus::placeholder {
-  color: transparent; /* El placeholder desaparece al hacer foco */
-}
-
-.carousel-container {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto; /* Elimina el margen superior */
-  overflow: hidden; /* Ocultar las imágenes fuera de vista */
-}
-
-.carousel {
-  display: flex;
-  transition: transform 0.5s ease; /* Desplazamiento suave */
-}
-
-.carousel-item {
-  min-width: 100%; /* Asegura que cada imagen ocupe todo el contenedor */
-  position: relative;
-}
-
-.carousel-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Puntos de navegación dentro de la imagen */
-.carousel-nav {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  z-index: 10;
-}
-
-.dot {
-  height: 12px;
-  width: 12px;
-  margin: 0 5px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-  cursor: pointer;
-}
-
-.dot.active {
-  background-color: #717171;
-}
-
-/* Carrusel de Plataformas */
-.platforms-section {
-  padding: 30px 20px;
-  background-color: #111;
-  color: #fff;
-}
-
-.platforms-section h2 {
-  font-size: 22px;
-  font-weight: bold;
-  margin-left: 5px;
-  margin-bottom: 15px;
-  letter-spacing: 1px;
-}
-
-.platforms-carousel {
-  display: flex;
-  gap: 15px;
-  overflow-x: hidden; /* Oculta el desbordamiento horizontal */
-  padding-bottom: 10px;
-  position: relative;
-  width: 100%; /* Asegura que el carrusel ocupe todo el espacio */
-}
-
-.platform-item {
-  flex-shrink: 0; /* Evita que los items se encojan */
-  width: 150px; /* Define el ancho fijo de cada elemento */
-}
-
-.platform-item img {
-  width: 100%;
-  height: auto;
-  object-fit: cover; /* Asegura que las imágenes mantengan la proporción */
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.platform-item:hover img {
-  transform: scale(1.08);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
-}
+    .platform-item:hover img {
+      transform: scale(1.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+    }
 
 /* Carrusel de Películas */
 .movies-section {
