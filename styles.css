@@ -116,51 +116,63 @@ body {
   background-color: #717171;
 }
 
-    /* --- Carrusel de Plataformas --- */
-    .platforms-section {
-      padding: 30px 20px;
-      background-color: #111;
-      color: #fff;
-    }
+/* --- Carrusel de Plataformas --- */
+.platforms-section {
+  padding: 30px 20px;
+  background-color: #111;
+  color: #fff;
+}
 
-    .platforms-section h2 {
-      font-size: 22px;
-      font-weight: bold;
-      margin-left: 5px;
-      margin-bottom: 15px;
-      letter-spacing: 1px;
-    }
+.platforms-section h2 {
+  font-size: 22px;
+  font-weight: bold;
+  margin-left: 5px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
 
-    .platforms-carousel {
-      display: flex;
-      gap: 15px;
-      overflow-x: auto;
-      scroll-behavior: smooth;
-      padding-bottom: 10px;
-    }
+.platforms-carousel {
+  display: flex;
+  gap: 15px;
+  overflow-x: hidden; /* Cambiado a hidden para evitar que se desborden los elementos */
+  padding-bottom: 10px;
+  position: relative;
+  transition: transform 0.3s ease; /* Transición suave al mover el carrusel */
+}
 
-    .platforms-carousel::-webkit-scrollbar {
-      display: none;
-    }
+/* Ocultar el scrollbar */
+.platforms-carousel::-webkit-scrollbar {
+  display: none;
+}
 
-    .platform-item {
-      flex: 0 0 auto;
-      width: 110px;
-    }
+.platform-item {
+  flex-shrink: 0; /* Impide que los elementos se encojan */
+  width: 110px; /* Establece un ancho fijo para cada elemento */
+}
 
-    .platform-item img {
-      width: 100%;
-      border-radius: 12px;
-      background: #1a1a1a;
-      padding: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+.platform-item img {
+  width: 100%;
+  height: auto; /* Asegura que las imágenes mantengan su proporción */
+  border-radius: 12px;
+  background: #1a1a1a;
+  padding: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .platform-item:hover img {
-      transform: scale(1.08);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.8);
-    }
+.platform-item:hover img {
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+/* Asegura que el carrusel no se desborde */
+.platforms-carousel {
+  overflow: hidden;
+}
+
+.platform-item img {
+  object-fit: cover; /* Asegura que las imágenes se ajusten sin distorsión */
+}
 
 /* --- Carrusel de Películas --- */
 .movies-section {
