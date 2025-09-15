@@ -116,7 +116,7 @@ body {
   background-color: #717171;
 }
 
-/* --- Carrusel de Plataformas --- */
+/* Carrusel de Plataformas */
 .platforms-section {
   padding: 30px 20px;
   background-color: #111;
@@ -134,15 +134,15 @@ body {
 .platforms-carousel {
   display: flex;
   gap: 15px;
-  overflow-x: hidden; /* Ocultar el desbordamiento horizontal */
+  overflow-x: hidden; /* Oculta el desbordamiento horizontal */
   padding-bottom: 10px;
   position: relative;
   width: 100%; /* Asegura que el carrusel ocupe todo el espacio */
 }
 
-.platforms-carousel > .platform-item {
+.platform-item {
   flex-shrink: 0; /* Evita que los items se encojan */
-  width: 110px; /* Define el ancho fijo de cada elemento */
+  width: 150px; /* Define el ancho fijo de cada elemento */
 }
 
 .platform-item img {
@@ -159,7 +159,7 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
 }
 
-/* --- Carrusel de Películas --- */
+/* Carrusel de Películas */
 .movies-section {
   padding: 30px 20px;
   background-color: #111;
@@ -177,14 +177,15 @@ body {
 .movies-carousel {
   display: flex;
   gap: 15px;
-  overflow-x: hidden; /* Esto impide que las imágenes se desborden del contenedor */
+  overflow-x: hidden; /* Impide que las imágenes se desborden del contenedor */
   scroll-behavior: smooth;
   padding-bottom: 10px;
   position: relative;
+  width: 100%; /* Asegura que el carrusel ocupe todo el espacio disponible */
 }
 
-.movies-carousel > .movie-item {
-  flex-shrink: 0; /* Evita que los items se encojan */
+.movie-item {
+  flex-shrink: 0; /* Impide que los elementos se encojan */
   width: 140px; /* Define el ancho de cada elemento */
 }
 
@@ -208,6 +209,7 @@ body {
   flex-wrap: nowrap;
   justify-content: flex-start; /* Ajusta el contenido a la izquierda */
   overflow-x: hidden; /* Asegura que las imágenes no se desborden del contenedor */
+  position: relative;
 }
 
 /* MEDIA QUERY para pantallas más grandes (como tablets y desktops) */
@@ -242,7 +244,7 @@ body {
     max-width: 50%; /* Hace el buscador más pequeño en pantallas pequeñas */
   }
   
-    .platform-item {
+  .platform-item {
     width: 150px; /* Ajusta el tamaño en pantallas pequeñas */
   }
 }
