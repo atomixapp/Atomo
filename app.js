@@ -11,6 +11,7 @@ const totalItems = platformItems.length;
 function updatePlatformCarouselPosition() {
   // Aseguramos que el desplazamiento no se mueva más allá del límite
   const offset = Math.min(0, Math.max(-(totalItems - 1) * itemWidth, -currentIndex * itemWidth));
+  platformsCarousel.style.transition = 'transform 0.3s ease'; // Transición suave al mover el carrusel
   platformsCarousel.style.transform = `translateX(${offset}px)`;
 }
 
@@ -27,6 +28,7 @@ platformsCarousel.addEventListener('touchmove', (e) => {
   const touchDiff = touchStartX - touchMoveX; // Distancia que ha recorrido el toque
 
   // Mover el carrusel de plataformas dependiendo del desplazamiento táctil
+  platformsCarousel.style.transition = 'none'; // Desactivar la transición mientras se mueve con el dedo
   platformsCarousel.style.transform = `translateX(${(-currentIndex * itemWidth) - touchDiff}px)`;
 });
 
@@ -37,6 +39,7 @@ platformsCarousel.addEventListener('touchend', (e) => {
   const touchEndX = e.changedTouches[0].clientX; // Posición final del toque
   const touchDiff = touchStartX - touchEndX; // Distancia que ha recorrido el toque
 
+  // Avanzar o retroceder según la distancia del toque
   if (touchDiff > 50) {
     // Deslizar hacia la derecha (pasar al siguiente elemento)
     currentIndex = Math.min(currentIndex + 1, totalItems - 1);
