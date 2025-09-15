@@ -1,56 +1,41 @@
-// Variables del carrusel de plataformas
-const platformsCarousel = document.querySelector('.platforms-carousel');
-const platformItems = document.querySelectorAll('.platform-item');
-let itemWidth = platformItems[0].offsetWidth + 15; // Incluye el margen entre elementos
-let currentIndex = 0; // Índice de los elementos del carrusel de plataformas
-let isTouching = false;
-let touchStartX = 0;
-const totalItems = platformItems.length;
+// Variables para el carrusel principal
+const carousel = document.querySelector('.carousel');
+const dots = document.querySelectorAll('.dot');
+let currentIndex = 0;
+const totalItems = document.querySelectorAll('.carousel-item').length;
 
-// Función para actualizar la posición del carrusel
-function updatePlatformCarouselPosition() {
-  // Aseguramos que el desplazamiento no se mueva más allá del límite
-  const offset = Math.min(0, Math.max(-(totalItems - 1) * itemWidth, -currentIndex * itemWidth));
-  platformsCarousel.style.transition = 'transform 0.3s ease'; // Transición suave al mover el carrusel
-  platformsCarousel.style.transform = `translateX(${offset}px)`;
+// Función para actualizar el carrusel
+function updateCarousel() {
+  // Desplazar el carrusel a la imagen correspondiente
+  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+  // Actualizar los puntos de navegación
+  dots.forEach(dot => dot.classList.remove('active'));
+  dots[currentIndex].classList.add('active');
 }
 
-// Deslizar con el dedo (en pantallas táctiles)
-platformsCarousel.addEventListener('touchstart', (e) => {
-  isTouching = true;
-  touchStartX = e.touches[0].clientX; // Guardar la posición inicial del toque
+// Cambiar al siguiente carrusel
+function nextCarousel() {
+  currentIndex = (currentIndex + 1) % totalItems;
+  updateCarousel();
+}
+
+// Cambiar al carrusel anterior
+function prevCarousel() {
+  currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+  updateCarousel();
+}
+
+// Eventos de los puntos de navegación
+dots.forEach(dot => {
+  dot.addEventListener('click', (e) => {
+    currentIndex = parseInt(e.target.getAttribute('data-index'));
+    updateCarousel();
+  });
 });
 
-platformsCarousel.addEventListener('touchmove', (e) => {
-  if (!isTouching) return;
+// Iniciar carrusel (cada 5 segundos)
+setInterval(nextCarousel, 5000);
 
-  const touchMoveX = e.touches[0].clientX; // Posición actual del toque
-  const touchDiff = touchStartX - touchMoveX; // Distancia que ha recorrido el toque
-
-  // Mover el carrusel de plataformas dependiendo del desplazamiento táctil
-  platformsCarousel.style.transition = 'none'; // Desactivar la transición mientras se mueve con el dedo
-  platformsCarousel.style.transform = `translateX(${(-currentIndex * itemWidth) - touchDiff}px)`;
-});
-
-platformsCarousel.addEventListener('touchend', (e) => {
-  if (!isTouching) return;
-  isTouching = false;
-
-  const touchEndX = e.changedTouches[0].clientX; // Posición final del toque
-  const touchDiff = touchStartX - touchEndX; // Distancia que ha recorrido el toque
-
-  // Avanzar o retroceder según la distancia del toque
-  if (touchDiff > 50) {
-    // Deslizar hacia la derecha (pasar al siguiente elemento)
-    currentIndex = Math.min(currentIndex + 1, totalItems - 1);
-  } else if (touchDiff < -50) {
-    // Deslizar hacia la izquierda (pasar al anterior elemento)
-    currentIndex = Math.max(currentIndex - 1, 0);
-  }
-
-  // Actualizar la posición después de deslizar
-  updatePlatformCarouselPosition();
-});
-
-// Configuración inicial (carrusel de plataformas)
-updatePlatformCarouselPosition();
+// Inicializar el carrusel al cargar la página
+updateCarousel();
