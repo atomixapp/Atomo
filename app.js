@@ -31,7 +31,7 @@ function handleTouchMove(e, carouselType, itemWidth, index) {
   const touchDiff = touchStartX - touchMoveX;
 
   carouselType.style.transition = 'none'; // Desactivar la transición mientras se mueve con el dedo
-  carouselType.style.transform = `translateX(${(-index * itemWidth) - touchDiff}px)`;
+  carouselType.style.transform = `translateX(${(-index * itemWidth) - touchDiff}px)`; // Mover solo el contenido del carrusel
 }
 
 function handleTouchEnd(e, carouselType, itemWidth, index) {
@@ -41,21 +41,22 @@ function handleTouchEnd(e, carouselType, itemWidth, index) {
   const touchEndX = e.changedTouches[0].clientX;
   const touchDiff = touchStartX - touchEndX;
 
+  // Ajustar el índice dependiendo de la distancia del deslizamiento
   if (touchDiff > 50) {
     index = Math.min(index + 1, carouselType === platformsCarousel ? platformItems.length - 1 : movieItems.length - 1);
   } else if (touchDiff < -50) {
     index = Math.max(index - 1, 0);
   }
 
+  // Actualizar la posición del carrusel
   updateCarouselPosition(carouselType, index, itemWidth);
 }
 
-// Eventos de deslizamiento para el carrusel de plataformas
+// Funciones para manejar el deslizamiento
 platformsCarousel.addEventListener('touchstart', (e) => handleTouchStart(e, platformsCarousel));
 platformsCarousel.addEventListener('touchmove', (e) => handleTouchMove(e, platformsCarousel, platformItems[0].offsetWidth + 15, platformIndex));
 platformsCarousel.addEventListener('touchend', (e) => handleTouchEnd(e, platformsCarousel, platformItems[0].offsetWidth + 15, platformIndex));
 
-// Eventos de deslizamiento para el carrusel de géneros
 actionCarousel.addEventListener('touchstart', (e) => handleTouchStart(e, actionCarousel));
 actionCarousel.addEventListener('touchmove', (e) => handleTouchMove(e, actionCarousel, movieItems[0].offsetWidth + 15, movieIndex));
 actionCarousel.addEventListener('touchend', (e) => handleTouchEnd(e, actionCarousel, movieItems[0].offsetWidth + 15, movieIndex));
