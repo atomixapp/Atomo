@@ -134,10 +134,11 @@ body {
 .platforms-carousel {
   display: flex;
   gap: 15px;
-  overflow-x: hidden; /* Cambiado a hidden para evitar que se desborden los elementos */
+  overflow-x: hidden; /* Asegura que no se desborden las imágenes fuera del contenedor */
   padding-bottom: 10px;
   position: relative;
   transition: transform 0.3s ease; /* Transición suave al mover el carrusel */
+  width: 100%; /* Asegura que ocupe todo el ancho disponible */
 }
 
 /* Ocultar el scrollbar */
@@ -147,12 +148,13 @@ body {
 
 .platform-item {
   flex-shrink: 0; /* Impide que los elementos se encojan */
-  width: 110px; /* Establece un ancho fijo para cada elemento */
+  width: 110px; /* Ajusta el ancho de cada elemento según el diseño */
 }
 
 .platform-item img {
   width: 100%;
-  height: auto; /* Asegura que las imágenes mantengan su proporción */
+  height: auto; /* Mantiene la proporción de la imagen */
+  object-fit: cover; /* Asegura que las imágenes se ajusten sin distorsión */
   border-radius: 12px;
   background: #1a1a1a;
   padding: 8px;
@@ -163,15 +165,6 @@ body {
 .platform-item:hover img {
   transform: scale(1.08);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
-}
-
-/* Asegura que el carrusel no se desborde */
-.platforms-carousel {
-  overflow: hidden;
-}
-
-.platform-item img {
-  object-fit: cover; /* Asegura que las imágenes se ajusten sin distorsión */
 }
 
 /* --- Carrusel de Películas --- */
@@ -192,33 +185,31 @@ body {
 .movies-carousel {
   display: flex;
   gap: 15px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
+  overflow-x: hidden; /* Esto evita que las imágenes se desborden del contenedor */
+  scroll-behavior: smooth; /* Suaviza el desplazamiento */
   padding-bottom: 10px;
   -webkit-overflow-scrolling: touch; /* Suaviza el desplazamiento en dispositivos móviles */
+  position: relative;
+  width: 100%; /* Asegura que el carrusel ocupe todo el ancho disponible */
 }
 
+/* Ocultar el scrollbar */
 .movies-carousel::-webkit-scrollbar {
   display: none;
 }
 
 .movie-item {
-  flex: 0 0 auto;
-  width: 140px; /* Más estrecho para formato póster */
+  flex-shrink: 0; /* Impide que los elementos se encojan */
+  width: 140px; /* Ajusta el ancho de cada elemento según el diseño */
 }
 
 .movie-item img {
   width: 100%;
-  height: 210px; /* Alto fijo para formato vertical */
+  height: 210px; /* Fija la altura para formato póster */
   object-fit: cover; /* Asegura que la imagen cubra el área sin distorsionarse */
   border-radius: 14px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.movie-item img {
-  max-width: 100%; /* Evita que las imágenes se desborden */
-  max-height: 100%; /* Limita la altura */
 }
 
 .movie-item:hover img {
@@ -226,21 +217,14 @@ body {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.9);
 }
 
-/* Esto se aplica para el contenedor del carrusel */
+/* Asegura que el carrusel de películas no se desborde */
 .movies-carousel {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: flex-start; /* Ajusta el contenido a la izquierda */
-  overflow-x: hidden; /* Asegura que las imágenes no se desborden del contenedor */
+  justify-content: flex-start; /* Alinea el contenido a la izquierda */
+  overflow-x: hidden; /* Impide el desbordamiento de las imágenes */
   position: relative;
 }
-
-/* Aquí agregamos un borde sutil al contenedor para asegurar que no haya desbordes visibles */
-.movies-section {
-  overflow-x: hidden;
-  position: relative;
-}
-
 
 /* MEDIA QUERY para pantallas más grandes (como tablets y desktops) */
 @media (min-width: 768px) {
