@@ -1,10 +1,4 @@
-// Variables para el carrusel principal
-const carousel = document.querySelector('.carousel');
-const dots = document.querySelectorAll('.dot');
-let currentIndex = 0;
-const totalItems = document.querySelectorAll('.carousel-item').length;
-
-// Variables para los carruseles de plataformas y géneros
+// Variables para el carrusel de plataformas y géneros
 const platformsCarousel = document.querySelector('.platforms-carousel');
 const actionCarousel = document.querySelector('.movies-carousel');
 
@@ -17,48 +11,12 @@ let movieIndex = 0;
 let isTouching = false;
 let touchStartX = 0;
 
-// Función para actualizar el carrusel principal
-function updateCarousel() {
-  // Desplazar el carrusel a la imagen correspondiente
-  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-
-  // Actualizar los puntos de navegación
-  dots.forEach(dot => dot.classList.remove('active'));
-  dots[currentIndex].classList.add('active');
-}
-
-// Función para actualizar los carruseles de plataformas y géneros
+// Función para actualizar la posición del carrusel (plataformas y géneros)
 function updateCarouselPosition(carousel, index, itemWidth) {
   const offset = -index * itemWidth;
   carousel.style.transition = 'transform 0.3s ease';
   carousel.style.transform = `translateX(${offset}px)`;
 }
-
-// Cambiar al siguiente carrusel principal
-function nextCarousel() {
-  currentIndex = (currentIndex + 1) % totalItems;
-  updateCarousel();
-}
-
-// Cambiar al carrusel principal anterior
-function prevCarousel() {
-  currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-  updateCarousel();
-}
-
-// Eventos de los puntos de navegación del carrusel principal
-dots.forEach(dot => {
-  dot.addEventListener('click', (e) => {
-    currentIndex = parseInt(e.target.getAttribute('data-index'));
-    updateCarousel();
-  });
-});
-
-// Iniciar carrusel principal (cada 5 segundos)
-setInterval(nextCarousel, 5000);
-
-// Inicializar carrusel principal al cargar la página
-updateCarousel();
 
 // Funciones de deslizamiento para carruseles de plataformas y géneros
 function handleTouchStart(e, carouselType) {
@@ -92,12 +50,12 @@ function handleTouchEnd(e, carouselType, itemWidth, index) {
   updateCarouselPosition(carouselType, index, itemWidth);
 }
 
-// Eventos de deslizamiento para carrusel de plataformas
+// Eventos de deslizamiento para el carrusel de plataformas
 platformsCarousel.addEventListener('touchstart', (e) => handleTouchStart(e, platformsCarousel));
 platformsCarousel.addEventListener('touchmove', (e) => handleTouchMove(e, platformsCarousel, platformItems[0].offsetWidth + 15, platformIndex));
 platformsCarousel.addEventListener('touchend', (e) => handleTouchEnd(e, platformsCarousel, platformItems[0].offsetWidth + 15, platformIndex));
 
-// Eventos de deslizamiento para carrusel de géneros (acción)
+// Eventos de deslizamiento para el carrusel de géneros
 actionCarousel.addEventListener('touchstart', (e) => handleTouchStart(e, actionCarousel));
 actionCarousel.addEventListener('touchmove', (e) => handleTouchMove(e, actionCarousel, movieItems[0].offsetWidth + 15, movieIndex));
 actionCarousel.addEventListener('touchend', (e) => handleTouchEnd(e, actionCarousel, movieItems[0].offsetWidth + 15, movieIndex));
