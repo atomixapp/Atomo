@@ -58,7 +58,6 @@ body {
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  z-index: 1; /* Mantiene la imagen visible por encima de otros elementos */
 }
 
 /* Efecto al pasar el ratón sobre la imagen */
@@ -68,9 +67,26 @@ body {
 }
 
 /* Evitar que la imagen se corte al hacer clic */
-.platform-item:active img {
-  transform: scale(1.15); /* Aumentamos un poco el tamaño */
+.platform-item img:active {
+  transform: scale(1.2); /* Aumentamos un poco el tamaño */
   z-index: 10; /* La imagen se posiciona por encima del contenedor */
   cursor: zoom-in; /* Cambia el cursor para indicar que está siendo ampliada */
+}
+
+.platform-item img:focus {
+  transform: scale(1.2); /* Aumentamos un poco el tamaño */
+  z-index: 10; /* La imagen se posiciona por encima del contenedor */
+  cursor: zoom-in; /* Cambia el cursor para indicar que está siendo ampliada */
+}
+
+.platforms-carousel {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+/* Estilos para el contenedor que permite el desbordamiento sin cortar */
+.platform-item:hover img {
+  transition: transform 0.3s ease;
+  transform: scale(1.08); /* Ampliamos solo un poco */
 }
 
