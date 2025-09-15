@@ -48,6 +48,7 @@ body {
 .platform-item {
   flex-shrink: 0;
   width: 150px; /* Define el ancho fijo de cada elemento */
+  position: relative;
 }
 
 .platform-item img {
@@ -57,9 +58,19 @@ body {
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 1; /* Mantiene la imagen visible por encima de otros elementos */
 }
 
+/* Efecto al pasar el ratón sobre la imagen */
 .platform-item:hover img {
   transform: scale(1.08);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
 }
+
+/* Evitar que la imagen se corte al hacer clic */
+.platform-item:active img {
+  transform: scale(1.15); /* Aumentamos un poco el tamaño */
+  z-index: 10; /* La imagen se posiciona por encima del contenedor */
+  cursor: zoom-in; /* Cambia el cursor para indicar que está siendo ampliada */
+}
+
