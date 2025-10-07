@@ -14,66 +14,70 @@ body {
   min-height: 100vh;
 }
 
-.gallery-container {
-  text-align: center;
+.container {
   width: 80%;
   max-width: 1200px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.menu ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.menu li {
+  margin: 0 15px;
+}
+
+.category-btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.category-btn:hover {
+  background-color: #444;
+}
+
+.gallery-container {
+  text-align: center;
 }
 
 .gallery-title {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #fff;
 }
 
-.carousel {
-  position: relative;
+.gallery {
   display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
   justify-content: center;
-  align-items: center;
-  overflow: hidden;
 }
 
-.carousel-images {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-
-.carousel-images img {
+.gallery img {
   width: 250px;
   height: 400px;
   object-fit: cover;
-  margin: 0 10px;
   border-radius: 10px;
+  transition: transform 0.3s;
 }
 
-button {
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  border: none;
-  padding: 10px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-}
-
-button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
+.gallery img:hover {
+  transform: scale(1.05);
 }
 
 @media screen and (max-width: 768px) {
-  .carousel-images img {
+  .gallery img {
     width: 200px;
     height: 300px;
   }
