@@ -1,4 +1,3 @@
-// Configuración de Firebase (esto debe estar en el HTML donde se inicializa Firebase)
 const db = firebase.firestore();
 
 // Función para mostrar las películas de una categoría
@@ -16,6 +15,8 @@ function showCategory(category) {
       } else {
         snapshot.forEach(doc => {
           const pelicula = doc.data();
+          console.log("Película cargada:", pelicula); // Verificamos que se esté obteniendo la película
+
           const imgElement = document.createElement('img');
           imgElement.src = pelicula.imagen; // Usar la URL de la imagen
           imgElement.alt = pelicula.titulo; // El título de la película como alt
