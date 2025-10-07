@@ -3,23 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>App de Películas</title>
+  <title>Galería de Películas</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-  <section class="platforms-section">
-    <h2>Plataformas</h2>
-    <div class="platforms-carousel" id="carousel">
-      <div class="platform-item"><img src="https://i.postimg.cc/TwZPG2S2/netflix.webp" alt="Netflix"></div>
-      <div class="platform-item"><img src="https://i.postimg.cc/K8qxxv3X/Disney.webp" alt="Disney+"></div>
-      <div class="platform-item"><img src="https://i.postimg.cc/L6mpPZzK/primevideo.png" alt="Prime Video"></div>
-      <div class="platform-item"><img src="https://i.postimg.cc/Y2zctqTX/hbo.avif" alt="HBO"></div>
-      <div class="platform-item"><img src="https://i.postimg.cc/KYMVwZnD/mov.jpg" alt="Movistar+"></div>
+  <div class="gallery-container">
+    <h1 class="gallery-title">Películas Recomendadas</h1>
+    <div class="carousel">
+      <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+      <div class="carousel-images">
+        <img src="https://via.placeholder.com/250x400?text=Película+1" alt="Película 1">
+        <img src="https://via.placeholder.com/250x400?text=Película+2" alt="Película 2">
+        <img src="https://via.placeholder.com/250x400?text=Película+3" alt="Película 3">
+        <img src="https://via.placeholder.com/250x400?text=Película+4" alt="Película 4">
+        <img src="https://via.placeholder.com/250x400?text=Película+5" alt="Película 5">
+        <!-- Añadir más imágenes según sea necesario -->
+      </div>
+      <button class="next" onclick="moveSlide(1)">&#10095;</button>
     </div>
-  </section>
-
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-  <script src="app.js"></script>
+  </div>
+  <script src="scripts.js"></script>
 </body>
 </html>
