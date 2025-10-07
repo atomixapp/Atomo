@@ -10,7 +10,7 @@ const firebaseConfig = {
 
 // Inicializar Firebase
 const app = firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+const db = firebase.firestore(app);  // Asegúrate de inicializar la base de datos correctamente
 
 // Función para mostrar las películas de una categoría
 function showCategory(category) {
