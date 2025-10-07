@@ -65,9 +65,9 @@ body {
 }
 
 .gallery img {
-  width: 250px;
-  height: 400px;
-  object-fit: cover;
+  width: 300px; /* Aumentamos el ancho */
+  height: 169px; /* Establecemos la altura para un formato 16:9 */
+  object-fit: cover; /* Mantener la relación de aspecto de la imagen */
   border-radius: 10px;
   transition: transform 0.3s;
 }
@@ -78,7 +78,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .gallery img {
-    width: 200px;
-    height: 300px;
+    width: 250px;
+    height: 140px; /* Ajustamos el tamaño para pantallas más pequeñas */
   }
 }
