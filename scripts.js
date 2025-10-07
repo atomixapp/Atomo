@@ -1,4 +1,3 @@
-// Importar los módulos de Firebase (desde la versión modular 9+)
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
 import { getFirestore, collection, query, where, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
 
@@ -22,8 +21,8 @@ async function showCategory(category) {
   gallery.innerHTML = ''; // Limpiar galería antes de agregar nuevas películas
 
   try {
-    // Crear una consulta para obtener las películas de Firebase según la categoría
-    const q = query(collection(db, 'peliculas'), where('categoria', '==', category));
+    // Crear una consulta para obtener las películas de Firebase que tengan la categoría seleccionada en el array
+    const q = query(collection(db, 'peliculas'), where('categoria', 'array-contains', category));
     const querySnapshot = await getDocs(q);
     
     if (querySnapshot.empty) {
