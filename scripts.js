@@ -26,7 +26,7 @@ async function showCategory(category) {
     const querySnapshot = await getDocs(q);
     
     if (querySnapshot.empty) {
-      gallery.innerHTML = '<p>No hay películas disponibles en esta categoría.</p>';
+      gallery.innerHTML = `<p>No hay películas disponibles en la categoría ${category}.</p>`;
     } else {
       querySnapshot.forEach((doc) => {
         const pelicula = doc.data();
