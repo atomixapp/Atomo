@@ -21,6 +21,8 @@ async function showCategory(category) {
   gallery.innerHTML = ''; // Limpiar galería antes de agregar nuevas películas
 
   try {
+    console.log(`Buscando películas de la categoría: ${category}`);
+    
     // Crear una consulta para obtener las películas de Firebase que tengan la categoría seleccionada en el array
     const q = query(collection(db, 'peliculas'), where('categoria', 'array-contains', category));
     const querySnapshot = await getDocs(q);
