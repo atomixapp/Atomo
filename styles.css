@@ -66,21 +66,25 @@ body {
 }
 
 .carousel {
-  overflow: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 20px;
+  position: relative;
 }
 
 .carousel-track {
-  display: flex;
+  display: inline-flex;
   transition: transform 0.5s ease;
 }
 
 .carousel-item {
+  display: inline-block;
   margin-right: 15px;
 }
 
 .carousel-item img {
   width: 300px;
-  height: 400px;
+  height: 200px;
   border-radius: 8px;
   object-fit: cover;
 }
@@ -88,4 +92,31 @@ body {
 .carousel-item img:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
+}
+
+/* Flechas de navegación */
+.carousel-section {
+  position: relative;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+button.left {
+  left: 10px;
+}
+
+button.right {
+  right: 10px;
 }
