@@ -1,47 +1,33 @@
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
-    import { getFirestore, collection, query, where, getDocs } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js';
+const track = document.querySelector('.carousel-track');
+let index = 0;
 
-    // Configuración de Firebase
-    const firebaseConfig = {
-      apiKey: "AIzaSyC8hn1eHtuRg9AWwMt2cZv6mpaOaVmJH_4",
-      authDomain: "atomo-40588.firebaseapp.com",
-      projectId: "atomo-40588",
-      storageBucket: "atomo-40588.firebasestorage.app",
-      messagingSenderId: "545925442732",
-      appId: "1:545925442732:web:50f8089bcbe77d63c74309"
-    };
+const nextButton = document.createElement('button');
+nextButton.textContent = 'Next';
+nextButton.style.position = 'absolute';
+nextButton.style.right = '20px';
+nextButton.style.top = '50%';
+nextButton.style.transform = 'translateY(-50%)';
 
-    // Inicializar Firebase
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
+const prevButton = document.createElement('button');
+prevButton.textContent = 'Prev';
+prevButton.style.position = 'absolute';
+prevButton.style.left = '20px';
+prevButton.style.top = '50%';
+prevButton.style.transform = 'translateY(-50%)';
 
-    // Función para mostrar las películas de una categoría
-    async function showCategory(category) {
-      const gallery = document.getElementById('gallery');
-      gallery.innerHTML = ''; // Limpiar galería antes de agregar nuevas películas
+document.body.appendChild(nextButton);
+document.body.appendChild(prevButton);
 
-      try {
-        const q = query(collection(db, 'peliculas'), where('categoria', 'array-contains', category));
-        const querySnapshot = await getDocs(q);
+nextButton.addEventListener('click', () => {
+  if (index < 3) {
+    index++;
+    track.style.transform = `translateX(-${index * 220}px)`;
+  }
+});
 
-        if (querySnapshot.empty) {
-          gallery.innerHTML = `<p>No hay películas disponibles en la categoría ${category}.</p>`;
-        } else {
-          querySnapshot.forEach((doc) => {
-            const pelicula = doc.data();
-            console.log("Película cargada:", pelicula); // Verificamos que se esté obteniendo la película
-
-            const imgElement = document.createElement('img');
-            imgElement.src = pelicula.imagen; // Usar la URL de la imagen
-            imgElement.alt = pelicula.titulo; // El título de la película como alt
-            gallery.appendChild(imgElement);
-          });
-        }
-      } catch (error) {
-        console.error("Error al cargar las películas: ", error);
-        gallery.innerHTML = '<p>Hubo un error al cargar las películas.</p>';
-      }
-    }
-
-    // Mostrar la primera categoría por defecto (Acción)
-    showCategory('accion');
+prevButton.addEventListener('click', () => {
+  if (index > 0) {
+    index--;
+    track.style.transform = `translateX(-${index * 220}px)`;
+  }
+});
