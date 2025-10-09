@@ -3,30 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galería de Películas</title>
+  <title>Netflix - Carrusel</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
   <div class="container">
-    <!-- Barra de categorías -->
-    <div class="menu">
-      <ul>
-        <li><button class="category-btn" onclick="showCategory('accion')">Acción</button></li>
-        <li><button class="category-btn" onclick="showCategory('comedia')">Comedia</button></li>
-        <li><button class="category-btn" onclick="showCategory('drama')">Drama</button></li>
-        <li><button class="category-btn" onclick="showCategory('aventura')">Aventura</button></li>
-      </ul>
-    </div>
-    
-    <!-- Galería de películas -->
-    <div class="gallery-container">
-      <h1 class="gallery-title">Películas Recomendadas</h1>
-      <div class="gallery" id="gallery">
-        <!-- Las películas se cargarán aquí desde Firebase -->
+    <header class="header">
+      <div class="logo">Netflix</div>
+      <div class="nav">
+        <a href="#">Home</a>
+        <a href="#">TV Shows</a>
+        <a href="#">Movies</a>
+        <a href="#">New & Popular</a>
+        <a href="#">My List</a>
+        <a href="#">Browse by Languages</a>
       </div>
-    </div>
+    </header>
+
+    <section class="carousel-section">
+      <h2>Popular on Netflix</h2>
+      <div class="carousel">
+        <div class="carousel-track">
+          <div class="carousel-item">
+            <img src="https://via.placeholder.com/200x300" alt="Show 1">
+          </div>
+          <div class="carousel-item">
+            <img src="https://via.placeholder.com/200x300" alt="Show 2">
+          </div>
+          <div class="carousel-item">
+            <img src="https://via.placeholder.com/200x300" alt="Show 3">
+          </div>
+          <div class="carousel-item">
+            <img src="https://via.placeholder.com/200x300" alt="Show 4">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="carousel-section">
+      <h2>Trending Now</h2>
+      <div class="carousel">
+        <div class="carousel-track">
+          <div class="carousel-item">
+            <img src="https://via.placeholder.com/200x300" alt="Trending 1">
+          </div>
+          <div class="carousel-item">
+            <img src="https://via.placeholder.com/200x300" alt="Trending 2">
+          </div>
+          <div class="carousel-item">
+            <img src="https://via.placeholder.com/200x300" alt="Trending 3">
+          </div>
+          <div class="carousel-item">
+            <img src="https://via.placeholder.com/200x300" alt="Trending 4">
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 
-  <script type="module" src="scripts.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
