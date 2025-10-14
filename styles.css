@@ -1,21 +1,54 @@
+/* Diseño general */
 body {
   font-family: 'Arial', sans-serif;
   margin: 0;
   background-color: #121212;
   color: #fff;
+  display: flex;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
+.sidebar {
   background-color: #1e1e1e;
+  width: 250px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  position: fixed;
 }
 
 .logo {
   font-size: 2em;
   font-weight: bold;
   color: #ffcc00;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.categories, .language {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-btn, .language button {
+  background-color: #333;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+}
+
+.category-btn:hover, .language button:hover {
+  background-color: #ffcc00;
+}
+
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
+  flex-grow: 1;
 }
 
 .search input {
@@ -24,27 +57,6 @@ body {
   border-radius: 5px;
   border: none;
   width: 300px;
-}
-
-.categories {
-  display: flex;
-  justify-content: space-evenly;
-  background-color: #2a2a2a;
-  padding: 10px 0;
-}
-
-.category-btn {
-  background-color: #333;
-  border: none;
-  padding: 10px 20px;
-  color: white;
-  font-size: 1.2em;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.category-btn:hover {
-  background-color: #ffcc00;
 }
 
 .movie-list {
@@ -63,12 +75,12 @@ body {
 
 .movie-item img {
   width: 100%;
-  height: auto;
-  border-bottom: 5px solid #ffcc00;
+  height: 100%;
+  object-fit: cover;
 }
 
 .movie-item .movie-info {
-  padding: 15px;
+  padding: 10px;
 }
 
 .movie-item .rating {
@@ -78,4 +90,14 @@ body {
   background-color: #ffcc00;
   padding: 5px 10px;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .main-content {
+    margin-left: 200px;
+  }
 }
