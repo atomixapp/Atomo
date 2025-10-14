@@ -10,21 +10,34 @@
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
 </head>
 <body>
-  <div class="header">
+  <!-- Barra lateral de navegación -->
+  <div class="sidebar">
     <div class="logo">IPTV</div>
-    <div class="search">
-      <input type="text" id="search" placeholder="Buscar Series...">
+    <div class="categories">
+      <button class="category-btn">Todas</button>
+      <button class="category-btn">Favoritos</button>
+      <button class="category-btn">Popular</button>
+      <button class="category-btn">Nuevos Lanzamientos</button>
+    </div>
+    <div class="language">
+      <button>English</button>
+      <button>Español</button>
+      <button>Italiano</button>
+      <button>Português</button>
     </div>
   </div>
 
-  <div class="categories">
-    <button class="category-btn">Todas</button>
-    <button class="category-btn">Favoritos</button>
-    <button class="category-btn">Popular</button>
-    <button class="category-btn">Nuevos Lanzamientos</button>
-  </div>
+  <!-- Contenido principal de películas -->
+  <div class="main-content">
+    <div class="header">
+      <div class="search">
+        <input type="text" id="search" placeholder="Buscar Series...">
+      </div>
+    </div>
 
-  <div id="movie-list" class="movie-list"></div>
+    <!-- Carrusel de películas -->
+    <div id="movie-list" class="movie-list"></div>
+  </div>
 
   <script src="app.js"></script>
 </body>
