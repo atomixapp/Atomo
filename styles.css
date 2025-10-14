@@ -76,6 +76,13 @@ nav ul li a:hover {
     font-weight: bold;
 }
 
+.category-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ecf0f1;
+    margin-left: 20px;
+}
+
 .top-search {
     padding: 10px;
     font-size: 16px;
@@ -85,13 +92,6 @@ nav ul li a:hover {
     width: 300px;
     background-color: #34495e;
     color: white;
-}
-
-.category-title {
-    font-size: 28px;
-    font-weight: bold;
-    color: #ecf0f1;
-    margin-bottom: 20px;
 }
 
 .movie-gallery {
