@@ -155,7 +155,6 @@ body {
   font-weight: bold;
 }
 
-/* Rating (estrellas) */
 .card .card-info .rating {
   font-size: 16px;
   color: #f5a623; /* Color amarillo para las estrellas */
