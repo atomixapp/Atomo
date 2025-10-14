@@ -1,11 +1,11 @@
 // firebase-config.js
 const firebaseConfig = {
-  apiKey: "AIzaSyC8hn1eHtuRg9AWwMt2cZv6mpaOaVmJH_4",
-  authDomain: "atomo-40588.firebaseapp.com",
-  projectId: "atomo-40588",
-  storageBucket: "atomo-40588.firebasestorage.app",
-  messagingSenderId: "545925442732",
-  appId: "1:545925442732:web:50f8089bcbe77d63c74309"
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT_ID.appspot.com",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID"
 };
 
 const app = firebase.initializeApp(firebaseConfig);
