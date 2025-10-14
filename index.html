@@ -1,70 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Netflix - Carrusel</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPTV de Películas</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header class="header">
+        <div class="logo">Mi IPTV</div>
+        <input type="text" class="search-bar" placeholder="Buscar película...">
+    </header>
+    
+    <main class="main-content">
+        <section class="category">
+            <h2 class="category-title">Categoría 1</h2>
+            <div class="movie-gallery">
+                <!-- Las películas se cargarán dinámicamente aquí -->
+            </div>
+        </section>
 
-  <header class="header">
-    <div class="logo">Netflix</div>
-    <div class="nav">
-      <a href="#">Home</a>
-      <a href="#">TV Shows</a>
-      <a href="#">Movies</a>
-      <a href="#">New & Popular</a>
-      <a href="#">My List</a>
-      <a href="#">Browse by Languages</a>
-    </div>
-    <div class="search-bar">
-      <input type="text" placeholder="Buscar" />
-      <button>🔍</button>
-    </div>
-  </header>
+        <section class="category">
+            <h2 class="category-title">Categoría 2</h2>
+            <div class="movie-gallery">
+                <!-- Más películas -->
+            </div>
+        </section>
+    </main>
 
-    <section class="carousel-section">
-      <h2>Popular on Netflix</h2>
-      <div class="carousel">
-        <div class="carousel-track">
-          <div class="carousel-item">
-            <img src="https://image.tmdb.org/t/p/original/3ucz8biRhLFQf1w6CI2In5eU7u4.jpg" alt="Show 1">
-          </div>
-          <div class="carousel-item">
-            <img src="https://image.tmdb.org/t/p/original/uxa8Wka61l62yVLg20WgdEYyDyJ.jpg" alt="Show 2">
-          </div>
-          <div class="carousel-item">
-            <img src="https://image.tmdb.org/t/p/original/qqhrFZ5KbUNRE6OTsXNvOaDQmi2.jpg" alt="Show 3">
-          </div>
-          <div class="carousel-item">
-            <img src="https://image.tmdb.org/t/p/original/gEPhLwDi6MMSPxrVJ2PL8AzKmRY.jpg" alt="Show 4">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="carousel-section">
-      <h2>Trending Now</h2>
-      <div class="carousel">
-        <div class="carousel-track">
-          <div class="carousel-item">
-            <img src="https://image.tmdb.org/t/p/original/fpPFrlZI7h59u20xnm6UELHe1C.jpg" alt="Trending 1">
-          </div>
-          <div class="carousel-item">
-            <img src="https://image.tmdb.org/t/p/original/8RF2EUEt9uknaEa4Eh9SrW1eecY.jpg" alt="Trending 2">
-          </div>
-          <div class="carousel-item">
-            <img src="https://image.tmdb.org/t/p/original/8RF2EUEt9uknaEa4Eh9SrW1eecY.jpg" alt="Trending 3">
-          </div>
-          <div class="carousel-item">
-            <img src="https://image.tmdb.org/t/p/original/8RF2EUEt9uknaEa4Eh9SrW1eecY.jpg" alt="Trending 4">
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
