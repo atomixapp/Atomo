@@ -1,38 +1,33 @@
-const track = document.querySelector('.carousel-track');
-const prevButton = document.createElement('button');
-const nextButton = document.createElement('button');
+// script.js
+const categories = [
+    {
+        title: 'Acción',
+        movies: [
+            { title: 'Película 1', img: 'img/pelicula1.jpg' },
+            { title: 'Película 2', img: 'img/pelicula2.jpg' }
+        ]
+    },
+    {
+        title: 'Comedia',
+        movies: [
+            { title: 'Película A', img: 'img/peliculaA.jpg' },
+            { title: 'Película B', img: 'img/peliculaB.jpg' }
+        ]
+    }
+];
 
-let index = 0;
+const movieGalleryElements = document.querySelectorAll('.movie-gallery');
 
-prevButton.textContent = '◀';
-nextButton.textContent = '▶';
-
-prevButton.classList.add('prev');
-nextButton.classList.add('next');
-
-document.body.appendChild(prevButton);
-document.body.appendChild(nextButton);
-
-prevButton.style.position = 'absolute';
-nextButton.style.position = 'absolute';
-
-prevButton.style.top = '50%';
-nextButton.style.top = '50%';
-prevButton.style.left = '20px';
-nextButton.style.right = '20px';
-prevButton.style.transform = 'translateY(-50%)';
-nextButton.style.transform = 'translateY(-50%)';
-
-nextButton.addEventListener('click', () => {
-  if (index < 3) {
-    index++;
-    track.style.transform = `translateX(-${index * 320}px)`;
-  }
-});
-
-prevButton.addEventListener('click', () => {
-  if (index > 0) {
-    index--;
-    track.style.transform = `translateX(-${index * 320}px)`;
-  }
+categories.forEach((category, index) => {
+    const gallery = movieGalleryElements[index];
+    category.movies.forEach(movie => {
+        const movieCard = document.createElement('div');
+        movieCard.classList.add('movie-card');
+        
+        const movieImg = document.createElement('img');
+        movieImg.src = movie.img;
+        
+        movieCard.appendChild(movieImg);
+        gallery.appendChild(movieCard);
+    });
 });
