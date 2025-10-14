@@ -71,16 +71,10 @@ nav ul li a:hover {
     color: white;
 }
 
-.top-logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
 .category-title {
     font-size: 24px;
     font-weight: bold;
     color: #ecf0f1;
-    margin-left: 20px;
 }
 
 .top-search {
@@ -98,6 +92,7 @@ nav ul li a:hover {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    margin-top: 20px; /* Agregamos margen para que las películas no estén pegadas a la barra */
 }
 
 .movie-card {
