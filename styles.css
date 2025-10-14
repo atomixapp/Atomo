@@ -30,12 +30,16 @@ body {
     flex-direction: column;
 }
 
-.sidebar .logo {
-    font-size: 24px;
-    font-weight: bold;
+.sidebar-search {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
     margin-bottom: 20px;
+    background-color: #34495e;
     color: white;
-    text-align: center;
+    width: 100%;
 }
 
 nav ul {
@@ -75,17 +79,6 @@ nav ul li a:hover {
     font-size: 24px;
     font-weight: bold;
     color: #ecf0f1;
-}
-
-.top-search {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    width: 300px;
-    background-color: #34495e;
-    color: white;
 }
 
 .movie-gallery {
