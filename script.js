@@ -63,8 +63,7 @@ function renderMovies() {
       <img src="${imageUrl}" alt="${movie.title}">
       <div class="card-info">
         <h3>${movie.title}</h3>
-        <div class="rating">⭐ ${movie.rating}</div>
-        <div class="year">${movie.year}</div>
+        <div class="year">${movie.year}</div> <!-- Solo mostrar el año debajo del título -->
       </div>
     `;
     movieCardsContainer.appendChild(card);
