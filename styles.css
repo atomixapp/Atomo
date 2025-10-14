@@ -1,122 +1,76 @@
+/* styles.css */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #141414;
-  color: white;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-  background-color: #141414;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #1e1e1e;
 }
 
-.header .logo {
-  font-size: 24px;
-  font-weight: bold;
+.logo {
+    font-size: 24px;
+    font-weight: bold;
 }
 
-.header .nav {
-  display: flex;
+.search-bar {
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: 200px;
 }
 
-.header .nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: white;
-  font-size: 14px;
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
 }
 
-.header .search-bar {
-  display: flex;
-  align-items: center;
+.category {
+    margin-bottom: 30px;
 }
 
-.header .search-bar input {
-  padding: 10px;
-  font-size: 14px;
-  border-radius: 5px;
-  border: none;
+.category-title {
+    font-size: 20px;
+    margin-bottom: 15px;
 }
 
-.header .search-bar button {
-  background-color: #e50914;
-  border: none;
-  color: white;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-left: 10px;
+.movie-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
-.carousel-section {
-  margin: 30px 0;
+.movie-card {
+    width: 200px;
+    height: 300px;
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
 }
 
-.carousel-section h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
+.movie-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.carousel {
-  overflow-x: auto;
-  white-space: nowrap;
-  padding-bottom: 20px;
-  position: relative;
-}
-
-.carousel-track {
-  display: inline-flex;
-  transition: transform 0.5s ease;
-}
-
-.carousel-item {
-  display: inline-block;
-  margin-right: 15px;
-}
-
-.carousel-item img {
-  width: 300px;
-  height: 200px;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-.carousel-item img:hover {
-  transform: scale(1.1);
-  transition: transform 0.3s ease;
-}
-
-/* Flechas de navegación */
-.carousel-section {
-  position: relative;
-}
-
-button {
-  position: absolute;
-  top: 50%;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 18px;
-  border-radius: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-}
-
-button.left {
-  left: 10px;
-}
-
-button.right {
-  right: 10px;
+.movie-card:hover {
+    transform: scale(1.05);
 }
