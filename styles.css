@@ -7,6 +7,7 @@
 
 body {
   font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
 }
 
 /* Barra Superior */
@@ -40,26 +41,55 @@ body {
 /* Barra Lateral */
 #sidebar {
   width: 250px;
-  background-color: #1e1e1e;
+  background: linear-gradient(180deg, #1f3b73, #2c628b); /* Degradado azul */
   color: #fff;
   padding: 20px;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
-#sidebar input, #sidebar button {
+#sidebar input {
   margin-bottom: 20px;
   padding: 10px;
   border-radius: 4px;
   border: none;
   background-color: #333;
   color: #fff;
-  cursor: pointer;
+  font-size: 16px;
+}
+
+#sidebar h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+#categories {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+#categories li {
+  margin: 8px 0;
 }
 
 #sidebar button {
   width: 100%;
-  text-align: left;
+  padding: 12px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#sidebar button i {
+  margin-right: 10px;
+  font-size: 18px;
 }
 
 #sidebar button:hover {
