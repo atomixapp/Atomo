@@ -1,4 +1,8 @@
 // Configuración de Firebase
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+// Configuración de Firebase
 const firebaseConfig = {
   apiKey: "AIzaSyC8hn1eHtuRg9AWwMt2cZv6mpaOaVmJH_4",
   authDomain: "atomo-40588.firebaseapp.com",
@@ -9,8 +13,8 @@ const firebaseConfig = {
 };
 
 // Inicializar Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 let currentCategory = 'all';
 let movies = []; // Lista de películas que se obtendrán desde Firestore
