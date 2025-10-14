@@ -1,4 +1,4 @@
-// Configuración de Firebase
+// Importación de Firebase (API modular de Firebase 9.x)
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
 
@@ -22,7 +22,8 @@ let movies = []; // Lista de películas que se obtendrán desde Firestore
 // Función para obtener las películas de Firestore
 async function fetchMovies() {
   try {
-    const querySnapshot = await db.collection('peliculas').get();
+    // Usamos la nueva API modular para obtener las colecciones
+    const querySnapshot = await getDocs(collection(db, 'peliculas'));
     movies = []; // Limpiar el array antes de cargar nuevos datos
 
     querySnapshot.forEach(doc => {
@@ -42,7 +43,6 @@ async function fetchMovies() {
   }
 }
 
-// Función para renderizar las cards de películas
 // Función para renderizar las cards de películas
 function renderMovies() {
   const movieCardsContainer = document.getElementById('movie-cards');
@@ -70,7 +70,6 @@ function renderMovies() {
     movieCardsContainer.appendChild(card);
   });
 }
-
 
 // Función para filtrar por categoría
 function filterByCategory(category) {
