@@ -121,7 +121,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
   position: relative;
   max-width: 250px; /* Limitar el ancho máximo de la tarjeta */
   margin: 0 auto; /* Centrar la tarjeta */
@@ -137,7 +136,6 @@ body {
   width: 100%;
   height: 250px; /* Ajustamos la altura de la imagen */
   object-fit: cover; /* Mantiene la imagen completa sin recortarla */
-  margin-bottom: 10px; /* Reduce el espacio entre la imagen y la parte inferior */
   border-radius: 8px; /* Borde redondeado alrededor de la imagen */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Aumentamos la sombra para ser más visible */
 }
@@ -185,7 +183,7 @@ body {
 #movie-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Ajuste en el tamaño de las tarjetas */
-  gap: 10px; /* Reducir aún más el espacio entre las tarjetas */
+  gap: 5px; /* Reducir aún más el espacio entre las tarjetas */
 }
 
 @media (max-width: 768px) {
