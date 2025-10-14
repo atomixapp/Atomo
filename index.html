@@ -3,31 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería de Paisajes</title>
+    <title>Galería de Películas</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <div class="logo">Galería de Paisajes</div>
-        <input type="text" class="search-bar" placeholder="Buscar...">
-    </header>
-    
-    <main class="main-content">
-        <section class="category">
-            <h2 class="category-title">Paisajes Naturales</h2>
-            <div class="movie-gallery">
-                <!-- Galería de imágenes de paisajes -->
-                <div class="movie-card"><img src="https://via.placeholder.com/300x200/3e8e41/ffffff?text=Paisaje+1" alt="Paisaje 1"></div>
-                <div class="movie-card"><img src="https://via.placeholder.com/300x200/4a90e2/ffffff?text=Paisaje+2" alt="Paisaje 2"></div>
-                <div class="movie-card"><img src="https://via.placeholder.com/300x200/7f8c8d/ffffff?text=Paisaje+3" alt="Paisaje 3"></div>
-                <div class="movie-card"><img src="https://via.placeholder.com/300x200/e74c3c/ffffff?text=Paisaje+4" alt="Paisaje 4"></div>
-                <div class="movie-card"><img src="https://via.placeholder.com/300x200/1abc9c/ffffff?text=Paisaje+5" alt="Paisaje 5"></div>
-            </div>
-        </section>
-        
-        <!-- Se pueden agregar más categorías aquí -->
-        
-    </main>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">IPTV</div>
+            <input type="text" class="search-bar" placeholder="Buscar Series...">
+            <nav>
+                <ul>
+                    <li><a href="#">All Series</a></li>
+                    <li><a href="#">Favorites</a></li>
+                    <li><a href="#">Popular</a></li>
+                    <li><a href="#">New Releases</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <section class="category">
+                <h2 class="category-title">Series de Comedia</h2>
+                <div class="movie-gallery">
+                    <!-- Tarjetas de series -->
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/200x300/3498db/ffffff?text=Serie+1" alt="Serie 1">
+                        <div class="card-details">
+                            <span class="rating">7/10</span>
+                            <p>Comedia, 2023</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/200x300/2ecc71/ffffff?text=Serie+2" alt="Serie 2">
+                        <div class="card-details">
+                            <span class="rating">8/10</span>
+                            <p>Comedia, 2022</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/200x300/e74c3c/ffffff?text=Serie+3" alt="Serie 3">
+                        <div class="card-details">
+                            <span class="rating">6/10</span>
+                            <p>Comedia, 2021</p>
+                        </div>
+                    </div>
+                    <!-- Añadir más tarjetas -->
+                </div>
+            </section>
+        </main>
+    </div>
 
     <script src="script.js"></script>
 </body>
