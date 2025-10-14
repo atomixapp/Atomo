@@ -1,44 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería de Películas IPTV</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IPTV Películas</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
 </head>
 <body>
-    <div class="container">
-        <aside class="sidebar">
-            <!-- Lista de géneros -->
-            <nav>
-                <ul id="genres-list">
-                    <li><a href="#" data-genre="todos">Todos</a></li>
-                    <li><a href="#" data-genre="accion">Acción</a></li>
-                    <li><a href="#" data-genre="comedia">Comedia</a></li>
-                    <li><a href="#" data-genre="drama">Drama</a></li>
-                    <li><a href="#" data-genre="aventura">Aventura</a></li>
-                    <li><a href="#" data-genre="terror">Terror</a></li>
-                    <li><a href="#" data-genre="romance">Romance</a></li>
-                    <li><a href="#" data-genre="ciencia-ficcion">Ciencia Ficción</a></li>
-                </ul>
-            </nav>
-        </aside>
-
-        <main class="main-content">
-            <!-- Barra superior con el título del género -->
-            <header class="top-bar">
-                <div class="category-title">Películas Populares</div>
-            </header>
-
-            <!-- Contenido principal (Películas) -->
-            <section class="category">
-                <div class="movie-gallery" id="movie-gallery">
-                    <!-- Las tarjetas de películas se cargarán aquí dinámicamente -->
-                </div>
-            </section>
-        </main>
+  <div class="header">
+    <div class="logo">IPTV</div>
+    <div class="search">
+      <input type="text" id="search" placeholder="Buscar Series...">
     </div>
+  </div>
 
-    <script src="script.js"></script>
+  <div class="categories">
+    <button class="category-btn">Todas</button>
+    <button class="category-btn">Favoritos</button>
+    <button class="category-btn">Popular</button>
+    <button class="category-btn">Nuevos Lanzamientos</button>
+  </div>
+
+  <div id="movie-list" class="movie-list"></div>
+
+  <script src="app.js"></script>
 </body>
 </html>
