@@ -119,52 +119,66 @@ body {
 
 /* Card de Película */
 .card {
-  background-color: #fff;
+  background-color: #1f2d3d; /* Fondo oscuro para la card */
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más sutil */
   cursor: pointer;
   display: flex;
-  flex-direction: column; /* Mantener el contenido en columna */
-  align-items: center; /* Centrar el contenido dentro de la tarjeta */
-  position: relative; /* Para posicionar el rating en la esquina */
-}
-
-.card img {
-  width: 100%;
-  height: 300px; /* Aumentamos la altura de la imagen para mostrarla en vertical */
-  object-fit: cover;
-  margin-bottom: 15px; /* Espacio debajo de la imagen */
-}
-
-/* Rating en la esquina superior izquierda */
-.card .rating {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  font-size: 18px;
-  color: #f5a623;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-weight: bold;
-  z-index: 10; /* Aseguramos que el rating esté por encima de la imagen */
-}
-
-/* Información debajo de la imagen */
-.card .card-info {
-  text-align: center; /* Asegura que el texto esté centrado */
+  flex-direction: column;
+  align-items: center;
   padding: 10px;
 }
 
-.card .card-info h3 {
-  font-size: 18px;
-  margin-bottom: 10px; /* Espacio entre el título y la información adicional */
+/* Imagen de la película */
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 15px;
 }
 
+/* Información de la tarjeta (Título, Rating, Año) */
+.card .card-info {
+  background-color: #263545; /* Color gris oscuro para el fondo del recuadro */
+  color: #fff; /* Texto blanco para el contraste */
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  width: 100%; /* Asegura que ocupe todo el ancho de la card */
+}
+
+/* Título de la película */
+.card .card-info h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Rating (estrellas) */
+.card .card-info .rating {
+  font-size: 16px;
+  color: #f5a623; /* Color amarillo para las estrellas */
+  margin-top: 5px;
+}
+
+/* Año de la película */
 .card .card-info .year {
   font-size: 14px;
   color: #888;
+}
+
+/* Rating en la parte superior de la imagen */
+.card .rating-box {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente */
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 
