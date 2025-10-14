@@ -30,6 +30,23 @@ body {
     flex-direction: column;
 }
 
+.sidebar-search {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+    background-color: #34495e;
+    color: white;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar-search:focus {
+    background-color: #1abc9c;
+}
+
 nav ul {
     list-style-type: none;
 }
@@ -42,14 +59,10 @@ nav ul li a {
     color: #ecf0f1;
     text-decoration: none;
     font-size: 18px;
-    display: block;
-    padding: 8px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #1abc9c;
+    color: #f39c12;
 }
 
 .main-content {
@@ -77,7 +90,7 @@ nav ul li a:hover {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
-    margin-top: 20px;
+    margin-top: 20px; /* Agregamos margen para que las películas no estén pegadas a la barra */
 }
 
 .movie-card {
