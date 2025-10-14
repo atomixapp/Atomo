@@ -14,7 +14,7 @@ const firebaseConfig = {
 
 // Inicializar Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const db = getFirestore(app); // Esto debe definirse correctamente
 
 let currentCategory = 'all';
 let movies = []; // Lista de películas que se obtendrán desde Firestore
@@ -22,7 +22,6 @@ let movies = []; // Lista de películas que se obtendrán desde Firestore
 // Función para obtener las películas de Firestore
 async function fetchMovies() {
   try {
-    // Usamos la nueva API modular para obtener las colecciones
     const querySnapshot = await getDocs(collection(db, 'peliculas'));
     movies = []; // Limpiar el array antes de cargar nuevos datos
 
@@ -32,8 +31,8 @@ async function fetchMovies() {
         id: doc.id,
         title: data.titulo,
         image: data.imagen,
-        rating: data.rating || 'N/A', // Asegurarnos de que tenga un valor de rating si no está disponible
-        year: data.year || 'Desconocido' // Asegurarnos de que tenga un valor de year si no está disponible
+        rating: data.rating || 'N/A',
+        year: data.year || 'Desconocido'
       });
     });
 
