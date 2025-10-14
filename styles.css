@@ -158,6 +158,9 @@ body {
   font-size: 18px;
   margin-bottom: 10px;
   font-weight: bold;
+  white-space: nowrap; /* Evita que el título pase a la siguiente línea */
+  overflow: hidden; /* Oculta el texto que sobrepase el espacio */
+  text-overflow: ellipsis; /* Muestra "..." si el texto es demasiado largo */
 }
 
 /* Año de la película */
