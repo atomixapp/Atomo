@@ -11,6 +11,7 @@ body {
     color: white;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 .header {
@@ -18,6 +19,7 @@ body {
     justify-content: space-between;
     padding: 20px;
     background-color: #1e1e1e;
+    align-items: center;
 }
 
 .logo {
@@ -26,12 +28,12 @@ body {
 }
 
 .search-bar {
-    padding: 8px;
+    padding: 10px;
     font-size: 16px;
     border-radius: 5px;
     border: none;
     outline: none;
-    width: 200px;
+    width: 250px;
 }
 
 .main-content {
@@ -42,35 +44,57 @@ body {
 }
 
 .category {
+    width: 100%;
     margin-bottom: 30px;
 }
 
 .category-title {
-    font-size: 20px;
-    margin-bottom: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
 }
 
 .movie-gallery {
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 20px;
+    justify-content: space-between;
 }
 
 .movie-card {
-    width: 200px;
-    height: 300px;
+    width: 300px;
+    height: 200px;
     background-color: #333;
     border-radius: 10px;
     overflow: hidden;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .movie-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
 .movie-card:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.movie-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Estilos para pantallas grandes (Smart TV) */
+@media screen and (min-width: 1024px) {
+    .main-content {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .movie-gallery {
+        justify-content: center;
+    }
 }
