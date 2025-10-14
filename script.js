@@ -39,6 +39,7 @@ async function fetchMovies() {
 }
 
 // Función para renderizar las cards de películas
+// Función para renderizar las cards de películas
 function renderMovies() {
   const movieCardsContainer = document.getElementById('movie-cards');
   movieCardsContainer.innerHTML = ''; // Limpiar contenido previo
@@ -48,8 +49,14 @@ function renderMovies() {
   filteredMovies.forEach(movie => {
     const card = document.createElement('div');
     card.classList.add('card');
+    
+    // Verificamos si la imagen está disponible antes de agregarla
+    const imageUrl = movie.image ? movie.image : 'https://via.placeholder.com/250x150'; // Imagen por defecto si no hay URL
+    
+    console.log("Cargando imagen: ", imageUrl); // Depuración
+
     card.innerHTML = `
-      <img src="${movie.image}" alt="${movie.title}">
+      <img src="${imageUrl}" alt="${movie.title}">
       <div class="card-info">
         <h3>${movie.title}</h3>
         <div class="rating">⭐ ${movie.rating}</div>
@@ -59,6 +66,7 @@ function renderMovies() {
     movieCardsContainer.appendChild(card);
   });
 }
+
 
 // Función para filtrar por categoría
 function filterByCategory(category) {
