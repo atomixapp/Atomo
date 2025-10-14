@@ -111,22 +111,17 @@ body {
   margin-bottom: 20px;
 }
 
-#movie-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-}
-
 /* Card de Película */
 .card {
   background-color: #1f2d3d; /* Fondo oscuro para la card */
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra más sutil */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más sutil en la tarjeta */
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 10px;
   position: relative;
   max-width: 250px; /* Limitar el ancho máximo de la tarjeta */
   margin: 0 auto; /* Centrar la tarjeta */
@@ -142,8 +137,9 @@ body {
   width: 100%;
   height: 250px; /* Ajustamos la altura de la imagen */
   object-fit: contain; /* Mantiene la imagen completa sin recortarla */
+  margin-bottom: 10px; /* Reduce el espacio entre la imagen y la parte inferior */
   border-radius: 8px; /* Borde redondeado alrededor de la imagen */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra alrededor de la imagen */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Aumentamos la sombra para ser más visible */
 }
 
 /* Información de la tarjeta (Título, Año) */
@@ -183,6 +179,13 @@ body {
   border-radius: 8px;
   font-weight: bold;
   font-size: 14px;
+}
+
+/* Ajustes en el grid de la galería */
+#movie-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Ajuste en el tamaño de las tarjetas */
+  gap: 10px; /* Reducir aún más el espacio entre las tarjetas */
 }
 
 @media (max-width: 768px) {
