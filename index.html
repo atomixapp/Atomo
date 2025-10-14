@@ -9,31 +9,50 @@
 <body>
     <div class="container">
         <aside class="sidebar">
-            <!-- Lista de géneros -->
+            <!-- Buscador con el mismo estilo de la barra superior -->
+            <input type="text" class="sidebar-search" placeholder="Buscar Películas...">
             <nav>
-                <ul id="genres-list">
-                    <li><a href="#" data-genre="todos">Todos</a></li>
-                    <li><a href="#" data-genre="accion">Acción</a></li>
-                    <li><a href="#" data-genre="comedia">Comedia</a></li>
-                    <li><a href="#" data-genre="drama">Drama</a></li>
-                    <li><a href="#" data-genre="aventura">Aventura</a></li>
-                    <li><a href="#" data-genre="terror">Terror</a></li>
-                    <li><a href="#" data-genre="romance">Romance</a></li>
-                    <li><a href="#" data-genre="ciencia-ficcion">Ciencia Ficción</a></li>
+                <ul>
+                    <li><a href="#">All Movies</a></li>
+                    <li><a href="#">Favorites</a></li>
+                    <li><a href="#">Popular</a></li>
+                    <li><a href="#">New Releases</a></li>
                 </ul>
             </nav>
         </aside>
 
         <main class="main-content">
-            <!-- Barra superior con el título del género -->
+            <!-- Barra superior con el título "Películas Populares" -->
             <header class="top-bar">
                 <div class="category-title">Películas Populares</div>
             </header>
 
             <!-- Contenido principal (Películas) -->
             <section class="category">
-                <div class="movie-gallery" id="movie-gallery">
-                    <!-- Las tarjetas de películas se cargarán aquí dinámicamente -->
+                <div class="movie-gallery">
+                    <!-- Tarjetas de películas -->
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/200x300/3498db/ffffff?text=Película+1" alt="Película 1">
+                        <div class="card-details">
+                            <span class="rating">7/10</span>
+                            <p>Acción, 2023</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/200x300/2ecc71/ffffff?text=Película+2" alt="Película 2">
+                        <div class="card-details">
+                            <span class="rating">8/10</span>
+                            <p>Comedia, 2022</p>
+                        </div>
+                    </div>
+                    <div class="movie-card">
+                        <img src="https://via.placeholder.com/200x300/e74c3c/ffffff?text=Película+3" alt="Película 3">
+                        <div class="card-details">
+                            <span class="rating">6/10</span>
+                            <p>Drama, 2021</p>
+                        </div>
+                    </div>
+                    <!-- Añadir más películas -->
                 </div>
             </section>
         </main>
