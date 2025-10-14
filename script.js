@@ -59,6 +59,7 @@ function renderMovies() {
     console.log("Cargando imagen: ", imageUrl); // Depuración
 
     card.innerHTML = `
+      <div class="rating-box">⭐ ${movie.rating}</div> <!-- Rating en la parte superior izquierda -->
       <img src="${imageUrl}" alt="${movie.title}">
       <div class="card-info">
         <h3>${movie.title}</h3>
