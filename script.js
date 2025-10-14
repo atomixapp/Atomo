@@ -1,25 +1,55 @@
-// Datos simulados de películas
-const movies = [
-  { title: 'Barney & Friends', category: 'kids', year: 1992, img: 'https://via.placeholder.com/250x150', rating: 7 },
-  { title: 'The Big Year', category: 'comedy', year: 2011, img: 'https://via.placeholder.com/250x150', rating: 6 },
-  { title: 'Moonfall', category: 'sci-fi', year: 2024, img: 'https://via.placeholder.com/250x150', rating: 8 },
-  { title: 'The Big Family', category: 'comedy', year: 2021, img: 'https://via.placeholder.com/250x150', rating: 5 },
-  // Más películas
-];
+// Configuración de Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyC8hn1eHtuRg9AWwMt2cZv6mpaOaVmJH_4",
+  authDomain: "atomo-40588.firebaseapp.com",
+  projectId: "atomo-40588",
+  storageBucket: "atomo-40588.firebasestorage.app",
+  messagingSenderId: "545925442732",
+  appId: "1:545925442732:web:50f8089bcbe77d63c74309"
+};
+
+// Inicializar Firebase
+const app = firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
 
 let currentCategory = 'all';
+let movies = []; // Lista de películas que se obtendrán desde Firestore
+
+// Función para obtener las películas de Firestore
+async function fetchMovies() {
+  try {
+    const querySnapshot = await db.collection('peliculas').get();
+    movies = []; // Limpiar el array antes de cargar nuevos datos
+
+    querySnapshot.forEach(doc => {
+      const data = doc.data();
+      movies.push({
+        id: doc.id,
+        title: data.titulo,
+        image: data.imagen,
+        rating: data.rating || 'N/A', // Asegurarnos de que tenga un valor de rating si no está disponible
+        year: data.year || 'Desconocido' // Asegurarnos de que tenga un valor de year si no está disponible
+      });
+    });
+
+    renderMovies(); // Llamar a renderMovies después de obtener los datos de Firestore
+  } catch (error) {
+    console.error("Error al obtener las películas: ", error);
+  }
+}
 
 // Función para renderizar las cards de películas
 function renderMovies() {
   const movieCardsContainer = document.getElementById('movie-cards');
   movieCardsContainer.innerHTML = ''; // Limpiar contenido previo
+
   const filteredMovies = movies.filter(movie => currentCategory === 'all' || movie.category === currentCategory);
 
   filteredMovies.forEach(movie => {
     const card = document.createElement('div');
     card.classList.add('card');
     card.innerHTML = `
-      <img src="${movie.img}" alt="${movie.title}">
+      <img src="${movie.image}" alt="${movie.title}">
       <div class="card-info">
         <h3>${movie.title}</h3>
         <div class="rating">⭐ ${movie.rating}</div>
@@ -48,7 +78,7 @@ document.getElementById('search').addEventListener('input', function() {
     const card = document.createElement('div');
     card.classList.add('card');
     card.innerHTML = `
-      <img src="${movie.img}" alt="${movie.title}">
+      <img src="${movie.image}" alt="${movie.title}">
       <div class="card-info">
         <h3>${movie.title}</h3>
         <div class="rating">⭐ ${movie.rating}</div>
@@ -59,5 +89,5 @@ document.getElementById('search').addEventListener('input', function() {
   });
 });
 
-// Inicializar la vista
-renderMovies();
+// Llamar a la función fetchMovies para cargar las películas desde Firestore
+fetchMovies();
