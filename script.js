@@ -14,6 +14,7 @@ const firebaseConfig = {
 
 // Inicializar Firebase
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 let currentCategory = 'all';
 let movies = []; // Lista de películas que se obtendrán desde Firestore
