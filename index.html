@@ -3,38 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IPTV Películas</title>
+  <title>IPTV App</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
 </head>
 <body>
-  <!-- Barra de menú superior -->
-  <div class="top-bar">
+  <!-- Barra Superior -->
+  <header id="header">
     <div class="logo">IPTV</div>
-    <div class="user-actions">
-      <button>Favoritos</button>
-      <button>Configuración</button>
+  </header>
+
+  <!-- Contenedor Principal -->
+  <div id="main-content">
+    <!-- Barra Lateral -->
+    <aside id="sidebar">
+      <input type="text" id="search" placeholder="Buscar películas..." />
+      <select id="categories" onchange="filterByCategory()">
+        <option value="all">Todas</option>
+        <option value="accion">Acción</option>
+        <option value="comedia">Comedia</option>
+        <!-- Añadir más categorías según lo necesites -->
+      </select>
+    </aside>
+
+    <!-- Galería de Películas -->
+    <div id="gallery">
+      <h2 id="category-title">Todas</h2>
+      <div id="movie-cards"></div>
     </div>
   </div>
 
-  <!-- Barra lateral de categorías con buscador -->
-  <div class="sidebar">
-    <div class="search-box">
-      <input type="text" id="search" placeholder="Buscar películas...">
-    </div>
-    <button class="category-btn">Todas</button>
-    <button class="category-btn">Favoritos</button>
-    <button class="category-btn">Popular</button>
-    <button class="category-btn">Nuevos Lanzamientos</button>
-    <button class="category-btn">Más vistos</button>
-  </div>
-
-  <!-- Contenido principal centrado de películas -->
-  <div class="main-content">
-    <div class="movie-list" id="movie-list"></div>
-  </div>
-
-  <script src="app.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
