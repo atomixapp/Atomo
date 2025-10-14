@@ -1,9 +1,9 @@
-// Simulación de datos de películas desde Firebase
+// Datos simulados de películas
 const movies = [
-  { title: 'Película 1', category: 'accion', img: 'https://via.placeholder.com/200x150' },
-  { title: 'Película 2', category: 'comedia', img: 'https://via.placeholder.com/200x150' },
-  { title: 'Película 3', category: 'accion', img: 'https://via.placeholder.com/200x150' },
-  { title: 'Película 4', category: 'comedia', img: 'https://via.placeholder.com/200x150' },
+  { title: 'Barney & Friends', category: 'kids', year: 1992, img: 'https://via.placeholder.com/250x150', rating: 7 },
+  { title: 'The Big Year', category: 'comedy', year: 2011, img: 'https://via.placeholder.com/250x150', rating: 6 },
+  { title: 'Moonfall', category: 'sci-fi', year: 2024, img: 'https://via.placeholder.com/250x150', rating: 8 },
+  { title: 'The Big Family', category: 'comedy', year: 2021, img: 'https://via.placeholder.com/250x150', rating: 5 },
   // Más películas
 ];
 
@@ -22,6 +22,8 @@ function renderMovies() {
       <img src="${movie.img}" alt="${movie.title}">
       <div class="card-info">
         <h3>${movie.title}</h3>
+        <div class="rating">⭐ ${movie.rating}</div>
+        <div class="year">${movie.year}</div>
       </div>
     `;
     movieCardsContainer.appendChild(card);
@@ -29,10 +31,9 @@ function renderMovies() {
 }
 
 // Función para filtrar por categoría
-function filterByCategory() {
-  const categorySelect = document.getElementById('categories');
-  currentCategory = categorySelect.value;
-  document.getElementById('category-title').textContent = categorySelect.options[categorySelect.selectedIndex].text;
+function filterByCategory(category) {
+  currentCategory = category;
+  document.getElementById('category-title').textContent = category.charAt(0).toUpperCase() + category.slice(1);
   renderMovies();
 }
 
@@ -50,11 +51,13 @@ document.getElementById('search').addEventListener('input', function() {
       <img src="${movie.img}" alt="${movie.title}">
       <div class="card-info">
         <h3>${movie.title}</h3>
+        <div class="rating">⭐ ${movie.rating}</div>
+        <div class="year">${movie.year}</div>
       </div>
     `;
     movieCardsContainer.appendChild(card);
   });
 });
 
-// Cargar películas al inicio
+// Inicializar la vista
 renderMovies();
