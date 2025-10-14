@@ -1,5 +1,5 @@
 // script.js
-document.querySelector('.search-bar').addEventListener('input', function(event) {
+document.querySelector('.top-search').addEventListener('input', function(event) {
     let searchTerm = event.target.value.toLowerCase();
     let allCards = document.querySelectorAll('.movie-card');
 
