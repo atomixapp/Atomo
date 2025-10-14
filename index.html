@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IPTV App</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
 <body>
   <!-- Barra Superior -->
   <header id="header">
     <div class="logo">IPTV</div>
     <div class="header-icons">
-      <!-- Iconos como favoritos, configuración, etc. -->
       <i class="fa fa-star"></i>
       <i class="fa fa-cogs"></i>
     </div>
@@ -24,12 +24,12 @@
       <input type="text" id="search" placeholder="Buscar series..." />
       <h3>Categorías</h3>
       <ul id="categories">
-        <li><button onclick="filterByCategory('all')">Todas</button></li>
-        <li><button onclick="filterByCategory('favorites')">Favoritos</button></li>
-        <li><button onclick="filterByCategory('popular')">Populares</button></li>
-        <li><button onclick="filterByCategory('new-releases')">Nuevas</button></li>
-        <li><button onclick="filterByCategory('english')">Inglés</button></li>
-        <li><button onclick="filterByCategory('spanish')">Español</button></li>
+        <li><button onclick="filterByCategory('all')"><i class="fas fa-tv"></i> Todas</button></li>
+        <li><button onclick="filterByCategory('favorites')"><i class="fas fa-star"></i> Favoritos</button></li>
+        <li><button onclick="filterByCategory('popular')"><i class="fas fa-fire"></i> Populares</button></li>
+        <li><button onclick="filterByCategory('new-releases')"><i class="fas fa-calendar-alt"></i> Nuevas</button></li>
+        <li><button onclick="filterByCategory('english')"><i class="fas fa-language"></i> Inglés</button></li>
+        <li><button onclick="filterByCategory('spanish')"><i class="fas fa-language"></i> Español</button></li>
         <!-- Añadir más categorías -->
       </ul>
     </aside>
