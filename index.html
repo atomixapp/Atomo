@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galería de Películas</title>
+    <title>Galería de Películas IPTV</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <aside class="sidebar">
             <div class="logo">IPTV</div>
-            <input type="text" class="search-bar" placeholder="Buscar Series...">
             <nav>
                 <ul>
-                    <li><a href="#">All Series</a></li>
+                    <li><a href="#">All Movies</a></li>
                     <li><a href="#">Favorites</a></li>
                     <li><a href="#">Popular</a></li>
                     <li><a href="#">New Releases</a></li>
@@ -22,32 +21,39 @@
         </aside>
 
         <main class="main-content">
+            <!-- Barra superior -->
+            <header class="top-bar">
+                <div class="top-logo">IPTV</div>
+                <input type="text" class="top-search" placeholder="Search Movies...">
+            </header>
+
+            <!-- Contenido principal (Películas) -->
             <section class="category">
-                <h2 class="category-title">Series de Comedia</h2>
+                <h2 class="category-title">Películas Populares</h2>
                 <div class="movie-gallery">
-                    <!-- Tarjetas de series -->
+                    <!-- Tarjetas de películas -->
                     <div class="movie-card">
-                        <img src="https://image.tmdb.org/t/p/original/qY3MTxuYvAiuMZlVzQDvl1iI2Vr.jpg" alt="Serie 1">
+                        <img src="https://via.placeholder.com/200x300/3498db/ffffff?text=Película+1" alt="Película 1">
                         <div class="card-details">
                             <span class="rating">7/10</span>
-                            <p>Comedia, 2023</p>
+                            <p>Acción, 2023</p>
                         </div>
                     </div>
                     <div class="movie-card">
-                        <img src="https://image.tmdb.org/t/p/original/tlRwdJRWUPHSZCelHExFIPsNtf0.jpg" alt="Serie 2">
+                        <img src="https://via.placeholder.com/200x300/2ecc71/ffffff?text=Película+2" alt="Película 2">
                         <div class="card-details">
                             <span class="rating">8/10</span>
                             <p>Comedia, 2022</p>
                         </div>
                     </div>
                     <div class="movie-card">
-                        <img src="https://image.tmdb.org/t/p/original/lNqcFUCTZb9BEVpAuUGpndr15gm.jpg" alt="Serie 3">
+                        <img src="https://via.placeholder.com/200x300/e74c3c/ffffff?text=Película+3" alt="Película 3">
                         <div class="card-details">
                             <span class="rating">6/10</span>
-                            <p>Comedia, 2021</p>
+                            <p>Drama, 2021</p>
                         </div>
                     </div>
-                    <!-- Añadir más tarjetas -->
+                    <!-- Añadir más películas -->
                 </div>
             </section>
         </main>
@@ -56,4 +62,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
