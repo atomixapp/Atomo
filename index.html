@@ -5,38 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IPTV Películas</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- Firebase SDK -->
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js"></script>
 </head>
 <body>
-  <!-- Barra lateral de navegación -->
-  <div class="sidebar">
+  <!-- Barra de menú superior -->
+  <div class="top-bar">
     <div class="logo">IPTV</div>
-    <div class="categories">
-      <button class="category-btn">Todas</button>
-      <button class="category-btn">Favoritos</button>
-      <button class="category-btn">Popular</button>
-      <button class="category-btn">Nuevos Lanzamientos</button>
+    <div class="user-actions">
+      <button>Favoritos</button>
+      <button>Configuración</button>
     </div>
-    <div class="language">
-      <button>English</button>
-      <button>Español</button>
-      <button>Italiano</button>
-      <button>Português</button>
-    </div>
+  </div>
+
+  <!-- Barra lateral de categorías -->
+  <div class="sidebar">
+    <button class="category-btn">Todas</button>
+    <button class="category-btn">Favoritos</button>
+    <button class="category-btn">Popular</button>
+    <button class="category-btn">Nuevos Lanzamientos</button>
+    <button class="category-btn">Más vistos</button>
   </div>
 
   <!-- Contenido principal de películas -->
   <div class="main-content">
-    <div class="header">
-      <div class="search">
-        <input type="text" id="search" placeholder="Buscar Series...">
-      </div>
-    </div>
-
-    <!-- Carrusel de películas -->
-    <div id="movie-list" class="movie-list"></div>
+    <div class="movie-list" id="movie-list"></div>
   </div>
 
   <script src="app.js"></script>
