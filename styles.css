@@ -138,7 +138,7 @@ body {
   width: 100%;
   height: 250px; /* Ajustamos la altura de la imagen */
   object-fit: cover; /* Asegura que la imagen cubra completamente el contenedor sin dejar márgenes */
-  margin-bottom: 10px; /* Reduce el espacio entre la imagen y la parte inferior */
+  margin-bottom: 5px; /* Reduce el espacio entre la imagen y la parte inferior */
   border-radius: 8px; /* Borde redondeado alrededor de la imagen */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra más sutil alrededor de la imagen */
 }
@@ -189,7 +189,7 @@ body {
 #movie-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste en el tamaño de las tarjetas */
-  gap: 10px; /* Espacio pequeño entre las tarjetas */
+  gap: 5px; /* Espacio pequeño entre las tarjetas */
 }
 
 @media (max-width: 768px) {
