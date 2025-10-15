@@ -189,7 +189,7 @@ body {
 #movie-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste en el tamaño de las tarjetas */
-  gap: 15px; /* Espacio pequeño entre las tarjetas */
+  gap: 10px; /* Espacio pequeño entre las tarjetas */
 }
 
 @media (max-width: 768px) {
