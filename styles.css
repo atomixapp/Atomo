@@ -87,21 +87,21 @@ aside {
   color: #1E2A47;
 }
 
-/* Main */
 main {
   flex: 1;
   padding: 20px;
   overflow: auto;
-  margin-left: 250px; /* Deja espacio para el aside */
+  padding-left: 20px; /* Asegura que el contenido no esté pegado al borde */
   padding-top: 80px; /* Asegura que el contenido no quede detrás del header */
+  margin-left: 0; /* Elimina el margen izquierdo que estaba causando el desplazamiento */
 }
 
-/* Galería */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
 }
+
 
 /* Card */
 .card {
