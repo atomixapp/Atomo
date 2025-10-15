@@ -8,16 +8,22 @@ body {
   font-family: Arial, sans-serif;
   background-color: #1E2A47; /* Azul moderno */
   color: white;
-  margin-left: 250px;
   padding-top: 0;
+  margin-left: 250px; /* Deja espacio para el aside */
 }
 
+/* Header */
 header {
   background-color: #1A1F36;
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%; /* Asegura que el header ocupe todo el ancho */
+  position: fixed; /* El header se mantiene fijo en la parte superior */
+  top: 0;
+  left: 0;
+  z-index: 10; /* Asegura que el header quede encima del aside */
 }
 
 header .logo {
@@ -32,11 +38,7 @@ header .search-bar input {
   width: 200px;
 }
 
-.container {
-  display: flex;
-  margin-top: 20px;
-}
-
+/* Aside */
 aside {
   width: 250px;
   background-color: #2E3A59; /* Azul oscuro */
@@ -44,11 +46,12 @@ aside {
   padding: 20px;
   height: calc(100vh - 60px); /* Ocupa toda la altura de la pantalla menos la altura del header */
   position: fixed; /* Fija la barra lateral */
-  top: 60px; /* Ajusta la posición para que quede por debajo del header */
+  top: 60px; /* Posiciona el aside justo debajo del header */
   left: 0;
   border-right: 2px solid #FFD700; /* Borde dorado para el toque moderno */
 }
 
+/* Categorías */
 .categories {
   list-style: none;
   padding: 0;
@@ -85,18 +88,23 @@ aside {
   color: #1E2A47;
 }
 
+/* Main */
 main {
   flex: 1;
   padding: 20px;
   overflow: auto;
+  margin-left: 250px; /* Deja espacio para el aside */
+  padding-top: 80px; /* Asegura que el contenido no quede detrás del header */
 }
 
+/* Galería */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
 }
 
+/* Card */
 .card {
   background-color: #333;
   border-radius: 10px;
@@ -142,6 +150,7 @@ main {
   margin-bottom: 10px;
 }
 
+/* Rating */
 .rating {
   position: absolute;
   top: 10px;
