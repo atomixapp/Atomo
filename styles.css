@@ -67,7 +67,7 @@ main {
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s;
-  position: relative; /* Necesario para el posicionamiento absoluto del rating */
+  position: relative;
 }
 
 .card img {
@@ -90,7 +90,7 @@ main {
   text-align: center;
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   color: #FFD700; /* Dorado para el título */
   white-space: nowrap; /* Evita que el título se divida en varias líneas */
   overflow: hidden;
@@ -98,20 +98,16 @@ main {
 }
 
 .year {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #FFD700; /* Dorado para el año */
-  color: black;
-  padding: 5px;
+  text-align: center;
   font-size: 14px;
-  border-radius: 5px;
+  color: #FFD700; /* Dorado para el año */
+  margin-bottom: 10px;
 }
 
 .rating {
   position: absolute;
   top: 10px;
-  left: 40px;
+  left: 10px; /* Moved more to the left */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -129,11 +125,4 @@ main {
 .rating .score {
   font-size: 16px;
   color: #F1F1F1; /* Blanco para la puntuación */
-}
-
-.card-info .description {
-  font-size: 14px;
-  color: #B0B0B0; /* Gris claro para la descripción */
-  text-align: center;
-  line-height: 1.4;
 }
