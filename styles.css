@@ -9,6 +9,7 @@ body {
   background-color: #1E2A47; /* Azul moderno */
   color: white;
   margin-left: 250px;
+  padding-top: 0;
 }
 
 header {
@@ -41,9 +42,9 @@ aside {
   background-color: #2E3A59; /* Azul oscuro */
   color: white;
   padding: 20px;
-  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  height: calc(100vh - 60px); /* Ocupa toda la altura de la pantalla menos la altura del header */
   position: fixed; /* Fija la barra lateral */
-  top: 0;
+  top: 60px; /* Ajusta la posición para que quede por debajo del header */
   left: 0;
   border-right: 2px solid #FFD700; /* Borde dorado para el toque moderno */
 }
