@@ -8,9 +8,9 @@ function loadMovies() {
   const gallery = document.querySelector('.gallery');
   // Simulación de las películas, deberás sustituir esto por la lógica de Firestore
   const movies = [
-    { title: 'Película 1', image: 'https://via.placeholder.com/200x300' },
-    { title: 'Película 2', image: 'https://via.placeholder.com/200x300' },
-    { title: 'Película 3', image: 'https://via.placeholder.com/200x300' }
+    { title: 'Película 1', image: 'https://image.tmdb.org/t/p/original/huvM6PcelNHpL3ldtgDpxstQWqN.jpg' },
+    { title: 'Película 2', image: 'https://image.tmdb.org/t/p/original/tgKYnJlze79IUKkPmtsW2nSUeeB.jpg' },
+    { title: 'Película 3', image: 'https://image.tmdb.org/t/p/original/fSRRH7UasrE6q240H00dww3vE1c.jpg' }
   ];
 
   movies.forEach(movie => {
