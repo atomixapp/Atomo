@@ -1,4 +1,3 @@
-/* Reset global */
 * {
   margin: 0;
   padding: 0;
@@ -7,192 +6,74 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #0a1f2b; /* Azul oscuro */
-  color: #fff; /* Texto blanco para contraste */
+  background-color: #1E2A47; /* Azul moderno */
+  color: white;
 }
 
-#header {
+header {
+  background-color: #1A1F36;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #111;
-  padding: 15px 30px;
-  color: #fff;
 }
 
-.logo {
-  font-size: 28px;
+header .logo {
+  font-size: 24px;
   font-weight: bold;
 }
 
-.header-icons i {
-  color: #fff;
-  margin-left: 20px;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-/* Contenedor Principal */
-#main-content {
-  display: flex;
-  height: calc(100vh - 60px);
-}
-
-/* Barra Lateral */
-#sidebar {
-  width: 250px;
-  background: linear-gradient(180deg, #1f3b73, #2c628b); /* Degradado azul */
-  color: #fff;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-#sidebar input {
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 4px;
-  border: none;
-  background-color: #333;
-  color: #fff;
-  font-size: 16px;
-}
-
-#sidebar h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-#categories {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-#categories li {
-  margin: 8px 0;
-}
-
-#sidebar button {
-  width: 100%;
-  padding: 12px;
-  background-color: #333;
-  color: #fff;
-  border: none;
+header .search-bar input {
+  padding: 8px;
   border-radius: 5px;
+  border: none;
+  width: 200px;
+}
+
+.container {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  font-size: 16px;
-  cursor: pointer;
+  margin-top: 20px;
 }
 
-#sidebar button i {
-  margin-right: 10px;
-  font-size: 18px;
-}
-
-#sidebar button:hover {
-  background-color: #444;
-}
-
-/* Galería de Películas */
-#gallery {
-  flex-grow: 1;
+aside {
+  width: 250px;
+  background-color: #262F57;
   padding: 20px;
-  background-color: #1a2c3a; /* Azul oscuro para la galería */
-  overflow-y: auto;
-  border-radius: 8px;
 }
 
-#category-title {
-  font-size: 28px;
-  margin-bottom: 20px;
+.categories {
+  list-style: none;
 }
 
-/* Card de Película */
-.card {
-  background-color: #1f2d3d; /* Fondo oscuro para la card */
-  border-radius: 12px; /* Borde más redondeado */
-  overflow: hidden;
+.categories li {
+  margin-bottom: 10px;
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 5px;
-  position: relative;
-  max-width: 250px; /* Limitar el ancho máximo de la tarjeta */
-  margin: 0 auto; /* Centrar la tarjeta */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para el efecto hover */
 }
 
-/* Sombra moderna en el hover */
-.card:hover {
-  transform: translateY(-5px); /* Eleva ligeramente la tarjeta al pasar el ratón */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra más difusa */
+main {
+  flex: 1;
+  padding: 20px;
+  overflow: auto;
 }
 
-/* Imagen de la película */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background-color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
 .card img {
   width: 100%;
-  height: 250px; /* Ajustamos la altura de la imagen */
-  object-fit: cover; /* Asegura que la imagen cubra completamente el contenedor sin dejar márgenes */
-  margin-bottom: 5px; /* Reduce el espacio entre la imagen y la parte inferior */
-  border-radius: 8px; /* Borde redondeado alrededor de la imagen */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra más sutil alrededor de la imagen */
+  height: auto;
 }
 
-/* Información de la tarjeta (Título, Año) */
-.card .card-info {
-  background-color: #263545; /* Color gris oscuro para el fondo del recuadro */
-  color: #fff; /* Texto blanco para el contraste */
-  padding: 15px;
-  border-radius: 8px;
-  text-align: center;
-  width: 100%; /* Asegura que ocupe todo el ancho de la card */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-/* Título de la película */
-.card .card-info h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  font-weight: bold;
-  white-space: nowrap; /* Evita que el título pase a la siguiente línea */
-  overflow: hidden; /* Oculta el texto que sobrepase el espacio */
-  text-overflow: ellipsis; /* Muestra "..." si el texto es demasiado largo */
-}
-
-/* Año de la película */
-.card .card-info .year {
-  font-size: 14px;
-  color: #888;
-}
-
-/* Rating en la parte superior de la imagen */
-.card .rating-box {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semitransparente */
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-/* Ajustes en el grid de la galería */
-#movie-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajuste en el tamaño de las tarjetas */
-  gap: 5px; /* Espacio pequeño entre las tarjetas */
-}
-
-@media (max-width: 768px) {
-  #sidebar {
-    width: 200px;
-  }
+.card:hover {
+  transform: scale(1.05);
 }
