@@ -1,3 +1,4 @@
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -44,58 +45,71 @@ aside {
   color: white;
   padding: 20px;
   height: calc(100vh - 60px); /* Ocupa toda la altura de la pantalla menos la altura del header */
-  position: fixed; /* Fija la barra lateral */
+  position: fixed; /* Fija la barra lateral en pantallas grandes */
   top: 60px; /* Posiciona el aside justo debajo del header */
   left: 0;
   border-right: 2px solid #FFD700; /* Borde dorado para el toque moderno */
   overflow-y: auto; /* Añadir desplazamiento si el contenido es largo */
 }
 
-/* Categorías */
-.categories {
-  list-style: none;
-  padding: 0;
+/* Media Queries para pantallas más pequeñas */
+
+/* Para pantallas medianas (tabletas) */
+@media (max-width: 1200px) {
+  aside {
+    position: relative; /* Cambia el aside a bloque normal en pantallas más pequeñas */
+    width: 100%;
+    height: auto;
+    margin-top: 80px; /* Asegura que el aside no se solape con el header */
+    border-right: none;
+    padding: 20px 0; /* Ajusta el padding */
+  }
+
+  .gallery {
+    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+  }
 }
 
-.categories li {
-  margin-bottom: 20px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  transition: background-color 0.3s, transform 0.3s;
+/* Para pantallas más pequeñas (móviles en horizontal) */
+@media (max-width: 992px) {
+  aside {
+    position: relative; /* Cambia el aside a bloque normal */
+    width: 100%;
+    margin-top: 80px; /* Asegura que el aside no se solape con el header */
+    padding: 20px 0;
+  }
+
+  .gallery {
+    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+  }
 }
 
-.categories li:hover {
-  background-color: #FFD700; /* Fondo dorado al pasar el mouse */
-  color: #1E2A47; /* Cambio de color de texto al pasar el mouse */
-  transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+/* Para pantallas muy pequeñas (móviles en vertical) */
+@media (max-width: 768px) {
+  aside {
+    position: relative; /* Cambia el aside a bloque normal */
+    width: 100%;
+    margin-top: 80px; /* Asegura que el aside no se solape con el header */
+    padding: 20px 0;
+  }
+
+  .gallery {
+    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+  }
 }
 
-.categories li i {
-  font-size: 20px;
-  margin-right: 10px;
-  color: #FFD700; /* Color dorado para los íconos */
-}
+/* Para dispositivos móviles muy pequeños */
+@media (max-width: 480px) {
+  aside {
+    position: relative; /* Cambia el aside a bloque normal */
+    width: 100%;
+    margin-top: 80px; /* Asegura que el aside no se solape con el header */
+    padding: 20px 0;
+  }
 
-.categories li span {
-  font-size: 18px;
-}
-
-.categories li.active {
-  background-color: #FFD700;
-  color: #1E2A47;
-}
-
-/* Main */
-main {
-  flex: 1;
-  padding: 20px;
-  overflow: auto;
-  padding-left: 20px; /* Asegura que el contenido no esté pegado al borde */
-  padding-top: 80px; /* Asegura que el contenido no quede detrás del header */
-  margin-left: 0; /* Elimina el margen izquierdo que estaba causando el desplazamiento */
+  .gallery {
+    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+  }
 }
 
 /* Galería */
