@@ -52,64 +52,11 @@ aside {
   overflow-y: auto; /* Añadir desplazamiento si el contenido es largo */
 }
 
-/* Media Queries para pantallas más pequeñas */
-
-/* Para pantallas medianas (tabletas) */
-@media (max-width: 1200px) {
-  aside {
-    position: relative; /* Cambia el aside a bloque normal en pantallas más pequeñas */
-    width: 100%;
-    height: auto;
-    margin-top: 80px; /* Asegura que el aside no se solape con el header */
-    border-right: none;
-    padding: 20px 0; /* Ajusta el padding */
-  }
-
-  .gallery {
-    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
-  }
-}
-
-/* Para pantallas más pequeñas (móviles en horizontal) */
-@media (max-width: 992px) {
-  aside {
-    position: relative; /* Cambia el aside a bloque normal */
-    width: 100%;
-    margin-top: 80px; /* Asegura que el aside no se solape con el header */
-    padding: 20px 0;
-  }
-
-  .gallery {
-    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
-  }
-}
-
-/* Para pantallas muy pequeñas (móviles en vertical) */
-@media (max-width: 768px) {
-  aside {
-    position: relative; /* Cambia el aside a bloque normal */
-    width: 100%;
-    margin-top: 80px; /* Asegura que el aside no se solape con el header */
-    padding: 20px 0;
-  }
-
-  .gallery {
-    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
-  }
-}
-
-/* Para dispositivos móviles muy pequeños */
-@media (max-width: 480px) {
-  aside {
-    position: relative; /* Cambia el aside a bloque normal */
-    width: 100%;
-    margin-top: 80px; /* Asegura que el aside no se solape con el header */
-    padding: 20px 0;
-  }
-
-  .gallery {
-    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
-  }
+/* Main */
+main {
+  margin-left: 250px; /* Hace espacio para el aside */
+  padding: 20px;
+  padding-top: 80px; /* Asegura que el contenido no quede detrás del header */
 }
 
 /* Galería */
@@ -197,12 +144,34 @@ aside {
   .gallery {
     grid-template-columns: repeat(4, 1fr); /* 4 tarjetas por fila */
   }
+
+  aside {
+    position: relative; /* Cambia el aside a bloque normal en pantallas más pequeñas */
+    width: 100%;
+    height: auto;
+    margin-top: 80px; /* Asegura que el aside no se solape con el header */
+    border-right: none;
+  }
+
+  main {
+    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+  }
 }
 
 /* Para pantallas más pequeñas (móviles en horizontal) */
 @media (max-width: 992px) {
   .gallery {
     grid-template-columns: repeat(3, 1fr); /* 3 tarjetas por fila */
+  }
+
+  aside {
+    position: relative; /* Cambia el aside a bloque normal */
+    width: 100%;
+    margin-top: 80px;
+  }
+
+  main {
+    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
   }
 }
 
@@ -211,11 +180,31 @@ aside {
   .gallery {
     grid-template-columns: repeat(2, 1fr); /* 2 tarjetas por fila */
   }
+
+  aside {
+    position: relative; /* Cambia el aside a bloque normal */
+    width: 100%;
+    margin-top: 80px;
+  }
+
+  main {
+    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+  }
 }
 
 /* Para dispositivos móviles muy pequeños */
 @media (max-width: 480px) {
   .gallery {
     grid-template-columns: 1fr; /* 1 tarjeta por fila */
+  }
+
+  aside {
+    position: relative; /* Cambia el aside a bloque normal */
+    width: 100%;
+    margin-top: 80px;
+  }
+
+  main {
+    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
   }
 }
