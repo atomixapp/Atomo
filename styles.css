@@ -98,7 +98,7 @@ main {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(5, 1fr); /* 5 tarjetas por fila en pantallas grandes */
   gap: 20px;
 }
 
@@ -171,4 +171,24 @@ main {
 .rating .score {
   font-size: 16px;
   color: #F1F1F1; /* Blanco para la puntuación */
+}
+
+@media (max-width: 1200px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr); /* 4 tarjetas por fila */
+  }
+}
+
+/* Para pantallas más pequeñas, como móviles */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr); /* 3 tarjetas por fila */
+  }
+}
+
+/* Para pantallas muy pequeñas, como móviles en orientación vertical */
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 tarjetas por fila */
+  }
 }
