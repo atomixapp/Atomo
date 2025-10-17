@@ -11,8 +11,10 @@ body {
   color: white;
   padding-top: 0;
   margin-left: 250px; /* Deja espacio para el aside */
+  min-height: 100vh;
 }
 
+/* Header */
 header {
   background-color: #1A1F36;
   padding: 20px;
@@ -36,6 +38,7 @@ header .search-bar input {
   border-radius: 5px;
   border: none;
   width: 200px;
+  min-width: 150px; /* Para evitar que se haga demasiado pequeño */
 }
 
 /* Aside */
@@ -44,7 +47,7 @@ aside {
   background-color: #2E3A59; /* Azul oscuro */
   color: white;
   padding: 20px;
-  height: calc(100vh - 60px); /* Ocupa toda la altura de la pantalla menos la altura del header */
+  height: 100%; /* Asegura que el aside ocupe toda la altura */
   position: fixed; /* Fija la barra lateral en pantallas grandes */
   top: 60px; /* Posiciona el aside justo debajo del header */
   left: 0;
@@ -57,6 +60,7 @@ main {
   margin-left: 250px; /* Hace espacio para el aside */
   padding: 20px;
   padding-top: 80px; /* Asegura que el contenido no quede detrás del header */
+  min-height: 100vh;
 }
 
 /* Galería */
@@ -80,7 +84,7 @@ main {
 .card img {
   width: 100%;
   height: auto;
-  max-width: 400px;
+  max-width: 100%; /* Ajusta automáticamente el tamaño de la imagen */
 }
 
 .card:hover {
@@ -137,28 +141,16 @@ main {
   color: #F1F1F1; /* Blanco para la puntuación */
 }
 
-/* Media Queries para pantallas más pequeñas */
+/* Media Queries */
 
-/* Para pantallas medianas (tabletas) */
+/* Para pantallas grandes (ordenadores de escritorio) */
 @media (max-width: 1200px) {
   .gallery {
     grid-template-columns: repeat(4, 1fr); /* 4 tarjetas por fila */
   }
-
-  aside {
-    position: relative; /* Cambia el aside a bloque normal en pantallas más pequeñas */
-    width: 100%;
-    height: auto;
-    margin-top: 80px; /* Asegura que el aside no se solape con el header */
-    border-right: none;
-  }
-
-  main {
-    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
-  }
 }
 
-/* Para pantallas más pequeñas (móviles en horizontal) */
+/* Para pantallas medianas (tabletas) */
 @media (max-width: 992px) {
   .gallery {
     grid-template-columns: repeat(3, 1fr); /* 3 tarjetas por fila */
@@ -175,7 +167,7 @@ main {
   }
 }
 
-/* Para pantallas muy pequeñas (móviles en vertical) */
+/* Para pantallas pequeñas (móviles en horizontal) */
 @media (max-width: 768px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr); /* 2 tarjetas por fila */
@@ -199,9 +191,7 @@ main {
   }
 
   aside {
-    position: relative; /* Cambia el aside a bloque normal */
-    width: 100%;
-    margin-top: 80px;
+    display: none; /* Ocultar el aside en móviles pequeños */
   }
 
   main {
