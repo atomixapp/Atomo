@@ -1,4 +1,3 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +10,6 @@ body {
   color: white;
   padding-top: 0;
   margin-left: 250px; /* Deja espacio para el aside */
-  min-height: 100vh;
 }
 
 /* Header */
@@ -38,7 +36,6 @@ header .search-bar input {
   border-radius: 5px;
   border: none;
   width: 200px;
-  min-width: 150px; /* Para evitar que se haga demasiado pequeño */
 }
 
 /* Aside */
@@ -47,28 +44,64 @@ aside {
   background-color: #2E3A59; /* Azul oscuro */
   color: white;
   padding: 20px;
-  height: 100%; /* Asegura que el aside ocupe toda la altura */
-  position: fixed; /* Fija la barra lateral en pantallas grandes */
+  height: calc(100vh - 60px); /* Ocupa toda la altura de la pantalla menos la altura del header */
+  position: fixed; /* Fija la barra lateral */
   top: 60px; /* Posiciona el aside justo debajo del header */
   left: 0;
   border-right: 2px solid #FFD700; /* Borde dorado para el toque moderno */
-  overflow-y: auto; /* Añadir desplazamiento si el contenido es largo */
+}
+
+/* Categorías */
+.categories {
+  list-style: none;
+  padding: 0;
+}
+
+.categories li {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.categories li:hover {
+  background-color: #FFD700; /* Fondo dorado al pasar el mouse */
+  color: #1E2A47; /* Cambio de color de texto al pasar el mouse */
+  transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+}
+
+.categories li i {
+  font-size: 20px;
+  margin-right: 10px;
+  color: #FFD700; /* Color dorado para los íconos */
+}
+
+.categories li span {
+  font-size: 18px;
+}
+
+.categories li.active {
+  background-color: #FFD700;
+  color: #1E2A47;
 }
 
 /* Main */
 main {
-  margin-left: 250px; /* Hace espacio para el aside */
+  flex: 1;
   padding: 20px;
+  overflow: auto;
+  margin-left: 250px; /* Deja espacio para el aside */
   padding-top: 80px; /* Asegura que el contenido no quede detrás del header */
-  min-height: 100vh;
 }
 
 /* Galería */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 tarjetas por fila en pantallas grandes */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
-  margin-top: 20px; /* Asegura que las tarjetas no se solapen con el header */
 }
 
 /* Card */
@@ -84,7 +117,7 @@ main {
 .card img {
   width: 100%;
   height: auto;
-  max-width: 100%; /* Ajusta automáticamente el tamaño de la imagen */
+  max-width: 400px;
 }
 
 .card:hover {
@@ -139,62 +172,4 @@ main {
 .rating .score {
   font-size: 16px;
   color: #F1F1F1; /* Blanco para la puntuación */
-}
-
-/* Media Queries */
-
-/* Para pantallas grandes (ordenadores de escritorio) */
-@media (max-width: 1200px) {
-  .gallery {
-    grid-template-columns: repeat(4, 1fr); /* 4 tarjetas por fila */
-  }
-}
-
-/* Para pantallas medianas (tabletas) */
-@media (max-width: 992px) {
-  .gallery {
-    grid-template-columns: repeat(3, 1fr); /* 3 tarjetas por fila */
-  }
-
-  aside {
-    position: relative; /* Cambia el aside a bloque normal */
-    width: 100%;
-    margin-top: 80px;
-  }
-
-  main {
-    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
-  }
-}
-
-/* Para pantallas pequeñas (móviles en horizontal) */
-@media (max-width: 768px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr); /* 2 tarjetas por fila */
-  }
-
-  aside {
-    position: relative; /* Cambia el aside a bloque normal */
-    width: 100%;
-    margin-top: 80px;
-  }
-
-  main {
-    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
-  }
-}
-
-/* Para dispositivos móviles muy pequeños */
-@media (max-width: 480px) {
-  .gallery {
-    grid-template-columns: 1fr; /* 1 tarjeta por fila */
-  }
-
-  aside {
-    display: none; /* Ocultar el aside en móviles pequeños */
-  }
-
-  main {
-    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
-  }
 }
