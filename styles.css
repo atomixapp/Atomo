@@ -179,7 +179,6 @@ main {
 
 /* Media Queries para pantallas más pequeñas */
 
-/* Para pantallas medianas (tabletas) */
 @media (max-width: 1200px) {
   .gallery {
     grid-template-columns: repeat(4, 1fr); /* 4 tarjetas por fila */
