@@ -13,6 +13,7 @@ body {
   margin-left: 250px; /* Deja espacio para el aside */
 }
 
+/* Header */
 header {
   background-color: #1A1F36;
   padding: 20px;
@@ -44,8 +45,8 @@ aside {
   background-color: #2E3A59; /* Azul oscuro */
   color: white;
   padding: 20px;
-  height: 100vh; /* Ocupa toda la altura de la pantalla */
-  position: fixed; /* El aside se mantiene fijo en pantallas grandes */
+  height: calc(100vh - 60px); /* Ocupa toda la altura de la pantalla menos la altura del header */
+  position: fixed; /* Fija el aside en pantallas grandes */
   top: 60px; /* Posiciona el aside justo debajo del header */
   left: 0;
   border-right: 2px solid #FFD700; /* Borde dorado para el toque moderno */
