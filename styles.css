@@ -10,7 +10,8 @@ body {
   background-color: #1E2A47; /* Azul moderno */
   color: white;
   padding-top: 0;
-  margin-left: 250px; /* Deja espacio para el aside */
+  margin: 0; /* Eliminar margen del body */
+  overflow-x: hidden; /* Evitar desplazamiento horizontal */
 }
 
 /* Header */
@@ -98,6 +99,7 @@ main {
   padding-left: 20px; /* Asegura que el contenido no esté pegado al borde */
   padding-top: 80px; /* Asegura que el contenido no quede detrás del header */
   margin-left: 0; /* Elimina el margen izquierdo que estaba causando el desplazamiento */
+  min-height: 100vh; /* Asegura que el main ocupe al menos toda la altura de la pantalla */
 }
 
 /* Galería */
@@ -179,6 +181,7 @@ main {
 
 /* Media Queries para pantallas más pequeñas */
 
+/* Para pantallas medianas (tabletas) */
 @media (max-width: 1200px) {
   .gallery {
     grid-template-columns: repeat(4, 1fr); /* 4 tarjetas por fila */
