@@ -93,8 +93,9 @@ main {
   flex: 1;
   padding: 20px;
   overflow: auto;
-  margin-left: 250px; /* Deja espacio para el aside */
+  padding-left: 20px; /* Asegura que el contenido no esté pegado al borde */
   padding-top: 80px; /* Asegura que el contenido no quede detrás del header */
+  margin-left: 0; /* Elimina el margen izquierdo que estaba causando el desplazamiento */
 }
 
 /* Galería */
@@ -104,7 +105,6 @@ main {
   gap: 20px;
 }
 
-/* Card */
 .card {
   background-color: #333;
   border-radius: 10px;
