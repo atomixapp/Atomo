@@ -41,7 +41,7 @@ header h1 {
 
 /* Style for each carousel item */
 .carousel-item {
-    width: 400px; /* Aumento el tamaño de las imágenes */
+    width: 600px; /* Aumento el tamaño de las imágenes */
     height: 200px;
     margin: 0 15px;
     opacity: 0.6;
@@ -58,7 +58,7 @@ header h1 {
 
 /* Styling for the centered item (main focus) */
 .carousel-item.center {
-    transform: scale(2.1); /* Aumento el tamaño de la imagen central */
+    transform: scale(1.4); /* Aumento el tamaño de la imagen central */
     opacity: 1;
     z-index: 2;
 }
