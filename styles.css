@@ -9,13 +9,8 @@ body {
   font-family: Arial, sans-serif;
   background-color: #1E2A47; /* Azul moderno */
   color: white;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  height: 100vh;
-  overflow: hidden; /* Evitar desbordamientos */
+  padding-top: 60px; /* Ajuste para el header fijo */
+  margin-left: 250px; /* Deja espacio para el aside en pantallas grandes */
 }
 
 /* Header */
@@ -50,13 +45,12 @@ aside {
   background-color: #2E3A59; /* Azul oscuro */
   color: white;
   padding: 20px;
-  height: calc(100vh - 60px); /* Ocupa toda la altura de la pantalla */
+  height: calc(100vh - 60px); /* Ocupa toda la altura de la pantalla menos el header */
   position: fixed; /* Fija el aside a la izquierda */
   top: 60px;
   left: 0;
   border-right: 2px solid #FFD700; /* Borde dorado para el toque moderno */
   overflow-y: auto;
-  z-index: 5; /* Asegura que el aside esté por debajo del header */
 }
 
 /* Categorías en el aside */
@@ -98,22 +92,19 @@ aside {
 
 /* Main (contenido principal) */
 main {
-  margin-left: 250px; /* Deja espacio para el aside */
   padding: 20px;
   overflow: auto;
-  padding-top: 80px; /* Asegura que el contenido no quede detrás del header */
+  padding-top: 80px;
+  margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+  margin-top: 60px; /* Para que no quede debajo del header */
   flex: 1;
-  height: calc(100vh - 60px); /* Ajusta la altura para no sobrepasar la pantalla */
-  overflow-y: auto;
 }
 
 /* Galería */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 tarjetas por fila */
+  grid-template-columns: repeat(5, 1fr); /* 5 tarjetas por fila */
   gap: 20px;
-  grid-template-rows: auto;
-  overflow-x: auto; /* Permite el desplazamiento horizontal */
 }
 
 .card {
@@ -123,14 +114,11 @@ main {
   transition: transform 0.3s;
   position: relative;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  height: 350px; /* Ajusta el tamaño de las cards */
-  width: 100%; /* Hace que las cards ocupen todo el espacio disponible */
 }
 
 .card img {
   width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ajusta la imagen a la card */
+  height: auto;
 }
 
 .card:hover {
@@ -152,42 +140,71 @@ main {
   color: #FFD700;
 }
 
-/* Media Queries para Pantallas Grandes (Smart TV / Android TV) */
+/* Media Queries para pantallas más pequeñas (app móvil) */
 
-/* Para pantallas de TV / dispositivos grandes */
-@media (min-width: 1200px) {
+/* Para pantallas pequeñas (tablet, móvil horizontal) */
+@media (max-width: 1200px) {
+  /* Solo cambia el diseño en pantallas pequeñas */
   body {
-    margin: 0;
-    flex-direction: row;
-    overflow: hidden; /* Evita el scroll innecesario */
+    margin-left: 0; /* Elimina el margen izquierdo */
   }
 
+  /* Ajusta el número de columnas en la galería */
+  .gallery {
+    grid-template-columns: repeat(4, 1fr); /* 4 tarjetas por fila */
+  }
+
+  /* Hace que el aside se comporte como un bloque normal */
   aside {
-    position: fixed; /* El aside permanece fijo a la izquierda */
-    width: 250px;
-    height: calc(100vh - 60px); /* Ocupa toda la altura */
-    top: 60px;
-    z-index: 5; /* Asegura que esté debajo del header */
+    position: relative; /* Cambia a bloque normal */
+    width: 100%;
+    margin-top: 80px; /* Para evitar que se solape con el header */
+    height: auto; /* El alto se ajusta al contenido */
+    border-right: none; /* Elimina el borde */
   }
 
+  /* Ajuste en el main */
   main {
-    margin-left: 250px; /* Deja espacio para el aside */
-    padding-top: 80px; /* Asegura que el contenido no quede detrás del header */
-    flex: 1;
-    height: calc(100vh - 60px); /* Ajusta el alto para no sobrepasar la pantalla */
-    overflow-y: auto;
+    margin-left: 0;
+  }
+}
+
+/* Para pantallas aún más pequeñas (móvil vertical) */
+@media (max-width: 768px) {
+  /* Para mantener el aside fijo en pantallas pequeñas */
+  aside {
+    position: relative;
+    width: 100%;
+    margin-top: 80px;
+    height: auto;
+    border-right: none;
   }
 
   .gallery {
-    grid-template-columns: repeat(4, 1fr); /* 4 tarjetas por fila para pantallas grandes */
-    gap: 20px;
-    grid-template-rows: auto;
-    overflow-x: scroll; /* Agrega desplazamiento horizontal */
-    justify-items: stretch; /* Asegura que las tarjetas se ajusten */
+    grid-template-columns: repeat(2, 1fr); /* 2 tarjetas por fila */
   }
 
-  .card {
-    height: 350px; /* Ajuste a un tamaño más apropiado */
-    width: 100%; /* Se asegura de que las cards tengan el tamaño adecuado */
+  main {
+    margin-left: 0;
+  }
+}
+
+/* Para dispositivos móviles muy pequeños */
+@media (max-width: 480px) {
+  /* Para mantener el aside fijo */
+  aside {
+    position: relative;
+    width: 100%;
+    margin-top: 80px;
+    height: auto;
+    border-right: none;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr; /* 1 tarjeta por fila */
+  }
+
+  main {
+    margin-left: 0;
   }
 }
