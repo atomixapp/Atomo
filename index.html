@@ -1,70 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IPTV - Películas</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- FontAwesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel de Películas</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="logo">IPTV Películas</div>
-    <div class="search-bar">
-      <input type="text" placeholder="Buscar...">
+    <header>
+        <h1>Carrusel de Películas</h1>
+    </header>
+
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-item">
+                <div class="image-container">
+                    <img src="https://via.placeholder.com/300x150/00FF00/000000?text=Película+1" alt="Película 1">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="image-container">
+                    <img src="https://via.placeholder.com/300x150/FF00FF/000000?text=Película+2" alt="Película 2">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="image-container">
+                    <img src="https://via.placeholder.com/300x150/FF6347/000000?text=Película+3" alt="Película 3">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="image-container">
+                    <img src="https://via.placeholder.com/300x150/4682B4/000000?text=Película+4" alt="Película 4">
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="image-container">
+                    <img src="https://via.placeholder.com/300x150/FFA500/000000?text=Película+5" alt="Película 5">
+                </div>
+            </div>
+        </div>
     </div>
-  </header>
-  <div class="container">
-    <aside>
-      <ul class="categories">
-        <li><i class="fas fa-film"></i>Películas</li>
-        <li><i class="fas fa-tv"></i>Series</li>
-        <li><i class="fas fa-heart"></i>Favoritos</li>
-        <li><i class="fas fa-search"></i>Buscar</li>
-      </ul>
-    </aside>
-    <main>
-      <div class="gallery">
-        <!-- Ejemplo de una tarjeta de película -->
-        <div class="card">
-          <img src="https://image.tmdb.org/t/p/original/huvM6PcelNHpL3ldtgDpxstQWqN.jpg" alt="Película 1">
-          <div class="card-info">
-            <h3 class="title">Película 1</h3>
-            <div class="year">2023</div>
-            <div class="rating">
-              <span class="star">&#9733;</span>
-              <span class="score">8.5</span>
-            </div>
-          </div>
-        </div>
 
-        <div class="card">
-          <img src="https://image.tmdb.org/t/p/original/tgKYnJlze79IUKkPmtsW2nSUeeB.jpg" alt="Película 2">
-          <div class="card-info">
-            <h3 class="title">Película 2</h3>
-            <div class="year">2023</div>
-            <div class="rating">
-              <span class="star">&#9733;</span>
-              <span class="score">8.5</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="https://image.tmdb.org/t/p/original/fSRRH7UasrE6q240H00dww3vE1c.jpg" alt="Película 3">
-          <div class="card-info">
-            <h3 class="title">Película 3</h3>
-            <div class="year">2023</div>
-            <div class="rating">
-              <span class="star">&#9733;</span>
-              <span class="score">8.5</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-  </div>
-  <script src="app.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
