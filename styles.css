@@ -10,13 +10,12 @@ body {
   background-color: #1E2A47; /* Azul moderno */
   color: white;
   margin: 0;
-  padding-top: 60px; /* Ajuste para el header fijo */
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
   height: 100vh;
-  overflow: hidden; /* Evitar que se desborde el body */
+  overflow: hidden; /* Evitar desbordamientos */
 }
 
 /* Header */
