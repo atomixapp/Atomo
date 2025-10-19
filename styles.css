@@ -10,7 +10,7 @@ body {
   background-color: #1E2A47; /* Azul moderno */
   color: white;
   padding-top: 60px; /* Ajuste para el header fijo */
-  margin-left: 0; /* Elimina margen izquierdo en la app */
+  margin-left: 250px; /* Deja espacio para el aside en pantallas grandes */
 }
 
 /* Header */
@@ -20,11 +20,11 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%; /* Asegura que el header ocupe todo el ancho */
+  width: 100%;
   position: fixed; /* El header se mantiene fijo en la parte superior */
   top: 0;
   left: 0;
-  z-index: 10; /* Asegura que el header quede encima del aside */
+  z-index: 10;
 }
 
 header .logo {
@@ -39,21 +39,21 @@ header .search-bar input {
   width: 200px;
 }
 
-/* Aside */
+/* Aside (barra lateral) */
 aside {
   width: 250px; /* Fija el ancho del aside */
   background-color: #2E3A59; /* Azul oscuro */
   color: white;
   padding: 20px;
-  height: 100vh; /* Ocupa toda la altura de la pantalla */
-  position: fixed; /* Mantiene el aside fijo */
-  top: 60px; /* Espacio desde el header */
-  left: 0; /* Se coloca en la parte izquierda */
+  height: calc(100vh - 60px); /* Ocupa toda la altura de la pantalla menos el header */
+  position: fixed; /* Fija el aside a la izquierda */
+  top: 60px;
+  left: 0;
   border-right: 2px solid #FFD700; /* Borde dorado para el toque moderno */
-  overflow-y: auto; /* Añadir desplazamiento si el contenido es largo */
+  overflow-y: auto;
 }
 
-/* Categorías */
+/* Categorías en el aside */
 .categories {
   list-style: none;
   padding: 0;
@@ -70,15 +70,15 @@ aside {
 }
 
 .categories li:hover {
-  background-color: #FFD700; /* Fondo dorado al pasar el mouse */
-  color: #1E2A47; /* Cambio de color de texto al pasar el mouse */
-  transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+  background-color: #FFD700;
+  color: #1E2A47;
+  transform: scale(1.05);
 }
 
 .categories li i {
   font-size: 20px;
   margin-right: 10px;
-  color: #FFD700; /* Color dorado para los íconos */
+  color: #FFD700;
 }
 
 .categories li span {
@@ -90,13 +90,13 @@ aside {
   color: #1E2A47;
 }
 
-/* Main */
+/* Main (contenido principal) */
 main {
   padding: 20px;
   overflow: auto;
-  padding-top: 80px; /* Asegura que el contenido no quede detrás del header */
-  margin-left: 0; /* Elimina el margen izquierdo */
-  margin-top: 60px; /* Espacio para el header fijo */
+  padding-top: 80px;
+  margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+  margin-top: 60px; /* Para que no quede debajo del header */
   flex: 1;
 }
 
@@ -107,14 +107,13 @@ main {
   gap: 20px;
 }
 
-/* Card */
 .card {
   background-color: #333;
   border-radius: 10px;
   overflow: hidden;
   transition: transform 0.3s;
   position: relative;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Añadir sombreado */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .card img {
@@ -126,12 +125,11 @@ main {
   transform: scale(1.05);
 }
 
-/* Card - Información */
 .card-info {
   padding: 10px;
-  background-color: #2E3A59; /* Azul oscuro */
+  background-color: #2E3A59;
   border-radius: 0 0 10px 10px;
-  margin-top: -5px; /* Elimina el espacio gris oscuro entre la imagen y la info */
+  margin-top: -5px;
 }
 
 .card-info .title {
@@ -139,76 +137,74 @@ main {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 5px;
-  color: #FFD700; /* Dorado para el título */
+  color: #FFD700;
 }
 
-/* Media Queries para la APP (Pantallas Pequeñas) */
+/* Media Queries para pantallas más pequeñas (app móvil) */
 
-/* Para pantallas más pequeñas, como móviles en horizontal */
-@media (max-width: 992px) {
+/* Para pantallas pequeñas (tablet, móvil horizontal) */
+@media (max-width: 1200px) {
+  /* Solo cambia el diseño en pantallas pequeñas */
   body {
-    margin-left: 0; /* Elimina el margen izquierdo en la app */
+    margin-left: 0; /* Elimina el margen izquierdo */
   }
 
+  /* Ajusta el número de columnas en la galería */
   .gallery {
-    grid-template-columns: repeat(3, 1fr); /* 3 tarjetas por fila */
+    grid-template-columns: repeat(4, 1fr); /* 4 tarjetas por fila */
   }
 
+  /* Hace que el aside se comporte como un bloque normal */
   aside {
-    position: relative; /* Cambia el aside a bloque normal en pantallas más pequeñas */
+    position: relative; /* Cambia a bloque normal */
     width: 100%;
-    margin-top: 80px; /* Asegura que el aside no se solape con el header */
-    height: auto; /* El alto del aside es automático en pantallas pequeñas */
-    border-right: none; /* Elimina el borde derecho en la app */
+    margin-top: 80px; /* Para evitar que se solape con el header */
+    height: auto; /* El alto se ajusta al contenido */
+    border-right: none; /* Elimina el borde */
   }
 
+  /* Ajuste en el main */
   main {
-    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+    margin-left: 0;
   }
 }
 
-/* Para pantallas móviles en vertical */
+/* Para pantallas aún más pequeñas (móvil vertical) */
 @media (max-width: 768px) {
-  body {
-    margin-left: 0; /* Elimina margen izquierdo en la app */
+  /* Para mantener el aside fijo en pantallas pequeñas */
+  aside {
+    position: relative;
+    width: 100%;
+    margin-top: 80px;
+    height: auto;
+    border-right: none;
   }
 
   .gallery {
     grid-template-columns: repeat(2, 1fr); /* 2 tarjetas por fila */
   }
 
-  aside {
-    position: relative; /* Cambia el aside a bloque normal */
-    width: 100%;
-    margin-top: 80px;
-    height: auto; /* El alto del aside se ajusta al contenido */
-    border-right: none; /* Elimina el borde en la app */
-  }
-
   main {
-    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+    margin-left: 0;
   }
 }
 
 /* Para dispositivos móviles muy pequeños */
 @media (max-width: 480px) {
-  body {
-    margin-left: 0; /* Elimina margen izquierdo en la app */
+  /* Para mantener el aside fijo */
+  aside {
+    position: relative;
+    width: 100%;
+    margin-top: 80px;
+    height: auto;
+    border-right: none;
   }
 
   .gallery {
     grid-template-columns: 1fr; /* 1 tarjeta por fila */
   }
 
-  aside {
-    position: relative; /* Cambia el aside a bloque normal */
-    width: 100%;
-    margin-top: 80px;
-    height: auto; /* El alto del aside es automático */
-    border-right: none;
-  }
-
   main {
-    margin-left: 0; /* Elimina margen izquierdo */
+    margin-left: 0;
   }
 }
