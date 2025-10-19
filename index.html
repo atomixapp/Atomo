@@ -1,70 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IPTV - Películas</title>
-  <link rel="stylesheet" href="styles.css">
-  <!-- FontAwesome CDN -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Películas</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="logo">IPTV Películas</div>
-    <div class="search-bar">
-      <input type="text" placeholder="Buscar...">
-    </div>
-  </header>
-  <div class="container">
-    <aside>
-      <ul class="categories">
-        <li><i class="fas fa-film"></i>Películas</li>
-        <li><i class="fas fa-tv"></i>Series</li>
-        <li><i class="fas fa-heart"></i>Favoritos</li>
-        <li><i class="fas fa-search"></i>Buscar</li>
-      </ul>
-    </aside>
+    <header>
+        <h1>App de Películas</h1>
+    </header>
     <main>
-      <div class="gallery">
-        <!-- Ejemplo de una tarjeta de película -->
-        <div class="card">
-          <img src="https://image.tmdb.org/t/p/original/huvM6PcelNHpL3ldtgDpxstQWqN.jpg" alt="Película 1">
-          <div class="card-info">
-            <h3 class="title">Película 1</h3>
-            <div class="year">2023</div>
-            <div class="rating">
-              <span class="star">&#9733;</span>
-              <span class="score">8.5</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="https://image.tmdb.org/t/p/original/tgKYnJlze79IUKkPmtsW2nSUeeB.jpg" alt="Película 1">
-          <div class="card-info">
-            <h3 class="title">Película 1</h3>
-            <div class="year">2023</div>
-            <div class="rating">
-              <span class="star">&#9733;</span>
-              <span class="score">8.5</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <img src="https://image.tmdb.org/t/p/original/fSRRH7UasrE6q240H00dww3vE1c.jpg" alt="Película 1">
-          <div class="card-info">
-            <h3 class="title">Película 1</h3>
-            <div class="year">2023</div>
-            <div class="rating">
-              <span class="star">&#9733;</span>
-              <span class="score">8.5</span>
-            </div>
-          </div>
-        </div>
-      </div>
+        <div class="movie-container" id="movie-container"></div>
     </main>
-  </div>
-  <script src="app.js"></script>
+    <footer>
+        <p>&copy; 2023 App de Películas</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
