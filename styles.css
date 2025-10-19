@@ -15,7 +15,7 @@ body {
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
-  height: 100vh;
+  min-height: 100vh;
   overflow-x: hidden; /* Evitar desbordamientos horizontales */
 }
 
@@ -99,11 +99,10 @@ aside {
 
 /* Main (contenido principal) */
 main {
+  margin-left: 250px; /* Deja espacio para el aside */
   padding: 20px;
   overflow: auto;
   padding-top: 80px; /* Asegura que el contenido no quede detrás del header */
-  margin-left: 250px; /* Deja espacio para el aside */
-  margin-top: 60px; /* Para que no quede debajo del header */
   flex: 1;
   height: calc(100vh - 60px); /* Ajusta la altura para no sobrepasar la pantalla */
   overflow-y: auto;
@@ -114,7 +113,6 @@ main {
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* 5 tarjetas por fila */
   gap: 20px;
-  grid-template-rows: auto; /* Hace que las filas se ajusten automáticamente */
 }
 
 .card {
@@ -160,12 +158,10 @@ main {
     margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
   }
 
-  /* Ajusta el número de columnas en la galería */
   .gallery {
     grid-template-columns: repeat(4, 1fr); /* 4 tarjetas por fila */
   }
 
-  /* Hace que el aside se comporte como un bloque normal */
   aside {
     position: relative; /* Cambia a bloque normal */
     width: 100%;
@@ -174,7 +170,6 @@ main {
     border-right: none; /* Elimina el borde */
   }
 
-  /* Ajuste en el main */
   main {
     margin-left: 0;
   }
