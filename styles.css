@@ -1,229 +1,49 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: Arial, sans-serif;
-  background-color: #1E2A47; /* Azul moderno */
-  color: white;
-  margin: 0;
-  padding-top: 60px; /* Ajuste para el header fijo */
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  height: 100vh;
-  overflow-x: hidden; /* Evitar desbordamientos horizontales */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
 
-/* Header */
 header {
-  background-color: #1A1F36;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  position: fixed; /* El header se mantiene fijo en la parte superior */
-  top: 0;
-  left: 0;
-  z-index: 10;
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
 }
 
-header .logo {
-  font-size: 24px;
-  font-weight: bold;
+.movie-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
 }
 
-header .search-bar input {
-  padding: 8px;
-  border-radius: 5px;
-  border: none;
-  width: 200px;
+.movie {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    transition: transform 0.2s;
 }
 
-/* Aside (barra lateral) */
-aside {
-  width: 250px; /* Fija el ancho del aside */
-  background-color: #2E3A59; /* Azul oscuro */
-  color: white;
-  padding: 20px;
-  height: calc(100vh - 60px); /* Ocupa toda la altura de la pantalla menos el header */
-  position: fixed; /* Fija el aside a la izquierda */
-  top: 60px;
-  left: 0;
-  border-right: 2px solid #FFD700; /* Borde dorado para el toque moderno */
-  overflow-y: auto;
-  z-index: 5; /* Asegura que el aside esté por debajo del header */
+.movie:hover {
+    transform: scale(1.05);
 }
 
-/* Categorías en el aside */
-.categories {
-  list-style: none;
-  padding: 0;
-}
-
-.categories li {
-  margin-bottom: 20px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.categories li:hover {
-  background-color: #FFD700;
-  color: #1E2A47;
-  transform: scale(1.05);
-}
-
-.categories li i {
-  font-size: 20px;
-  margin-right: 10px;
-  color: #FFD700;
-}
-
-.categories li span {
-  font-size: 18px;
-}
-
-.categories li.active {
-  background-color: #FFD700;
-  color: #1E2A47;
-}
-
-/* Main (contenido principal) */
-main {
-  padding: 20px;
-  overflow: auto;
-  padding-top: 80px; /* Asegura que el contenido no quede detrás del header */
-  margin-left: 250px; /* Deja espacio para el aside */
-  margin-top: 60px; /* Para que no quede debajo del header */
-  flex: 1;
-  height: calc(100vh - 60px); /* Ajusta la altura para no sobrepasar la pantalla */
-  overflow-y: auto;
-}
-
-/* Galería */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 tarjetas por fila */
-  gap: 20px;
-}
-
-.card {
-  background-color: #333;
-  border-radius: 10px;
-  overflow: hidden;
-  transition: transform 0.3s;
-  position: relative;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-}
-
-.card:hover {
-  transform: scale(1.05);
-}
-
-.card-info {
-  padding: 10px;
-  background-color: #2E3A59;
-  border-radius: 0 0 10px 10px;
-  margin-top: -5px;
-}
-
-.card-info .title {
-  text-align: center;
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #FFD700;
-}
-
-/* Media Queries para pantallas más pequeñas (app móvil) */
-
-/* Para pantallas medianas (tabletas) */
-@media (max-width: 1200px) {
-  body {
-    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
-  }
-
-  /* Ajusta el número de columnas en la galería */
-  .gallery {
-    grid-template-columns: repeat(4, 1fr); /* 4 tarjetas por fila */
-  }
-
-  /* Hace que el aside se comporte como un bloque normal */
-  aside {
-    position: relative; /* Cambia a bloque normal */
+.movie img {
     width: 100%;
-    margin-top: 80px; /* Para evitar que se solape con el header */
-    height: auto; /* El alto se ajusta al contenido */
-    border-right: none; /* Elimina el borde */
-  }
-
-  /* Ajuste en el main */
-  main {
-    margin-left: 0;
-  }
+    border-radius: 5px;
 }
 
-/* Para pantallas más pequeñas (móviles en horizontal) */
-@media (max-width: 992px) {
-  .gallery {
-    grid-template-columns: repeat(3, 1fr); /* 3 tarjetas por fila */
-  }
-
-  aside {
-    position: relative; /* Cambia el aside a bloque normal */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #333;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
     width: 100%;
-    margin-top: 80px;
-  }
-
-  main {
-    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
-  }
-}
-
-/* Para pantallas muy pequeñas (móviles en vertical) */
-@media (max-width: 768px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr); /* 2 tarjetas por fila */
-  }
-
-  aside {
-    position: relative; /* Cambia el aside a bloque normal */
-    width: 100%;
-    margin-top: 80px;
-  }
-
-  main {
-    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
-  }
-}
-
-/* Para dispositivos móviles muy pequeños */
-@media (max-width: 480px) {
-  .gallery {
-    grid-template-columns: 1fr; /* 1 tarjeta por fila */
-  }
-
-  aside {
-    position: relative; /* Cambia el aside a bloque normal */
-    width: 100%;
-    margin-top: 80px;
-  }
-
-  main {
-    margin-left: 0;
-  }
 }
