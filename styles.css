@@ -9,8 +9,9 @@ body {
   font-family: Arial, sans-serif;
   background-color: #1E2A47; /* Azul moderno */
   color: white;
+  margin: 0;
   padding-top: 60px; /* Ajuste para el header fijo */
-  margin-left: 250px; /* Deja espacio para el aside en pantallas grandes */
+  margin-left: 250px; /* Espacio para el aside en pantallas grandes */
 }
 
 /* Header */
@@ -95,7 +96,7 @@ main {
   padding: 20px;
   overflow: auto;
   padding-top: 80px;
-  margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+  margin-left: 250px; /* Espacio para que las cards no se solapen con el aside */
   margin-top: 60px; /* Para que no quede debajo del header */
   flex: 1;
 }
@@ -103,7 +104,7 @@ main {
 /* Galería */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 tarjetas por fila */
+  grid-template-columns: repeat(5, 1fr); /* 5 tarjetas por fila en pantallas grandes */
   gap: 20px;
 }
 
@@ -140,71 +141,28 @@ main {
   color: #FFD700;
 }
 
-/* Media Queries para pantallas más pequeñas (app móvil) */
+/* Media Queries para Pantallas Grandes (Smart TV / Android TV) */
 
-/* Para pantallas pequeñas (tablet, móvil horizontal) */
-@media (max-width: 1200px) {
-  /* Solo cambia el diseño en pantallas pequeñas */
+/* Solo para pantallas grandes, como Smart TV */
+@media (min-width: 1200px) {
   body {
-    margin-left: 0; /* Elimina el margen izquierdo */
+    margin-left: 250px; /* Elimina márgenes en la app y mantiene espacio para el aside */
   }
 
-  /* Ajusta el número de columnas en la galería */
-  .gallery {
-    grid-template-columns: repeat(4, 1fr); /* 4 tarjetas por fila */
-  }
-
-  /* Hace que el aside se comporte como un bloque normal */
   aside {
-    position: relative; /* Cambia a bloque normal */
-    width: 100%;
-    margin-top: 80px; /* Para evitar que se solape con el header */
-    height: auto; /* El alto se ajusta al contenido */
-    border-right: none; /* Elimina el borde */
-  }
-
-  /* Ajuste en el main */
-  main {
-    margin-left: 0;
-  }
-}
-
-/* Para pantallas aún más pequeñas (móvil vertical) */
-@media (max-width: 768px) {
-  /* Para mantener el aside fijo en pantallas pequeñas */
-  aside {
-    position: relative;
-    width: 100%;
-    margin-top: 80px;
-    height: auto;
-    border-right: none;
-  }
-
-  .gallery {
-    grid-template-columns: repeat(2, 1fr); /* 2 tarjetas por fila */
+    position: fixed; /* Fijo a la izquierda */
+    width: 250px; /* Ancho fijo */
+    height: calc(100vh - 60px); /* Acomoda el aside a la altura de la pantalla */
+    top: 60px;
   }
 
   main {
-    margin-left: 0;
-  }
-}
-
-/* Para dispositivos móviles muy pequeños */
-@media (max-width: 480px) {
-  /* Para mantener el aside fijo */
-  aside {
-    position: relative;
-    width: 100%;
-    margin-top: 80px;
-    height: auto;
-    border-right: none;
+    margin-left: 250px; /* Evita que el contenido se solape con el aside */
+    padding-top: 80px; /* Asegura que el contenido no quede detrás del header */
   }
 
   .gallery {
-    grid-template-columns: 1fr; /* 1 tarjeta por fila */
-  }
-
-  main {
-    margin-left: 0;
+    grid-template-columns: repeat(5, 1fr); /* 5 tarjetas por fila */
+    gap: 20px;
   }
 }
