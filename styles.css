@@ -57,6 +57,7 @@ aside {
   left: 0;
   border-right: 2px solid #FFD700; /* Borde dorado para el toque moderno */
   overflow-y: auto;
+  z-index: 5; /* Asegura que el aside esté por debajo del header */
 }
 
 /* Categorías en el aside */
@@ -156,10 +157,12 @@ main {
     margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
   }
 
+  /* Ajusta el número de columnas en la galería */
   .gallery {
     grid-template-columns: repeat(4, 1fr); /* 4 tarjetas por fila */
   }
 
+  /* Hace que el aside se comporte como un bloque normal */
   aside {
     position: relative; /* Cambia a bloque normal */
     width: 100%;
@@ -168,8 +171,9 @@ main {
     border-right: none; /* Elimina el borde */
   }
 
+  /* Ajuste en el main */
   main {
-    margin-left: 0; /* Elimina el margen izquierdo en pantallas pequeñas */
+    margin-left: 0;
   }
 }
 
@@ -220,6 +224,6 @@ main {
   }
 
   main {
-    margin-left: 0; /* Elimina el margen izquierdo */
+    margin-left: 0;
   }
 }
