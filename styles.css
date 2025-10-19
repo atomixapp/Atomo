@@ -110,7 +110,7 @@ main {
 /* Galería */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 tarjetas por fila en pantallas grandes */
+  grid-template-columns: repeat(4, 1fr); /* 4 tarjetas por fila */
   gap: 20px;
 }
 
@@ -121,11 +121,13 @@ main {
   transition: transform 0.3s;
   position: relative;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  height: 300px; /* Asegura que las cards tengan un tamaño consistente */
 }
 
 .card img {
   width: 100%;
-  height: auto;
+  height: 100%; /* Asegura que la imagen ocupe todo el alto de la card */
+  object-fit: cover; /* Hace que la imagen se ajuste correctamente dentro de la card */
 }
 
 .card:hover {
@@ -173,7 +175,12 @@ main {
   }
 
   .gallery {
-    grid-template-columns: repeat(5, 1fr); /* 5 tarjetas por fila en pantallas grandes */
+    grid-template-columns: repeat(4, 1fr); /* 4 tarjetas por fila para pantallas grandes */
     gap: 20px;
+  }
+
+  /* Ajustar el tamaño de las cards */
+  .card {
+    height: 300px; /* Mantener un tamaño consistente para las cards */
   }
 }
