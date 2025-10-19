@@ -9,8 +9,8 @@ body {
   font-family: Arial, sans-serif;
   background-color: #1E2A47; /* Azul moderno */
   color: white;
-  padding-top: 0;
-  margin-left: 250px; /* Deja espacio para el aside */
+  padding-top: 60px; /* Ajuste para el header fijo */
+  margin-left: 0; /* Eliminar margen izquierdo en el cuerpo */
 }
 
 /* Header */
@@ -92,12 +92,12 @@ aside {
 
 /* Main */
 main {
-  flex: 1;
   padding: 20px;
   overflow: auto;
-  padding-left: 20px; /* Asegura que el contenido no esté pegado al borde */
   padding-top: 80px; /* Asegura que el contenido no quede detrás del header */
-  margin-left: 0; /* Elimina el margen izquierdo que estaba causando el desplazamiento */
+  margin-left: 0; /* Elimina el margen izquierdo */
+  margin-top: 60px; /* Espacio para el header fijo */
+  flex: 1;
 }
 
 /* Galería */
@@ -120,7 +120,6 @@ main {
 .card img {
   width: 100%;
   height: auto;
-  max-width: 400px;
 }
 
 .card:hover {
@@ -141,40 +140,6 @@ main {
   font-weight: bold;
   margin-bottom: 5px;
   color: #FFD700; /* Dorado para el título */
-  white-space: nowrap; /* Evita que el título se divida en varias líneas */
-  overflow: hidden;
-  text-overflow: ellipsis; /* Añade puntos suspensivos si el título es muy largo */
-}
-
-.year {
-  text-align: center;
-  font-size: 14px;
-  color: #FFD700; /* Dorado para el año */
-  margin-bottom: 10px;
-}
-
-/* Rating */
-.rating {
-  position: absolute;
-  top: 10px;
-  left: 10px; /* Moved more to the left */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.rating .star {
-  font-size: 20px;
-  color: #FFD700; /* Dorado para la estrella */
-  margin-right: 5px;
-}
-
-.rating .score {
-  font-size: 16px;
-  color: #F1F1F1; /* Blanco para la puntuación */
 }
 
 /* Media Queries para pantallas más pequeñas */
