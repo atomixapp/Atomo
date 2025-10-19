@@ -58,7 +58,7 @@ header h1 {
 
 /* Styling for the centered item (main focus) */
 .carousel-item.center {
-    transform: scale(1.4); /* Aumento el tamaño de la imagen central */
+    transform: scale(2.1); /* Aumento el tamaño de la imagen central */
     opacity: 1;
     z-index: 2;
 }
