@@ -41,14 +41,15 @@ header h1 {
 
 /* Style for each carousel item */
 .carousel-item {
-    width: 600px; /* Aumento el tamaño de las imágenes */
+    width: 400px;
     height: 200px;
     margin: 0 15px;
-    opacity: 0.6;
+    opacity: 0.7;
     transition: transform 0.3s ease, opacity 0.3s ease;
     position: relative;
 }
 
+/* Images inside carousel */
 .carousel-item img {
     width: 100%;
     height: 100%;
@@ -58,21 +59,40 @@ header h1 {
 
 /* Styling for the centered item (main focus) */
 .carousel-item.center {
-    transform: scale(1.4); /* Aumento el tamaño de la imagen central */
+    transform: scale(1.4);
     opacity: 1;
     z-index: 2;
 }
 
 /* Styling for the left and right items (background) */
 .carousel-item.left, .carousel-item.right {
-    transform: scale(0.9); /* Aumento un poco el tamaño de las imágenes laterales */
+    transform: scale(0.9);
     opacity: 0.7;
 }
 
-.carousel-item.left {
-    transform: scale(1.1); /* Un poco más grande que el lado derecho */
+/* Navigation buttons */
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 3;
+    border-radius: 5px;
 }
 
-.carousel-item.right {
-    transform: scale(1.1); /* Un poco más grande que el lado izquierdo */
+.nav-button.left {
+    left: 10px;
+}
+
+.nav-button.right {
+    right: 10px;
+}
+
+.nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
 }
