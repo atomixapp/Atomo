@@ -83,6 +83,9 @@ header h1 {
     cursor: pointer;
     z-index: 3;
     border-radius: 5px;
+    /* Alineación de las flechas en el centro */
+    height: 40px;
+    width: 40px;
 }
 
 .nav-button.left {
