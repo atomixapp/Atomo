@@ -1,35 +1,18 @@
-let currentIndex = 0;
-const items = document.querySelectorAll('.carousel-item');
+// Si deseas cargar películas dinámicamente, aquí puedes agregar código
+document.addEventListener("DOMContentLoaded", () => {
+    const movieData = [
+        { img: "https://via.placeholder.com/200x300", title: "Película 1" },
+        { img: "https://via.placeholder.com/200x300", title: "Película 2" },
+        { img: "https://via.placeholder.com/200x300", title: "Película 3" },
+        { img: "https://via.placeholder.com/200x300", title: "Película 4" },
+        // Agregar más películas si es necesario
+    ];
 
-// Función para actualizar el carrusel y aplicar las clases
-function updateCarousel() {
-    items.forEach((item, index) => {
-        item.classList.remove('center', 'left', 'right');
-        if (index === currentIndex) {
-            item.classList.add('center'); // Imagen centrada (más grande)
-        } else if (index === currentIndex - 1 || (currentIndex === 0 && index === items.length - 1)) {
-            item.classList.add('left'); // Imagen a la izquierda (más pequeña)
-        } else if (index === currentIndex + 1 || (currentIndex === items.length - 1 && index === 0)) {
-            item.classList.add('right'); // Imagen a la derecha (más pequeña)
-        }
-    });
-}
-
-// Función para mover al siguiente item
-function showNextSlide() {
-    currentIndex = (currentIndex + 1) % items.length;
-    updateCarousel();
-}
-
-// Función para mover al item anterior
-function showPrevSlide() {
-    currentIndex = (currentIndex - 1 + items.length) % items.length;
-    updateCarousel();
-}
-
-// Asignar eventos a las flechas
-document.getElementById('nextButton').addEventListener('click', showNextSlide);
-document.getElementById('prevButton').addEventListener('click', showPrevSlide);
-
-// Inicializa el carrusel
-updateCarousel();
+    const movieGallery = document.querySelector('.movie-gallery');
+    movieGallery.innerHTML = movieData.map(movie => `
+        <div class="movie-card">
+            <img src="${movie.img}" alt="${movie.title}">
+            <h3>${movie.title}</h3>
+        </div>
+    `).join('');
+});
