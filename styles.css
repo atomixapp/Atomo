@@ -8,7 +8,7 @@
 /* Body y fondo principal */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #74b9ff, #a29bfe); /* Degradado de azul claro */
+    background: linear-gradient(135deg, #74b9ff, #a29bfe); /* Degradado azul */
     min-height: 100vh;
     color: #fff;
     display: flex;
@@ -52,7 +52,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: #ffd700; /* Un color dorado para hover */
+    color: #ffd700; /* Color dorado para hover */
 }
 
 /* Main content */
@@ -62,6 +62,7 @@ header nav ul li a:hover {
     padding: 20px;
     justify-content: space-between;
     flex-grow: 1;
+    background: transparent; /* Garantizar que el fondo azul se vea siempre */
 }
 
 /* Aside */
@@ -100,7 +101,7 @@ aside ul li a:hover {
 /* Movie Gallery */
 .movie-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajustamos el tamaño de las columnas */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Ajustar el tamaño de las columnas */
     gap: 20px;
     flex: 1;
     padding: 20px 0;
@@ -116,7 +117,7 @@ aside ul li a:hover {
     padding: 0;
     transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
     position: relative;
-    height: 350px; /* Tamaño adecuado para navegador web */
+    height: 320px; /* Ajustar tamaño para que no sea tan grande */
     margin-bottom: 20px; /* Margen entre las tarjetas */
 }
 
@@ -175,6 +176,11 @@ aside ul li a:hover {
 
     .movie-gallery {
         grid-template-columns: 1fr 1fr; /* Dos columnas en dispositivos pequeños */
+    }
+
+    /* Ajustar el tamaño de las tarjetas en pantallas pequeñas */
+    .movie-card {
+        height: 260px; /* Hacer las tarjetas un poco más pequeñas en móviles */
     }
 }
 
