@@ -8,7 +8,7 @@
 /* Body y fondo principal */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #ff6f61, #d46a9b); /* Degradado moderno */
+    background: linear-gradient(135deg, #74b9ff, #a29bfe); /* Degradado de azul claro */
     min-height: 100vh;
     color: #fff;
 }
@@ -96,7 +96,7 @@ aside ul li a:hover {
 /* Movie Gallery */
 .movie-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     flex: 1;
     padding: 20px 0;
@@ -104,24 +104,26 @@ aside ul li a:hover {
 
 .movie-card {
     background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
-    padding: 15px;
+    padding: 10px;
     transition: transform 0.3s, box-shadow 0.3s;
+    height: 350px; /* Hacemos la tarjeta más alta */
 }
 
 .movie-card img {
     width: 100%;
-    height: auto;
+    height: 80%;
+    object-fit: cover; /* Asegura que la imagen cubra toda la tarjeta */
     border-radius: 8px;
     transition: transform 0.3s ease-in-out;
 }
 
 .movie-card h3 {
-    margin-top: 15px;
-    font-size: 1.3rem;
+    margin-top: 10px;
+    font-size: 1.2rem;
     color: #fff;
     font-weight: bold;
 }
@@ -129,7 +131,7 @@ aside ul li a:hover {
 /* Hover effects para las tarjetas */
 .movie-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
 .movie-card:hover img {
