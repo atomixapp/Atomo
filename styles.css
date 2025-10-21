@@ -11,6 +11,8 @@ body {
     background: linear-gradient(135deg, #74b9ff, #a29bfe); /* Degradado de azul claro */
     min-height: 100vh;
     color: #fff;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header */
@@ -59,6 +61,7 @@ header nav ul li a:hover {
     flex-wrap: wrap;
     padding: 20px;
     justify-content: space-between;
+    flex-grow: 1;
 }
 
 /* Aside */
