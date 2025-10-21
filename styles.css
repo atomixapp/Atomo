@@ -96,46 +96,65 @@ aside ul li a:hover {
 /* Movie Gallery */
 .movie-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
     flex: 1;
     padding: 20px 0;
 }
 
+/* Nueva tarjeta moderna de película */
 .movie-card {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo sutil */
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     text-align: center;
-    padding: 10px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    height: 350px; /* Hacemos la tarjeta más alta */
+    padding: 0;
+    transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+    position: relative;
+    height: 400px; /* Altura fija */
 }
 
+/* Imagen de la tarjeta */
 .movie-card img {
     width: 100%;
-    height: 80%;
-    object-fit: cover; /* Asegura que la imagen cubra toda la tarjeta */
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out, filter 0.3s ease;
     border-radius: 8px;
-    transition: transform 0.3s ease-in-out;
 }
 
-.movie-card h3 {
-    margin-top: 10px;
-    font-size: 1.2rem;
+/* Filtro y título de la tarjeta */
+.movie-card .card-info {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro para legibilidad */
     color: #fff;
+    padding: 10px;
+    border-radius: 0 0 8px 8px;
+    visibility: hidden;
+}
+
+.movie-card .card-info h3 {
+    font-size: 1.3rem;
     font-weight: bold;
 }
 
 /* Hover effects para las tarjetas */
 .movie-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+    transform: translateY(-10px); /* Sutil elevación */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
 }
 
 .movie-card:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05); /* Aumento de imagen en hover */
+    filter: brightness(1.2); /* Añadir brillo para destacar la imagen */
+}
+
+.movie-card:hover .card-info {
+    visibility: visible; /* Mostrar título y detalles en hover */
 }
 
 /* Responsive */
