@@ -1,104 +1,115 @@
-/* Reset basic styles */
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body and header styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #1b1b1b;
-    color: #fff;
-    text-align: center;
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
 }
 
-header {
-    background-color: #222;
-    padding: 20px;
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 
 header h1 {
-    font-size: 2.5rem;
-    color: #fff;
+    font-size: 1.8rem;
 }
 
-/* Carousel container */
-.carousel-container {
-    position: relative;
-    width: 90%;
-    margin: 30px auto;
-    overflow: hidden;
-    height: 300px;
-}
-
-/* Carousel items */
-.carousel {
+header nav ul {
+    list-style-type: none;
     display: flex;
-    transition: transform 0.5s ease;
-    position: relative;
 }
 
-/* Style for each carousel item */
-.carousel-item {
-    width: 400px;
-    height: 200px;
+header nav ul li {
     margin: 0 15px;
-    opacity: 0.7;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    position: relative;
 }
 
-/* Images inside carousel */
-.carousel-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-/* Styling for the centered item (main focus) */
-.carousel-item.center {
-    transform: scale(1.4);
-    opacity: 1;
-    z-index: 2;
-}
-
-/* Styling for the left and right items (background) */
-.carousel-item.left, .carousel-item.right {
-    transform: scale(0.9);
-    opacity: 0.7;
-}
-
-/* Navigation buttons */
-.nav-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
+header nav ul li a {
     color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 3;
-    border-radius: 5px;
-    height: 40px;
-    width: 40px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* Main content */
+.content {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
 }
 
-/* Position the buttons */
-.nav-button.left {
-    left: 0;
+/* Aside */
+aside {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 20px;
 }
 
-.nav-button.right {
-    right: 0;
+aside ul {
+    list-style-type: none;
 }
 
-.nav-button:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+aside ul li {
+    margin-bottom: 10px;
+}
+
+aside ul li a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #333;
+    display: block;
+    padding: 8px;
+    transition: background 0.3s;
+}
+
+aside ul li a:hover {
+    background-color: #ddd;
+}
+
+/* Movie Gallery */
+.movie-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    flex: 1;
+}
+
+.movie-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px;
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.movie-card h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
