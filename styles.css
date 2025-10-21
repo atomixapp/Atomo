@@ -68,6 +68,7 @@ aside {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    margin-right: 20px; /* Margen entre el aside y la galería */
 }
 
 aside ul {
@@ -96,7 +97,7 @@ aside ul li a:hover {
 /* Movie Gallery */
 .movie-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajustamos el tamaño de las columnas */
     gap: 20px;
     flex: 1;
     padding: 20px 0;
@@ -112,7 +113,8 @@ aside ul li a:hover {
     padding: 0;
     transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
     position: relative;
-    height: 400px; /* Altura fija */
+    height: 350px; /* Reducimos la altura de la tarjeta */
+    margin-bottom: 20px; /* Margen entre las tarjetas */
 }
 
 /* Imagen de la tarjeta */
@@ -138,7 +140,7 @@ aside ul li a:hover {
 }
 
 .movie-card .card-info h3 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: bold;
 }
 
@@ -166,5 +168,9 @@ aside ul li a:hover {
     aside {
         width: 100%;
         margin-bottom: 20px;
+    }
+
+    .movie-gallery {
+        grid-template-columns: 1fr 1fr; /* Dos columnas en dispositivos pequeños */
     }
 }
