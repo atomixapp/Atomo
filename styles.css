@@ -113,7 +113,7 @@ aside ul li a:hover {
     padding: 0;
     transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
     position: relative;
-    height: 350px; /* Reducimos la altura de la tarjeta */
+    height: 350px; /* Tamaño adecuado para navegador web */
     margin-bottom: 20px; /* Margen entre las tarjetas */
 }
 
@@ -176,7 +176,8 @@ aside ul li a:hover {
 }
 
 /* Ajustes específicos para Android TV (pantallas grandes) */
-@media (min-width: 1024px) and (max-width: 1600px) {
+@media (min-width: 1600px) { 
+    /* Solo afecta a pantallas grandes como las de Android TV */
     .movie-card {
         height: 250px; /* Reducir el tamaño de las tarjetas en pantallas grandes */
         margin-bottom: 15px; /* Reducir el margen entre las tarjetas */
