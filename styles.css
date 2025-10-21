@@ -174,3 +174,15 @@ aside ul li a:hover {
         grid-template-columns: 1fr 1fr; /* Dos columnas en dispositivos pequeños */
     }
 }
+
+/* Ajustes específicos para Android TV (pantallas grandes) */
+@media (min-width: 1024px) and (max-width: 1600px) {
+    .movie-card {
+        height: 250px; /* Reducir el tamaño de las tarjetas en pantallas grandes */
+        margin-bottom: 15px; /* Reducir el margen entre las tarjetas */
+    }
+
+    .movie-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Hacer las tarjetas más pequeñas en pantallas grandes */
+    }
+}
