@@ -5,15 +5,14 @@
     box-sizing: border-box;
 }
 
-/* Body y fondo principal (mantener el degradado en el navegador web) */
+/* Body y fondo principal */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #74b9ff, #a29bfe); /* Fondo azul degradado para navegador web */
+    background: linear-gradient(135deg, #74b9ff, #a29bfe); /* Degradado azul */
     min-height: 100vh;
     color: #fff;
     display: flex;
     flex-direction: column;
-    overflow-x: hidden; /* Evitar desplazamiento horizontal */
 }
 
 /* Header */
@@ -63,7 +62,7 @@ header nav ul li a:hover {
     padding: 20px;
     justify-content: space-between;
     flex-grow: 1;
-    background: transparent; /* Evitar que el fondo se quede blanco */
+    background: transparent; /* Garantizar que el fondo azul se vea siempre */
 }
 
 /* Aside */
@@ -102,7 +101,7 @@ aside ul li a:hover {
 /* Movie Gallery */
 .movie-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajustamos el tamaño de las columnas */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Ajustar el tamaño de las columnas */
     gap: 20px;
     flex: 1;
     padding: 20px 0;
@@ -118,7 +117,7 @@ aside ul li a:hover {
     padding: 0;
     transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
     position: relative;
-    height: 250px; /* Altura ajustada */
+    height: 320px; /* Ajustar tamaño para que no sea tan grande */
     margin-bottom: 20px; /* Margen entre las tarjetas */
 }
 
@@ -164,30 +163,36 @@ aside ul li a:hover {
     visibility: visible; /* Mostrar título y detalles en hover */
 }
 
-/* Ajustes específicos para dispositivos Android (emulador Bluestacks y pantallas grandes) */
-@media (min-width: 1280px) {
-    /* Ajustar solo para el emulador de Android (Bluestacks) y dispositivos grandes */
-    body {
-        background: #2d98da; /* Fondo azul más oscuro solo para la app (Bluestacks) */
+/* Responsive */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
     }
 
+    aside {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .movie-gallery {
+        grid-template-columns: 1fr 1fr; /* Dos columnas en dispositivos pequeños */
+    }
+
+    /* Ajustar el tamaño de las tarjetas en pantallas pequeñas */
     .movie-card {
-        height: 200px; /* Tamaño reducido de las tarjetas */
+        height: 260px; /* Hacer las tarjetas un poco más pequeñas en móviles */
+    }
+}
+
+/* Ajustes específicos para Android TV (pantallas grandes) */
+@media (min-width: 1600px) { 
+    /* Solo afecta a pantallas grandes como las de Android TV */
+    .movie-card {
+        height: 250px; /* Reducir el tamaño de las tarjetas en pantallas grandes */
         margin-bottom: 15px; /* Reducir el margen entre las tarjetas */
     }
 
     .movie-gallery {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adaptar las tarjetas a la pantalla */
-    }
-}
-
-/* Ajustes adicionales para pantallas ultra grandes */
-@media (min-width: 1600px) { 
-    .movie-card {
-        height: 220px; /* Reducir el tamaño de las tarjetas en pantallas más grandes */
-    }
-
-    .movie-gallery {
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Adaptar tamaño */
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Hacer las tarjetas más pequeñas en pantallas grandes */
     }
 }
