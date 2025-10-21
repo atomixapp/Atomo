@@ -3,39 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrusel de Películas</title>
+    <title>Aplicación IPTV</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Header -->
     <header>
-        <h1>Carrusel de Películas</h1>
+        <div class="container">
+            <h1>IPTV Movies</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Categorías</a></li>
+                    <li><a href="#">Contactar</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <div class="carousel-container">
-        <div class="carousel">
-            <div class="carousel-item">
-                <img src="https://image.tmdb.org/t/p/original/8WhlNrtQdyUBnKrw5WBJnsDn1HE.jpg" alt="Película 1">
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Aside (Menu) -->
+        <aside>
+            <ul>
+                <li><a href="#">Acción</a></li>
+                <li><a href="#">Comedia</a></li>
+                <li><a href="#">Drama</a></li>
+                <li><a href="#">Terror</a></li>
+            </ul>
+        </aside>
+
+        <!-- Gallery of Movies -->
+        <section class="movie-gallery">
+            <div class="movie-card">
+                <img src="https://via.placeholder.com/200x300" alt="Movie 1">
+                <h3>Película 1</h3>
             </div>
-            <div class="carousel-item">
-                <img src="https://image.tmdb.org/t/p/original/8WhlNrtQdyUBnKrw5WBJnsDn1HE.jpg" alt="Película 2">
+            <div class="movie-card">
+                <img src="https://via.placeholder.com/200x300" alt="Movie 2">
+                <h3>Película 2</h3>
             </div>
-            <div class="carousel-item">
-                <img src="https://image.tmdb.org/t/p/original/8WhlNrtQdyUBnKrw5WBJnsDn1HE.jpg" alt="Película 3">
+            <div class="movie-card">
+                <img src="https://via.placeholder.com/200x300" alt="Movie 3">
+                <h3>Película 3</h3>
             </div>
-            <div class="carousel-item">
-                <img src="https://image.tmdb.org/t/p/original/8WhlNrtQdyUBnKrw5WBJnsDn1HE.jpg" alt="Película 4">
+            <div class="movie-card">
+                <img src="https://via.placeholder.com/200x300" alt="Movie 4">
+                <h3>Película 4</h3>
             </div>
-            <div class="carousel-item">
-                <img src="https://image.tmdb.org/t/p/original/8WhlNrtQdyUBnKrw5WBJnsDn1HE.jpg" alt="Película 5">
-            </div>
-        </div>
-    </div>
-    
-        <!-- Flechas de navegación -->
-        <button class="nav-button left" id="prevButton">&#10094;</button>
-        <button class="nav-button right" id="nextButton">&#10095;</button>
+            <!-- Agrega más tarjetas de películas aquí -->
+        </section>
     </div>
 
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
