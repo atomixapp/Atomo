@@ -103,6 +103,7 @@ aside .categories ul li {
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
+    max-width: 100%;
 }
 
 .card:hover {
@@ -111,7 +112,8 @@ aside .categories ul li {
 
 .card img {
     width: 100%;
-    height: 200px;
+    height: 0;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
     object-fit: cover; /* Para que la imagen se ajuste sin distorsión */
     border-bottom: 2px solid #003355;
 }
@@ -136,7 +138,6 @@ aside .categories ul li {
 
 /* Media Queries */
 @media (max-width: 768px) {
-    /* Adaptar el sidebar y la galería */
     main {
         flex-direction: column;
         align-items: center;
@@ -158,7 +159,7 @@ aside .categories ul li {
     }
 
     .card img {
-        height: 60%;
+        padding-top: 60%;
     }
 
     .card .info {
@@ -177,6 +178,6 @@ aside .categories ul li {
     }
 
     .card img {
-        height: 65%;
+        padding-top: 56.25%;
     }
 }
