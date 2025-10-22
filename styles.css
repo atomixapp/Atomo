@@ -104,29 +104,26 @@ aside .categories ul li {
 
 .card img {
     width: 100%;
-    height: 70%;
-    object-fit: cover;
+    height: 60%; /* Ajustamos para que la imagen ocupe solo el 60% de la tarjeta */
+    object-fit: cover; /* Asegura que la imagen no se distorsione */
     border-bottom: 2px solid #003355;
 }
 
 .card .info {
-    padding: 10px;
+    padding: 15px;
     text-align: center;
     flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 .card .title {
     font-size: 1.2rem;
     font-weight: bold;
     color: white;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .card .rating {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #ffcc00;
 }
 
