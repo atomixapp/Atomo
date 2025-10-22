@@ -1,4 +1,4 @@
-/* Reset básico */
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,191 +6,132 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #74b9ff, #a29bfe) !important; /* Forzar el fondo azul */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Header */
-header {
-    background-color: rgba(0, 0, 0, 0.7);
+    font-family: Arial, sans-serif;
+    background-color: #003366;
     color: white;
-    padding: 15px 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-header .container {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    padding: 20px;
+    background-color: #002244;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
-    font-size: 2rem;
+header .logo {
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
-header nav ul {
-    list-style-type: none;
+header .header-actions button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+main {
     display: flex;
+    padding: 20px;
 }
 
-header nav ul li {
-    margin: 0 15px;
+aside.sidebar {
+    width: 250px;
+    padding: 10px;
+    background-color: #004477;
+    border-radius: 5px;
 }
 
-header nav ul li a {
+aside.sidebar input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #003355;
+    border: none;
+    border-radius: 5px;
+    color: white;
+}
+
+aside nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+aside nav ul li {
+    padding: 10px 0;
+}
+
+aside nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-}
-
-header nav ul li a:hover {
-    color: #ffd700; /* Color dorado para hover */
-}
-
-/* Main content */
-.content {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px;
-    justify-content: space-between;
-    flex-grow: 1;
-    background: transparent; /* Garantizar que el fondo azul se vea siempre */
-}
-
-/* Aside */
-aside {
-    width: 250px;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    margin-right: 20px; /* Margen entre el aside y la galería */
-}
-
-aside ul {
-    list-style-type: none;
-}
-
-aside ul li {
-    margin-bottom: 15px;
-}
-
-aside ul li a {
-    text-decoration: none;
     font-size: 1.1rem;
-    color: #fff;
-    display: block;
-    padding: 10px;
-    border-radius: 6px;
-    transition: background-color 0.3s, color 0.3s;
 }
 
-aside ul li a:hover {
-    background-color: #ffd700;
-    color: #333;
+aside .categories {
+    margin-top: 20px;
 }
 
-/* Movie Gallery */
-.movie-gallery {
+aside .categories h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+aside .categories ul li {
+    font-size: 1rem;
+    padding: 5px 0;
+}
+
+.gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Ajustar el tamaño de las columnas */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
-    flex: 1;
-    padding: 20px 0;
+    width: 100%;
 }
 
-/* Nueva tarjeta moderna de película */
-.movie-card {
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo sutil */
+.card {
+    background-color: #004466;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    padding: 0;
-    transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
-    position: relative;
-    height: 320px; /* Ajustar tamaño para que no sea tan grande */
-    margin-bottom: 20px; /* Margen entre las tarjetas */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Imagen de la tarjeta */
-.movie-card img {
+.card img {
     width: 100%;
-    height: 100%;
+    height: 150px;
     object-fit: cover;
-    transition: transform 0.3s ease-in-out, filter 0.3s ease;
-    border-radius: 8px;
 }
 
-/* Filtro y título de la tarjeta */
-.movie-card .card-info {
-    position: absolute;
-    bottom: 15px;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro para legibilidad */
-    color: #fff;
+.card .info {
     padding: 10px;
-    border-radius: 0 0 8px 8px;
-    visibility: hidden;
+    text-align: center;
 }
 
-.movie-card .card-info h3 {
+.card .title {
     font-size: 1.2rem;
     font-weight: bold;
 }
 
-/* Hover effects para las tarjetas */
-.movie-card:hover {
-    transform: translateY(-10px); /* Sutil elevación */
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+.card .rating {
+    font-size: 1.1rem;
+    color: #ffcc00;
 }
 
-.movie-card:hover img {
-    transform: scale(1.05); /* Aumento de imagen en hover */
-    filter: brightness(1.2); /* Añadir brillo para destacar la imagen */
-}
-
-.movie-card:hover .card-info {
-    visibility: visible; /* Mostrar título y detalles en hover */
-}
-
-/* Responsive */
+/* Media Queries */
 @media (max-width: 768px) {
-    .content {
+    main {
         flex-direction: column;
     }
 
-    aside {
+    aside.sidebar {
         width: 100%;
         margin-bottom: 20px;
     }
 
-    .movie-gallery {
-        grid-template-columns: 1fr 1fr; /* Dos columnas en dispositivos pequeños */
-    }
-
-    /* Ajustar el tamaño de las tarjetas en pantallas pequeñas */
-    .movie-card {
-        height: 260px; /* Hacer las tarjetas un poco más pequeñas en móviles */
-    }
-}
-
-/* Ajustes específicos para Android TV (pantallas grandes) */
-@media (min-width: 1600px) { 
-    /* Solo afecta a pantallas grandes como las de Android TV */
-    .movie-card {
-        height: 250px; /* Reducir el tamaño de las tarjetas en pantallas grandes */
-        margin-bottom: 15px; /* Reducir el margen entre las tarjetas */
-    }
-
-    .movie-gallery {
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Hacer las tarjetas más pequeñas en pantallas grandes */
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 }
