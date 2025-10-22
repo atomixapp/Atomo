@@ -9,7 +9,6 @@ body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(135deg, #74b9ff, #a29bfe) !important; /* Forzar el fondo azul */
     min-height: 100vh;
-    color: #fff;
     display: flex;
     flex-direction: column;
 }
