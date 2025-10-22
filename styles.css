@@ -104,6 +104,7 @@ aside .categories ul li {
     flex-direction: column;
     transition: transform 0.3s ease;
     max-width: 100%;
+    height: 400px; /* Altura fija para la tarjeta */
 }
 
 .card:hover {
@@ -112,9 +113,8 @@ aside .categories ul li {
 
 .card img {
     width: 100%;
-    height: 0;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
-    object-fit: cover; /* Para que la imagen se ajuste sin distorsión */
+    height: 250px; /* Ajustamos la altura de la imagen para que se vea bien */
+    object-fit: cover; /* Asegura que la imagen se ajuste sin distorsión */
     border-bottom: 2px solid #003355;
 }
 
@@ -159,7 +159,7 @@ aside .categories ul li {
     }
 
     .card img {
-        padding-top: 60%;
+        height: 60%; /* Ajustamos la altura de la imagen en pantallas pequeñas */
     }
 
     .card .info {
@@ -178,6 +178,6 @@ aside .categories ul li {
     }
 
     .card img {
-        padding-top: 56.25%;
+        height: 250px; /* Mantenemos la misma altura para pantallas grandes */
     }
 }
